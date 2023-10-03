@@ -1,9 +1,14 @@
 \documentclass{article}
 \usepackage{graphicx} % Required for inserting images
+\usepackage{amssymb}
 
 \title{Nota's lineaire algebra}
 \author{Raf Meeusen}
 \date{2023-2024}
+
+% mark paragraphs with empty line instead of indented first line
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
 
 \begin{document}
 
@@ -31,6 +36,7 @@ Examen:
 
 Boek: editie 2 ook bruikbaar ; maar er is een editie 3 
 
+
 Makkelijke verbanden tussen lin. alg. en andere topics: 
 \begin{itemize}
     \item fysisch netwerk met knooppunten (elek, stroom auto's, vloeistof): knooppuntvergelijkingen geven stelsel; stelsel = lin. algebra
@@ -42,43 +48,45 @@ Vrijheidsgraden als er oneindig veel oplossingen zijn. Oplossingen te schrijven 
 
 "operaties die de oplossingen van een stelsel bewaren" 
 (zie ook oefening nabeschouwing met S en S') 
-Deze operaties zijn per definities omkeerbaar.  
+Deze operaties zijn per definitie omkeerbaar.  
 
-Term: uitgebreide matrix van een stelsel (met de bi) 
-Term: achterwaartse subsitutie (bij oplossen stelsel) 
+Termen: 
+\begin{itemize}
+\item uitgebreide matrix van een stelsel (met de $b_i$) 
+\item achterwaartse subsitutie (bij oplossen stelsel) 
+\end{itemize}
 
-Stelsels waarbij oplossing bijna rechtstreeks af te lezen is => voorbeelden => allemaal met een matrix die in specifieke vorm is => link gelegd met echelonvorm / trapvorm. 
+Stelsels waarbij oplossing bijna rechtstreeks af te lezen is:  voorbeelden gezien in de les. Allemaal met een matrix die in specifieke vorm is. Dan link gelegd met echelonvorm / trapvorm. 
 
-Term: echelonvorm
-Term: trapvorm
+Termen:
+\begin{itemize}
+\item echelonvorm
+\item trapvorm
+\item gebonden variabelen (kolommen met leidende 1) 
+\item vrije variabelen (zonder leidende 1); als parameter te kiezen
+\item strijdig stelsel
+\end{itemize}
 
-Term: gebonden variabelen
-Term: vrije variabelen
-(af te lezen in echelonvorm: kolommen met leidende 1 = gebonden variabelen; zonder leidende 1 = vrije variabelen = als parameter kiezen)
+Gewoonte: parameter $\lambda$, $\mu$, ...
 
-Gewoonte: parameter lambda, mu, ... 
-
-Term: strijdig stelsel. 
-
-Elk stelsel kan naar echelon geconverteerd worden. 
-MAAR: een echelonvorm is NIET uniek. 
+Elk stelsel kan naar echelon geconverteerd worden. MAAR: een echelonvorm is NIET uniek. 
 
 Methode: algoritme, technieken. 
 
 Dan nog gezien: stelling 1.11. (ivm. 1 oplossing, 0 oplossingen, oneindig veel oplossingen)
 
-Notaties Rnxk  : n rijen / k kolommen. 
+Notatie: $\mathbb{R}^{nxk}$ , voor n rijen / k kolommen. 
 
-Voorbeelden bewijzen eigenschappen matrices: onthouden dat een matrix definieren erop neerkomt om elk element te bepalen (notatie Aij = element op rij i en kolom j). 
+Voorbeelden bewijzen eigenschappen matrices: onthouden dat een matrix defini{\"e}ren erop neerkomt om elk element te bepalen (notatie Aij = element op rij i en kolom j). 
 
-Definitie: transponeren v/e matrix (AT) . Is spiegelen over diagonaal. 
+Definitie: transponeren v/e matrix ($A^T$) . Is spiegelen over diagonaal. 
 
-Termen: 
-vierkante matrix
-symmetrische matrix (A = AT) ; moet dus vierkant zijn 
-diagonaalmatrix
-
-
+Termen:
+\begin{itemize}
+\item vierkante matrix
+\item symmetrische matrix ($A = A^T$) ; moet dus vierkant zijn
+\item diagonaalmatrix
+\end{itemize}
 
 \section{Les 2, 3 okt}
 
@@ -160,9 +168,12 @@ OK, alleen twijfelde ik wat bij inverteren van de elementaire. Niet slecht om ee
 
 4. Doenbaar, wat rekenwerk. Gevolg 1.40 is pagina 40. Maar nog niet gedaan. 
 
-5. Oefening 1.35 uit boek (is op p. 53, idempotente matrix)
+5. Oefening 1.35 uit boek (is op p. 53, idempotente matrix). Nog niet gedaan. 
+
+\section{Les 3 voorbereiding}
 
 
-\section{TODO}
+
+\section{KEEP ME TO JUMP TO END}
 
 \end{document}
