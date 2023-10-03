@@ -29,8 +29,6 @@ Examen:
 \item er zijn voorbeeldexamens 
 \end{itemize}
 
-
-
 Boek: editie 2 ook bruikbaar ; maar er is een editie 3 
 
 Makkelijke verbanden tussen lin. alg. en andere topics: 
@@ -80,5 +78,64 @@ diagonaalmatrix
 
 
 \section{Les 2, 3 okt}
+
+
+Matrices vermenigvuldigen. Te onthouden: rij links, kolom rechts. Een rij x een kolom = 1 getal. (makkelijk te onthouden, want ik weet ook nog dat nxm matrix maal mxp matrix een nxp matrix geeft, en nxm matrix heeft n rijen met lengte m, en de lengte van de kolommen van de tweede is ook m. Logisch. Aantal rijen = lengte van de kolommen, en vice versa. 
+
+% even vooruitlopen waarom dat matrixproduct zo gedefinieerd is: 
+% 
+%Functie $L_A(x)$ is een afbeelding van $\mathbf{R}$ $$ R^k naar R^n, met 
+%L_A(x) = som (Aij . xj) 
+%(elke matrix A definieert een afbeelding La van ...) 
+%En dan is La . Lb = L_A.B 
+%(en dit maakt de definitie van matrixproduct logisch) 
+
+
+\begin{itemize}
+    \item veel eigenschappen en rekenregels
+    \item een nulmatrix $O_{nxk}$
+    \item een eenheidsmatrix $I_n$ (vierkante matrix) 
+    \item MAAR: vermenigvuldiging niet-commutatief (logisch want niet eens gedefinieerd voor alle nxk en kxl dimensies. 
+    \item $AB$ kan nul zijn terwijl $A \neq O$ en $B \neq O$
+\end{itemize}
+
+
+Noot: als we een matrix zien als een "operatie", en een vermenigvuldiging van matrices zien als de opeenvolging van die twee operaties, dan vinden we het ook logisch dat de uitkomst van $AB$ niet zelfde is als $BA$. (schoenen aantrekken, dan kousen, of omgekeerd. 
+
+Matrices waar volgorde van operaties wel omwisselbaar is: noemt men commuterende matrices. 
+
+Vraag: kunnen we matrices delen? Aangezien product van matrices nul kan zijn zonder dat een van de matrices nul is, is het delen niet zo evident als bij re{\"e}le getallen. Bvb. uit $ab=0$ volgt, als $b=0$, dat $a=0$, omdat we mogen delen door $b$. 
+
+Inverteren: een matrix vinden zodanig dat vermenigvuldiging de eenheidsmatrix geeft. Ook hier zijn er verschillende opties: de linkerinvers en de rechterinvers. 
+
+Opmerking: we beperken ons hier tot vierkante matrices wat betreft inverse, hoewel je ook inverse kan berekenen voor niet-vierkante matrices. 
+
+Stelling: voor een vierkante matrix die links inverse B heeft en rechts inverse C, geldt dat $B=C$. (bewijs in les gezien, heel kort). 
+
+Definitie 1.33. We noemen een nxn matrix ofwel inverteerbaar, ofwel niet-inverteerbaar, indien ... Synoniemen: regulier, niet-singulier/singulier. Opgelet: op dit moment hebben we nog niet bewezen dat linker inverse en rechter inverse gelijk zijn! Dat komt later! 
+
+Stelling 1.34: inverse van product (als beide inverteerbaar zijn) =  product van de inversen in omgekeerde volgorde. Het bewijs is gebaseerd op: aantonen dat een gegeven matrix een inverse van een andere, is bewijzen dat zowel links-vermenigvuldigen als rechts-vermenigvuldigen resulteert in de eenheidsmatrix. 
+
+Noot: niet evident hier om de te volgen wat al bewezen is, en wat we al weten, maar nog niet bewezen is (en dus: wat volgt eigenlijk waaruit). Bvb. nog steeds niet bewezen dat linker en rechter inverse gelijk gaan zijn. 
+
+Rap een eigenschap tussendoor: als $AB=0$ en $A$ is inverteerbaar, dan is $B=0$. (bewijs redelijk makkelijk) 
+
+Term/concept: elementaire matrix $E_n$. Komt voort uit oplossen van stelsels met matrix rij-operaties, gecombineerd met matrix-vermenigvuldigen. We kunnen namelijk rij-operaties voorstellen als matrix-vermenigvuldiging met zogenaamde elementaire matrices. (die op hun beurt voortkomen uit rij-operaties toepassen op een eenheidsmatrix). 
+
+Interessant: twee rijen van plaats wisselen: ongedaan maken is opnieuw hetzelfde doen! Dus inverse van $E_n$ voor rijen verwisselen, is gewoon dezelfde $E_n$! 
+
+Noteer ook: alle elementaire matrices zijn inverteerbaar. 
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}
