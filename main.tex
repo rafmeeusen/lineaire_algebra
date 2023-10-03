@@ -32,9 +32,12 @@ Examen:
 Boek: editie 2 ook bruikbaar ; maar er is een editie 3 
 
 Makkelijke verbanden tussen lin. alg. en andere topics: 
-fysisch netwerk met knooppunten (elek, stroom auto's, vloeistof): knooppuntvergelijkingen geven stelsel; stelsel = lin. algebra
-vlakke meetkunde: 2 vgln. stellen rechte voor; stelsel = alle punten die op beide rechten liggen
-Ruimte-meetkunde: vergelijkbaar, vlakken / rechten
+\begin{itemize}
+    \item fysisch netwerk met knooppunten (elek, stroom auto's, vloeistof): knooppuntvergelijkingen geven stelsel; stelsel = lin. algebra
+    \item vlakke meetkunde: 2 vgln. stellen rechte voor; stelsel = alle punten die op beide rechten liggen
+    \item Ruimte-meetkunde: vergelijkbaar, vlakken / rechten
+\end{itemize}
+
 Vrijheidsgraden als er oneindig veel oplossingen zijn. Oplossingen te schrijven in functie van "vrije parameters". 
 
 "operaties die de oplossingen van een stelsel bewaren" 
@@ -120,22 +123,46 @@ Noot: niet evident hier om de te volgen wat al bewezen is, en wat we al weten, m
 
 Rap een eigenschap tussendoor: als $AB=0$ en $A$ is inverteerbaar, dan is $B=0$. (bewijs redelijk makkelijk) 
 
-Term/concept: elementaire matrix $E_n$. Komt voort uit oplossen van stelsels met matrix rij-operaties, gecombineerd met matrix-vermenigvuldigen. We kunnen namelijk rij-operaties voorstellen als matrix-vermenigvuldiging met zogenaamde elementaire matrices. (die op hun beurt voortkomen uit rij-operaties toepassen op een eenheidsmatrix). 
+Term/concept: elementaire matrix $E_n$. Komt voort uit oplossen van stelsels met matrix rij-operaties, gecombineerd met matrix-vermenigvuldigen. We kunnen namelijk rij-operaties voorstellen als matrix-vermenigvuldiging met zogenaamde elementaire matrices. 
 
 Interessant: twee rijen van plaats wisselen: ongedaan maken is opnieuw hetzelfde doen! Dus inverse van $E_n$ voor rijen verwisselen, is gewoon dezelfde $E_n$! 
 
 Noteer ook: alle elementaire matrices zijn inverteerbaar. 
 
+ERO: elementaire rij-operaties. Bij elke ERO hoort een EM (elementaire matrix), noemen we $\Sigma$, en die EM bekom je door rij-operaties toepassen op de eenheidsmatrix. ERO toepassen op matrix A komt overeen met matrix-vermenigvuldiging $\Sigma A$. Links-vermenigvuldigen dus. 
+
+Noot: we weten dat twee rijen wisselen, ongedaan gemaakt wordt door opnieuw hetzelfde te doen. Dus: de matrix $\Sigma$ van rij-wissel operatie, moet wel de inverse van zichzelf zijn. 
+
+Grote stelling: 1.39, met 6 equivalente beweringen. De matrix A heeft een links inverse B; het stelsel $AX=0$ heeft enkel de evidente oplossing $X=0$ (dus stelsel met 1 oplossing!); etc. etc. Puntje 4: matrix A is product van elementaire matrices, is een soort sleutel-formulering, en ook een sleutel in het grote bewijs. 
+
+Bewijs: formulering 2 volgt uit 1 door links met B te vermenigvuldigen en uit te werken. Formulering 3 volgt uit 2, doordat stelsels met 1 oplossing in rij-echelon-vorm de eenheidmatrix hebben, en altijd daartoe te herleiden zijn met ERO's. Bewijs van 4 uit 3 (A is product van EM's): op bord geschreven tijdens de les. Ook redelijk makkelijk (moet wel weten dat EM's inverteerbaar zijn, en opnieuw EM geven). 
+
+Tussenstelling: als $C$ inverteerbaar, en $CA=I_n$, dan is A inverteerbaar en $A^{-1}=C$. Het bewijs: als $CA=I_n$, dan is A rechterinvers van C, en dus $A=C^{-1}$
+
+Noot: tijdens de les effe de draad kwijt tussen wat al bewezen was, en wat niet, en de definities inverteerbaar etc. Nog eens nakijken! 
+
+Noot2: belangrijk is: als $AB=I_n$, dan kan je dat op 2 manieren lezen: A is linkerinvers van B, of B is rechterinvers van A. Die twee manieren van lezen heb je nodig om bewijs sluitend te krijgen. 
+
+Bovendien volgt uit deze stelling een algoritme om de inverse te berekenen: doe dezelfde rijoperaties om A te rij-herleiden naar $I_n$, ook gewoon telkens op $I_n$, bijvoorbeeld door de matrix $(A|I_n)$ te gebruiken voor alle rij-operaties. Dan krijgen we rechts $A^{-1}$, want in bewijs hadden we gezien dat $A^{-1} = \Sigma_k \Sigma_{k-1} ... \Sigma_1$. Als bij A een nul-rij ontstaat, is A niet inverteerbaar. 
+
+Dan nog even over LU-decompositie gehad. (lower / upper triangular = benedendriehoeksmatrix en bovendriehoeksmatrix). Benedendriehoeksmatrix heeft niet-nullen op en beneden diagonaal. Het kunnen schrijven van een matrix A als product van een L en een U, heeft interessante toepassingen. Ook interessant: product van twee bovendriehoekmatrices is opnieuw bovendriehoeks. Een diagonaalmatrix is zowel bovendriehoeks als benedendriehoeks. Kijk ook eens naar de EM's en of ze L of U zijn. Echelonvorm is bovendriehoeks. 
+
+Ook "de spil" vernoemd hier ivm rij-herleiden. Dus ook leerstof (spil/gauss-eliminatie...). En volgende redenering: als je A in echelonvorm kan zetten zonder rijen te verwisselen, en we weten dat echelonvorm een U-vorm is. Dus $U= (\Sigma_k ... \Sigma_1) A$, met $\Sigma_k ... \Sigma_1$ inverteerbaar, en inverse hiervan is een L-vorm (indien geen rij-wissels). 
+
+\section{Les 2 nabeschouwing}
+
+1. stelsel herleiden naar trapvorm, dan elementaire matrices hiervoor opschrijven, en dan A herschrijven als product van elementaire (die dan inverse zijn van oorspronkelijke elementaire!) en de trapvorm zelf. 
+OK, alleen twijfelde ik wat bij inverteren van de elementaire. Niet slecht om eens voorbeeld van op te schrijven (1/lambda, en +lamba Ri wordt -lambda Ri). 
+
+2. stelling 1.38 bewijzen; had ik al gedaan voor paar getallenvoorbeelden, moet in deze oefening eigenlijk gewoon met variabele lambda en zo, dus heb ik geskipt. Wel goeie oefening om die inversen van elementairen eens uit te schrijven. 
+
+3. Die bewijzen zijn veel schrijfwerk, en met al die verschillende indices en mxn, nxp etc. dimensies, ... Eerst eens proberen definitie 1.22 zelf op te schrijven zonder te spieken. 
+
+4. Doenbaar, wat rekenwerk. Gevolg 1.40 is pagina 40. Maar nog niet gedaan. 
+
+5. Oefening 1.35 uit boek (is op p. 53, idempotente matrix)
 
 
-
-
-
-
-
-
-
-
-
+\section{TODO}
 
 \end{document}
