@@ -246,6 +246,47 @@ Oefening 1.7-39 p.54. 39a is vals. Tegenvoorbeeld is ooit in de les gegeven. 39b
 
 \section{Les 3, 10 okt}
 
+Determinanten. Vorige les: verband inverteerbaarheid matrix en oplosbaarheid (uniek) van homogeen stelsel. Voor 2x2 matrix kan je matrix beginnen inverteren via rijoperaties, en bekom je dat matrix inverteerbaar is als en slechts als $ad-bc$ niet nul is, en we kunnen dit defini\"eren als de determinant-functie $f(A)$ van een 2x2 matrix. 
+
+Paar eigenschappen van de 2x2 determinant: rijen van plaats wisselen, determinant van eenheidsmatrix is 1, twee matrices met verschillende eerste rij combineren. Deze drie eigenschappen worden als basis genomen van een algemene determinant-afbeelding. Zie boek. 
+
+Eigenschappen van een determinantfunctie: er volgt direct dat die lineariteit ook geldt voor alle andere rijen (want je mag rijen wisselen, alleen maar minteken erbij). Nul-rij geeft nul-determinant. Twee gelijke rijen ook nul (teken verandert maar moet hetzelfde blijven, dus moet 0 zijn). 
+
+Impact van elementaire rij-operaties (ERO) op een determinant-afbeelding: type III in stelling 2.3. Bewijs in de les gezien. Ook voor andere ERO's de impact gezien. 
+
+Stelling 2.4 gezien, vier onderdelen gecombineerd in een stelling: driehoeksmatrices, verband met inverteerbaarheid, determinant van product van matrices, determinant van getransponeerde matrix (dus lineariteit geldt ook voor de kolommen!). In de les het bewijs gezien van deel 2 van de stelling (verband inverteerbaarheid). Ene richting bewijs via ontbinding elementaire matrices. Andere richting van bewijs via contrapositie, en boven- en benedendriehoeksmatrices. 
+
+Gevolg 2.5: o.a. determinant van de inverse, ... 
+
+Nu gaan we bewijzen dat determinant-afbeelding bestaat. Gaat via permutaties, dus eerst heleboel wiskunde rond permutaties, transposities, ... 
+
+Notatie van permutatie $\sigma$ via matrix met bovenste rij (1 2 3 ...), en onderste rij de beelden onder $\sigma$. Demonstratie dat om van een gegeven  permutatie naar de identieke permutatie te gaan via "wissels": altijd oneven aantal wissels nodig. Een wissel noemt men een transpositie. Stelling: elke permutatie kan geschreven worden als een samenstelling van transposities. Het aantal transposities in zo'n gegeven ontbinding is altijd even of altijd oneven. 
+
+Definitie van inversies van een permutatie: koppels van indices $(i,j)$ waarvoor het afgebeelde koppel de orde omkeert. Voorbeeld gezien (alle inversies van een gegeven permutatie).  Definitie van het teken van de permutatie $\sigma$, gedefinieerd aan de hand van aantal inversies. Verband tussen aantal transposities in een ontbonden permutatie en het teken: $sgn(\sigma)=(-1)^m$. 
+
+Afleiding van de/een determintantafbeelding voor 3x3 matrices. Gedaan via lineaire combinaties van eenheidsvectoren $e_1$, $e_2$ en $e_3$. Dan definitie determinant gebruikt, eerst op rij 1, dan rij 2 etc. Je komt dan uiteindelijk op afbeelding op een matrix met alleen $e_i$ als rijen, die die hebben als waarde altijd 1 (eenheidsmatrix), -1 (afgeleid van eenheidsmatrix met oneven aantal rijwissels) of 0 (twee dezelfde rijen). Alleen kijken naar de niet-nul termen in de grote sommatie, dit zijn alleen de waarden $(j,k,l)$ die permutaties zijn van $(1,2,3)$ (dus verschillende j, k en l), dus equivalent te schrijven dat we sommeren over alle permutaties in plaats van de sommeren over alle combinaties van $j,k,l$ waarbij ze van 1 tot 3 gaan. 
+
+De afleiding toont aan dat de determinantafbeelding uniek is. Maar is de formule ook OK voor de andere twee delen van de definitie?  En komt dit overeen met hoe we vroeger determinanten geleerd hebben voor een 3x3? 
+
+
+\section{Les 3 nabeschouwing}
+
+1. Een determinant op 3 (twee??) manieren berekenen. OK, gedaan via trapvorm (en stelling 2.4 voor driehoeksmatrix), en dan gedaan via formule 2.2 pagina 65 met $\sigma$ en $sgn(\sigma)$ etc. Kwam beide 1 uit. 
+
+2. Bewijs van stelling 2.3 p. 58 verder bewijzen, dus puntje 2 en 3 i.v.m. $f(E)$. Puntje 2 letterlijk uit definitie te halen door D-1 en D-2 samen te nemen. Puntje 3 is gewoon D-3 op eenheidsmatrix, met $\mu=0$, gecombineerd met puntje 1 dat het op elke rij geldt.  
+
+3. gevolg 2.5 punt 2 bewijzen (det van inverse). Niet zo moeilijk: via product van $AA^{-1}$, we weten $f( AA^{-1}) = 1$ en dat determinant van product van matrices gelijk is aan product van determinanten. 
+
+4. redelijk eenvoudige uitbreiding van wat er al staat voor een 2x2, gewoon wat gelezen. 
+
+5. formule 2.2 pagina 65: aantonen dat $f(\mathbb{I})=1$ met deze formule. OK, even op moeten denken. De term onder sommatie $sgn(\sigma)a_{1\sigma(1)}...a_{n\sigma(n)}$ is alleen verschillend van nul, als \emph{alle} $a_{ij}$ tegelijk verschillend zijn van nul, en dat is alleen het geval als bij \emph{alle} $a_{ij}$ geldt dat $i=j$ (eenheidsmatrix, alleen diagonaal heeft 1). Dit krijg je alleen als $\sigma(i)=i$, dus bij de identieke afbeelding
+
+6. definitie 2.8 pagina 61. Nog eens goed moeten lezen, want er wrong iets. Ik had het wel juist gedaan, maar eigenlijk niet goed begrepen. Via stelling 2.10 p. 62 is het pas helemaal compleet: elke transpositie toepassen op een permutatie, verandert het teken. De identieke permutatie heeft 0 inversies, dus is even. En vanaf dan gaat elke "wissel" het teken veranderen. Maar het aantal inversies is niet gelijk aan het aantal wissels dat je gedaan hebt, je kan namelijk blijven wisselen. En dan snap ik wel beter dat je makkelijk 12 even en 12 oneven permutaties haalt uit $\{1,2,3,4\}$
+
+7. Had ik eerst heel veel moeite mee. Ik dacht dat die permutaties of transposities gingen over het van plaats veranderen van posities van elementen in koppels of vectoren. Maar dat is niet. Het zijn afbeeldingen, dus functies, met zowel domein en bereik dezelfde verzameling $\{1,2,3,...\}$. Het gaat dus niet over het van plaats verwisselen an sich. Dus eventueel tekenen als verzamelingen met pijlen, en zo meerdere keren na mekaar. NIET tekenen als 5-tuples waarbij je telkens elementen van plaats verwisselt! 
+7b is dan triviaal, want $(-1)^3=-1$. 7c is dan ook simpel. 
+
+
 
 
 
