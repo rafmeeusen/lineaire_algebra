@@ -89,6 +89,66 @@ Termen:
 \item diagonaalmatrix
 \end{itemize}
 
+\section{Les 1 nabeschouwing}
+
+Oefening 1, S1 en S2 gemaakt. S3 begonnen, maar niet helemaal afgewerkt.
+
+Oefening 2: gelezen, niet gemaakt. 
+
+Oefening 3: 0, 1 of oneindig. Leg uit adhv prop 1.8 / st.1.11. Even opgezocht: prop 1.8: elke matrix is rij-equivalent met een matrix in echelonvorm, en zelfs met een matrix die rijgereduceerd is. (p. 21). Stelling 1.11: p. 24
+stelling zegt dat een stelsel waarvan matrix in echelonvorm, altijd 0, 1 of oneindig oplossingen heeft, en geeft ook de voorwaarden adhv echelonvorm eigenschappen. 
+
+Oefening 4: maak opdracht 1.2 in boek. "toon aan dat  elke vd elementaire rijoperaties ongedaan gemaakt kan worden door opnieuw...". Geef telkens correct notatie voor de inverse elem.rij-op. 
+
+elementaire rij-operaties zijn: 
+\begin{itemize}
+\item $Ri \rightarrow  lambda * Ri $
+\item $Ri \rightarrow Rj$
+\item $Ri \rightarrow Ri + lambda*Rj$
+\end{itemize}
+
+inverse: 
+\begin{itemize}
+\item $Ri \rightarrow  (1/lambda) * Ri $
+\item $Ri \rightarrow Rj$
+\item $Ri \rightarrow Ri - lambda*Rj$
+\end{itemize}
+
+Oefening 5: gemaakt (zonder helemaal uit te schrijven) 
+...
+Stel daarom eerst dat ... oplossing is van S. Omdat 
+$
+(ai1 + lambda*aji) * x1 + ... 
+= 
+[ ai1 * x1 + ... + ain xn  ] + lambda* [ aj1 * x1 + ... ajn * xn] $
+en dat we uit S weten dat 
+eerste deel gelijk is aan $b_i$ 
+en tweede deel gelijk aan $lambda*bj$
+is ook aan deze vergelijking (nieuwe $Ri$) voldaan. 
+
+Omgekeerd: stel dat $(x1,...xn)$ oplossing is van S' 
+Omdat $lambda*(aj1x1 + ...) = b_j $ (zie j-de rij van S', en we hebben een oplossing),
+kunnen we vergelijking van nieuwe Ri herschrijven door links en rechts gelijke delen te schrappen,
+en blijft nog gewoon oude Ri uit S over. 
+
+Oefening 6: 
+eens gedaan op papier; niet heel moeilijk, maar wel opletten welke notatie juist welke betekenis heeft (volgorde van $_{ij}$ en $T$ en $lamba*$ etc.). 
+
+Oefening 7 (extra): 
+Vraag gesteld aan An Speelman: kolom van de constanten telt niet mee! 
+
+kolomoperaties: 
+\begin{itemize}
+    \item kolommen verwisselen (die NIET de constanten zijn): gewoon variabelen van naam veranderen. 
+    \item kolommen maal een lambda: 
+kolom van niet constanten: uitkomst van corresponderende var is gedeeld door lambda
+\item kolom plus lambda keer andere kolom: ik zie geen makkelijke redenering van wat er met oplossingen gebeurt. 
+
+\end{itemize}
+
+
+
+
 \section{Oefenzitting 1, 3 okt}
 
 (10u30, lokaal 01.14; Tom geeft oefenzittingen). 
@@ -107,6 +167,58 @@ Oefening 12 gemaakt. Maar niet goed aangepakt, en nog eens opnieuw gedaan. Kwam 
 
 
 Oefening 14 begonnen. Maar gestopt, te veel schrijfwerk. 
+
+
+\section{Les 2 voorbereiding}
+
+Gelezen. 
+2a) toon aan dat I.A = A = A.I . Voor 2x2. 
+\[I = 
+1  0
+0  1 \]
+\[
+A = 
+a11  a12 \\
+a21 a22\]
+
+(onthouden: rij vd linkse matrix x kolom vd rechtse matrix) 
+
+\[(I x A)11 = 1.a11 + 0.a21 =a11\]
+\[(I x A)12 = 1.a12 + 0.a22 = a12\]
+\[(I x A)21 = 0.a11 + 1.a21  =a21\]
+\[(I x A)22 = 0.a12 + 1.a22 =a22\]
+
+
+idem voor andere. 
+
+2b) 
+Zoek voorbeeld van 2x2 matrices waarbij A . B niet gelijk is aan B. 
+\[A 
+1  0
+1  1 
+en
+0  1
+0  0 \]
+
+heb ik eens uitgeteld; verschillend. 
+
+
+Appendix over sommatieteken. 
+TODO: Nieuwe notatie hier: $(ai)_{ni}=1$  
+(bij puntje 1. ) 
+
+bewijs de eigenschappen
+\begin{itemize}
+\item lambda/mu : OK, heb ik eens uitgeschreven
+\item dubbele som van ai.bj : OK, heb ik ook eens uitgeschreven. 
+\end{itemize}
+
+
+herschrijf uitdr. met sommatieteken; OK kan ik 
+omgekeerd, wat drukt .. uit  ; OK, kan ik 
+
+toon aan dat ... : OK, gedaan; is wat schrijfwerk en lastig, maar geen rocket science
+
 
 
 \section{Les 2, 3 okt}
