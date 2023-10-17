@@ -3,7 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 
-\title{Nota's lineaire algebra}
+\title{Nota's colleges lineaire algebra}
 \author{Raf Meeusen}
 \date{2023-2024}
 
@@ -148,27 +148,6 @@ kolom van niet constanten: uitkomst van corresponderende var is gedeeld door lam
 
 
 
-
-\section{Oefenzitting 1, 3 okt}
-
-(10u30, lokaal 01.14; Tom geeft oefenzittingen). 
-
-Oefeningen 1.7 pagina 47-54. 
-
-Oefening 1 matrix A1 gemaakt. 
-Oefening 2 matrix B1 gemaakt. 
-Oefeningen 4a en 4b gemaakt. Denk wel juist. 
-Oefening 5d gemaakt. 
-Oefening 6d gemaakt, maar niet zo heel netjes opgeschreven. 
-Oefening 10 linkse stelsel gemaakt. Denk redelijk juist gemaakt. 
-Oefening 11b gemaakt. Wel juist in grote lijnen. 
-Oefening 12 gemaakt. Maar niet goed aangepakt, en nog eens opnieuw gedaan. Kwam derdegraadvergelijking in b in, die je moet oplossen door nulpunt (b=1) te raden, en dan veelterm te delen. 
-
-
-
-Oefening 14 begonnen. Maar gestopt, te veel schrijfwerk. 
-
-
 \section{Les 2 voorbereiding}
 
 Gelezen. 
@@ -307,55 +286,6 @@ OK, alleen twijfelde ik wat bij inverteren van de elementaire. Niet slecht om ee
 
 A4 lesvoorbereiding, paar stukjes in boek lezen en nadenken. Duurde ongeveer halfuur. 
 
-
-\section{Oefenzitting 2, 10 okt}
-
-\subsection{Voorbereiding}
-
-Oefening 1.7-19 p.51 gemaakt. Deel 2 $C C^T$ kwam symmetrische matrix uit. Misschien altijd zo? Element $c_{ij}$ van product komt uit rij $i$ van linkse matrix en kolom $j$ van rechts. Element $c_{ji}$ komt uit rij $j$ van linkse en kolom $i$ van rechts. Rij $i$ van linkse matrix is kolom $i$ van rechtse. En kolom $j$ van linkse is rij $j$ van rechtse matrix. Dus inderdaad altijd zo. 
-
-
-Oefening 1.7-20 p.51. Volgens mij is de clou dat na herschrijven volgt dat $A-A^T = -2B^T$, dus dat we hieruit makkelijk $-2B^T$ kunnen halen, en dan ook $B$. 
-
-Oefening 1.7-24 matrix A1 p.52. OK, inverse berekend met truuk $(A|I)$. Uitkomst: 
-\begin{math}
-\begin{pmatrix}
--\frac{2}{7} & 1 & \frac{6}{7}\\
--\frac{1}{7} & 1 & \frac{3}{7} \\
-\frac{4}{7} & -1 & -\frac{5}{7} 
-\end{pmatrix}
-\end{math}
-
-Nagekeken met online calculator, klopte. Ook nog eens gekeken en nagedacht hoe te schrijven als product van elementaire. Niet vergeten dat het ook inverse van elementaire worden op een gegeven moment! Niet helemaal uitgeschreven, maar ik snap het principe wel. 
-
-Oefening 1.7-34 p.53. Ok, gemaakt. Deel a) met inductie en ook uit ongerijmde (als k-de macht verschillend van nul is, is ook (k+1)-de macht verschillend van nul), en dan gezien dat dat niet kan. Deel b) gewoon uitgerekend. Die inverse die voorgesteld wordt kan altijd berekend worden, dan vermendigvuldigd met $I-A$ en uitgerekend.
-
-
-\subsection{Oefenzitting}
-
-Oefening 27(a) p.52: OK uitgerekend, klopte. 
-
-Opdracht 1.27 op p.34: OK, klopt na uitschrijven van Tr(A-B) en dan te hergroeperen. 
-
-Oefening 1.7-21 p.51
-21a) $AA^T$: OK. Element $c_{ij}$ uitschrijven als som, dan meepakken dat $b_{kj} = a_{jk}$ voor de getransponeerde, en dan ook eens element $c_{ji}$ uitschrijven, en dan zie je dat ze hetzelfde zijn. Matrix met $c_{ij} = c{ji}$ is een symmetrische. Voor $A+A^T$ is zelfs nog makkelijker. 
-Andere manier: definitie van symmetrisch: $A=A^T$. Dus als we $(A+A^T)^T$ uitrekenen en opnieuw $A+A^T$ uitkomen, dan is deze inderdaad symmetrisch. En er is een eigenschap van de getransponeerde van een som, dus kan ook makkelijke zo aangetoond worden. Ook voor product moet dat waarschijnlijk zo kunnen (eigenschap $(AB)^T$), maar niet verder uitgewerkt. 
-22b) is ook redelijk triviaal. Dan 22c), gewoon uitgerekend dat som klopt. Dan 22d), was wat moeilijker. Gesteld dat $A=B+C$ met $B=B^T$ en  $C=-C^T$. Dan kan je berekenen dat die B en C gelijk zijn aan de uitdrukkingen uit vorige deeloefening door uitdrukkingen voor $A$ en $A^T$ verder uit te schrijven en op te lossen naar $B$ en $C$. 
-21e geskipt. 
-
-
-Oefening 1.7-35 p.53. Idempotente matrix. Ene vinden: eenheidsmatrix, en eerste rij maal -1 doen. Of tweede rij, etc. Deel b is makkelijk te berekenen. 
-
-Oefening 1.7-39 p.54. 39a is vals. Tegenvoorbeeld is ooit in de les gegeven. 39b is waar. Uit gegeven volgt dat $A=A^{-1}$ en $B=B^{-1}$. Dan is $(AB)^{-1} = (A^{-1}B^{-1})^{-1}$. Via eigenschap inverse van product volgt het gevraagde. 
-39c: vals. Stel $B=-A$, dan is $A+B=0$; tegenvoorbeeld.
-39d: waar. 
-
-39e: moeilijk, ik zie hem niet. Blijkbaar vals, moet paar keer proberen met bvb. 2x2 matrix. 
-
-39f: makkelijk, ongerijmde. Stel AB inverse wel, dan moet A wel inverteerbaar zijn. 
-
-39g: vals. Bvb. twee rijen wisselen, en een rij met  lambda vermenigvuldigen; operaties omkeren, en het klopt niet meer. 
-
 \section{Les 3, 10 okt}
 
 Determinanten. Vorige les: verband inverteerbaarheid matrix en oplosbaarheid (uniek) van homogeen stelsel. Voor 2x2 matrix kan je matrix beginnen inverteren via rijoperaties, en bekom je dat matrix inverteerbaar is als en slechts als $ad-bc$ niet nul is, en we kunnen dit defini\"eren als de determinant-functie $f(A)$ van een 2x2 matrix. 
@@ -399,6 +329,8 @@ De afleiding toont aan dat de determinantafbeelding uniek is. Maar is de formule
 7b is dan triviaal, want $(-1)^3=-1$. 7c is dan ook simpel. 
 
 
+\section{Les 4 voorbereiding} 
+Gedaan. 
 
 
 

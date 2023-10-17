@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\title{Huistaak 1 lineaire algebra}
+\author{Raf Meeusen}
+\date{week 4}
+
+\begin{document}
+\maketitle
+
+\section{Oefening 2.4-16, p.80}
+
+Gegeven: $A^T=-A$, $A \in \mathbb{R}^{nxn}$, n oneven. 
+
+Te bewijzen: $det(A) = 0$
+
+Bewijs: aangezien $A^T=-A$, geldt dat $det(A^T)=det(-A)$. Uit stelling 2.4: $det(A^T)=det(A)$. 
+Dus: $det(A)=det(-A)$. Wegens rijlineariteit van determinant in elke rij: $det(-A) = (-1)^ndet(A)$. 
+Dus voor oneven $n$ geldt dat $det(-A) = -det(A)$, wat alleen kan als $det(A)=0$. 
+
+Voorbeeld A met even n (n=4) waarbij $det(A) \neq 0$: 
+\begin{math}
+\begin{pmatrix}
+0 & 0 & 0 & -1 \\
+0 & 0 & -1 & 0 \\
+0 & 1 & 0 & 0 \\
+1 & 0 & 0 & 0 \\
+\end{pmatrix}
+\end{math}
+waarbij $det(A) = 1 $
+
+\section{Oefening 2.4-28}
+
+Huistaak: deel c) en deel d) 
+ 
+c) niet waar. Bvb. voor $c=0$: $det(-A) = (-1)^n detA$
+
+d) waar; we weten dat $det(A^T) = det(A)$ (eigenschap stelling 2.4); dus laat ons kijken of we iets interessant vinden als we $(c\mathbb{I}_n - A^T)^T$ berekenen: $(c\mathbb{I}_n - A^T)^T = (c\mathbb{I}_n^T - {A^T}^T) = (c\mathbb{I}_n - A)$, wegens: transponeren van som van matrices is som van getransponeerden, en getransponeerde van een diagonaalmatrix geeft zelfde matrix terug. Hieruit volgt de gestelde bewerking, QED.  
+
+\end{document}
