@@ -332,6 +332,97 @@ De afleiding toont aan dat de determinantafbeelding uniek is. Maar is de formule
 \section{Les 4 voorbereiding} 
 Gedaan. 
 
+\section{Les 4, 17 okt}
+Niet live, maar video bekeken. Was ziek. 
+
+Eerst nog verder over determinanten. De formule (2.2) p. 65 verder bestudeerd. Deze (2.2) is niet echt een definitie, denk ik, maar resultaat van rekenwerk aan de hand van definitie (2.1) p. 57. Best wel iets speciaal: we defini\"eren een determinant als een afbeelding met 3 eigenschappen, en komen dan tot besluit dat er maar 1 oplossing bestaat hiervoor. 
+
+In de les gedemonstreerd hoe je van (2.2) komt tot rij- of kolomontwikkeling, eigenlijk paragraaf 2.2.4 p.68 uit boek. Introductie $S_n$ als verzameling van alle permutaties van $\{1,2,...,n\}$. Kwam erop neer gewoon eens te proberen alle $a_{1j}$ uit de rest van de formule af te zonderen, en dan te kijken wat er overblijft (voorbeeld voor ontwikkeling eerste rij). Prof introduceerde ook $S_{n,1}, S_{n,2},...$, deelverzamelingen van $S_n$ waarbij 1 afgebeeld wordt op 1, resp. 2 op 2, etc. In boek iets andere notatie gebruikt. Dan interpretatie van de overschot: wat blijft er nog over nadat bvb. $a_1j$ buitengebracht is? Dit wordt $C_{ij}$ genoemd, en door goed te bekijken zien we dat dit ook een determinant is. Voor $C_{11}$ is het vrij makkelijk, maar voor $C_{12}$ is het subtieler. $S_{n,2}$ is eigenlijk verzameling van alle permutaties van $\{1,3,4,...n\}$. En er is nog een belangrijke nuance: er staat daar nog een kolom 2 tussen die geschrapt wordt, waardoor het teken verandert. Het volledige bewijs van hoe dat juist werkt met die tekens, is iets complexer, en moeten we niet kennen. Maar je kan het "onthouden" door in te zien dat je eerst nog kolommen moet omwisselen om de geschrapte kolom uit beeld te krijgen, en we weten dat elke kolom-omwisseling de determinant van teken doet veranderen. Bvb. kolom 4 naar links schuiven, is eerst een wissel kolom 4 met kolom 3, dan kolom 3 met 2, dan 2 met 1; dan pas staat geschrapte kolom uit beeld en is de overblijvende matrix een "geheel". 
+Besluit is dan: $C_{1i} = (-1)^{i-1} det (M_{1i})$, en dat $det A=  \sum_{i=1}^{n} a_{1i}C_{1i}$. 
+
+Definitie (2.19) besproken (cofactor en minor), en verband (cofactor is determinant minor, op teken na). Paar toepassingen gezien, redelijk triviaal. Dan terug naar hoe we aan determinanten waren gekomen: inverteren, inverteerbaarheid, en concept adjunt matrix gezien. Definitie 2.22, eigenschap van stelling 2.23, en daaruit volgt dus dat $A^{-1}= \frac{1}{det(A)} \cdot adj(A)$. Opmerking: niet effici\"ent om inverse te berekenen! Ook bewijs gezien van stelling 2.23 voor \'e\'en deel, in twee stappen: diagonaal elementen gelijk aan $det(A)$, en dan niet-diagonaal elementen gelijk aan nul. Truuk in het bewijs: matrix met 2 gelijke rijen introduceren, waarvan we weten dat determinant 0 is. Als je die ontwikkelt naar de j-de rij (met j-de rij gelijk aan i-de rij), dat krijg je een ontwikkeling met resultaat nul, maar die ontwikkeling komt ook overeen met een stuk van de formule in het bewijs ergens. 
+
+(pauze) 
+
+Vectorruimten: iets nieuws. Een niveau van abstractie. Begonnen met voorbeelden: oplossingen-verzameling van homogene stelsels, matrices met optelling en scalaire vermenigvuldiging, de veeltermen met re\"ele co\"effici\"enten. Sprake van zogenaamde "evidente rekenregels" voor optelling en scalaire vermenigvuldiging, en ook distributiviteit van ene op andere. 
+
+Nog een voorbeeld: continue functies. Kan je ook optellen en scalaire vermenigvuldigen. 
+
+Dus: twee bewerkingen die we telkens hebben, optelling en scalaire vermenigvuldiging. 
+Eerst even focus op die optelling: verzameling met 1 binaire bewerking die commutatief is: commutatieve groep (def. 3.2). Noot: er zijn ook niet-commutatieve groepen, bvb. samenstellen van permutaties, de vermenigvuldiging bij de inverteerbare matrices (jaja, die ene bewerking moet geen klassieke optelling zijn!). Anderzijds is er natuurlijk de gewone optelling in $\mathbb{Z}$ die wel een commutatieve groep is. 
+Niet-commutatieve groepen hebben vaak een $\times$ of $\cdot$ symbool voor hun operatie, en het neutraal element wordt dan vaak als $1$ geschreven (en niet als $0$ zoals bij commutatieve groep). Tegengesteld element is nodig bij commutatieve groep, daarom is ($\mathbb{Z}, \cdot$) geen commutatieve groep: wel associatief, wel een neutraal element ($1$), en ook commutatief, maar geen tegengesteld element (inverse). Rationale getallen met vermenigvuldiging zijn wel commutatieve groep, maar je moet 0 weglaten (want je kan met $0 \cdot x$ nooit neutraal element $1$ uitkomen!). 
+
+Even uitwijding naar aanleiding van een vraag: verschil axioma's en definities. Iemand vond het geen definities die werden gegeven, maar axioma's. Prof gaf hem ongelijk, zei dat axioma's vooral uit de verzamelingenleer komen. 
+
+Principe vectorruimten: paar definities, voor de rest een wit blad. En dan gaan we stellingen bewijzen. Beginnen met paar eenvoudige stellingen: lemma 3.7 en lemma 3.8 in de les even bewezen. 
+Opgelet: symbool $0$ is soms een re\"eel getal, en soms de nulvector. Zou uit context moeten blijken, maar toch belangrijk om bij stil te staan bij die bewijzen. Ook symbool $-$ heeft die dubbele betekenis: voor een getal is het het negatieve getal (bvb. $-1$), maar voor een vector bvb. $-v$ betekent het notatie van tegengestelde. Gelukkig is $(-1)v = -v$, zie lemma 3.8. 
+
+Concept deel-vectorruimte: komt vaak voor! Stelling 3.11 i.v.m. deelruimtecriterium. Voorbeeld: $\mathbb{R}^n$ is een vectorruimte, en de oplossingen van een stelsel $AX=0$ is een deelvectorruimte van $\mathbb{R}^n$. 
+
+\section{Les 4, nabeschouwing}
+
+\subsection {Kolom/rij-ontwikkeling}
+
+Oefening rap gemaakt, lukte wel. Opgelet: tekens! denk aan $(-1)^{i+j}$
+
+Oefening 2 extra:  Leg zorgvuldig uit waarom in 2.2.6 in het bewijs van de formule van Cramer geldt
+dat ... . Boek pagina 75. 
+\[ 
+det \begin{pmatrix}
+a_{11} & ... & b_1 & ... & a_{1n} \\ 
+a_{21} & ... & b_2 & ... & a_{2n} \\
+...    & ... & ... & ... & ... \\ 
+a_{n1} & ... & b_n & ... & a_{nn} 
+\end{pmatrix} 
+= b_1 C_{1i} + b_2 C_{2i} + ... 
+\] 
+Antwoord: gewoon kolomontwikkeling naar kolom $i$ (waar de $b_i$ staan). De kolom zelf waarnaar ontwikkeld wordt, komt niet voor in de minoren/cofactoren, dus zijn het de gewone $C_{ij}$ van de oorspronkelijke matrix, want de rest van de matrix is ongewijzigd. 
+
+
+\subsection {Vectorruimten}
+
+3. Bekijk Voorbeeld 3.6(3), pagina 93. 
+(a) Toon voor de vectorruimte ($\mathbb{R}, \mathbb{R}[X], +$) aan dat de eigenschappen van neutraal element en tegengesteld element uit Definitie 3.2 gelden en toon 1 eigenschap naar keuze aan uit Definitie 3.3.
+
+NE: er bestaat element 0 zodat $v+0=0=0+v$; voor ($\mathbb{R}, \mathbb{R}[X], +$) is dit de veelterm met alle  $a_i=0$. (noot: veelterm van graad 0). Triviaal dat uit definitie optelling (i.e. co\"effici\"enten van gelijke graad bij elkaar optellen), dat $v+0 = 0 = 0+v$. 
+
+TE: bestaat ook, namelijk de veelterm $v'$ met co\"effici\"enten $a'_i = -a_i$. Ook hier is het triviaal uit definitie optelling, dat $v + v'$ een veelterm geeft met alle co\"effici\"enten gelijk aan $0$. 
+
+Eigenschap naar keuze uit definitie 3.3 (p. 91): eigenschap 4 i.v.m. scalar 1: $1 . v=v$. Vermenigvuldiging met scalar voor veeltermen doe je door al zijn co\"effici\"enten met die scalar te vermenigvuldigen. Evident dat je dan opnieuw $v$ krijgt voor scalar 1. 
+
+(b) Waarom vormen de monische veeltermen geen vectorruimte?
+Monische veeltermen: hoogstegraadsco\"effici\"ent is 1. Bvb. $X^3 + 3X^2 -7X + 31$. 
+Heel eenvoudig: tel voorbeeld op bij zichzelf. En hij is niet monisch meer, dus som zit niet meer in de deelverzameling $U$ (zoals in stelling 3.11 voor deelruimtecriterium), dus is het geen deelruimte, dus geen vectorruimte (wel een deelverzameling van alle veeltermen).  
+
+
+
+4. Werk de opmerking op het einde van Voorbeeld 3.6(4) uit. (p. 93). De opmerking is: veeltermen van graad precies $n$ vormen geen vectorruimte. Ga na hoe dit komt. Opnieuw kijken naar criteria deelvectorruimten: is die optelling nog inwendig? Ook hier niet: neem hoogste co\"effici\"ent, zet er een $-$ voor, en tel op bij oorspronkelijke veelterm: de graad wordt eentje lager, niet meer precies $n$ dus, maar $n-1$. 
+
+5. Bewijs Lemma 3.7. En bewijs het derde puntje van Lemma 3.8. 
+Lemma 3.7: tiens, was ook oefening. Zie oefeningen. 
+Lemma 3.8, punt 3: $(-\lambda)v = -(\lambda v) = \lambda(-v)$. Bvb. gebruikmakend van 
+\[ (-\lambda)v = [(-1)\lambda]v = [\lambda (-1)]v = \lambda(-1)v = \lambda(-v) \]
+(achtereenvolgens: gemengde associativiteit, commutativiteit ($\mathbb{R},\cdot$), Lemma 3.8 puntje 2), hebben we al de gelijkheid van de linkse en de rechtse uitdrukking aangetoond. 
+Voor de middelste uitdrukking: 
+\[
+-(\lambda v) = (-1)(\lambda v) = (-1 \lambda) v = (- \lambda)v
+\]
+(achtereenvolgens puntje 2 Lemma 3.8, gemengde associativiteit, en \emph{gewone} tekenverandering in $\mathbb{R}$). 
+
+6. Toon aan dat er geen re\"ele vectorruimten bestaan met eindig veel vectoren.
+Raar. Volgens boek bestaat dat wel, namelijk de triviale vectorruimte $V=\{0\}$. 
+Stel dat bedoeling van vraag is: vectorruimten met meer dan 1 element. Dan begon ik te lezen in definitie, en zit met een vraag: waar uit definitie leid je af dat elke mogelijke $\lambda$ maal elke mogelijke $v$ opnieuw een vector is in $V$?? 
+
+
+7. Bekijk Voorbeeld 3.6(6), p.94. Hier staan voorbeelden van complexe vectorruimten. 
+Bekijk dan Voorbeeld 3.6(2) op p. 93 en leg uit waarom ($\mathbb{C}, \mathbb{R}, +$) geen (complexe) vectorruimte is.
+Ook dit lijkt gebaseerd op de aanname dat elke mogelijke $\lambda$ maal elke mogelijke $v$ steeds een vector is in $V$. (aanname wordt precies vaak gemaakt, bvb. bij deelruimten, maar ik snap niet goed waar ze vandaan komt). 
+
+
+\section{Les 5, voorbereiding}
+OK, gelezen en over nagedacht. (ivm de voortgebrachte ruimte van een deelverzameling $D$ van de commutatieve groep van een vectorruimte). 
+
+\section{Les 5, 24 okt}
 
 
 \section{KEEP ME TO JUMP TO END}
