@@ -144,10 +144,52 @@ n)  niet gemaakt
 
 \subsection {Voorbereiding}
 
-Voor te bereiden: 2.4: 28(l), 25 en bewijs lemma 3.7
+Oefening 2.4-28(l) (p.82): waar. Definitie $adj(A) = det(A) A^{-1}$. Uit gegeven volgt dan hier: $adj(A) = A^{-1}$. Opnieuw $adj$ nemen van linkse en rechtse geeft: $adj(adj(A)) = adj(A^{-1})$. Maar $adj(A) = A^{-1}$ dus is $adj(A^{-1}) = {(A^{-1}})^{-1} = A$, en dus $adj(adj(A)) = A$. QED. 
+
+Oefening 2.4-25 (p.81): oefening op Cramer. Truuk van Cramer is per onbekende een kolom vin $A$ vervangen door kolommatrix $B$, en dan determinant hiervan berekenen, en delen door $det(A)$, wat dan $x_i$ geeft met $i$ de kolom die is vervangen. Uitgerekend en nagekeken, klopte. 
+
+Bewijs lemma 3.7 (p.95): Gegeven $v+x=w+x$. Te bewijzen: $v=w$. Bewijs: gelijkheid $v+x+x'=w+x+x'$ volgt uit gegeven, voor elke $x'$, en wegens associativiteit dan ook $v+(x+x')=w+(x+x')$ voor elke $x'$. Kiezen we $x'$ het tegengesteld element van $x$, dan wordt dit: $v+(0)=w+(0)$, en hieruit volgt $v=w$, want $0$ is het NE. 
 
 \subsection {Oefenzitting}
 
+Oefening 2.4.24 (p. 81): $A$ en $B$ inverteerbaar. 
 
+\begin{enumerate}
+\item[(a)] Toon aan dat $adj(AB)=adj(B) \cdot adj(A)$. Bewijs: we hebben eigenschappen $A \cdot adj(A) = det(A) \mathbb{I}_n$, $A^{-1} = \frac{1}{det(A)} adj(A)$ en $adj(A) = det(A)A^{-1}$. Eerste eigenschap toepassen op $AB$: $AB \cdot adj(AB) = det(AB) \mathbb{I}_n$. Links en rechts links-vermenigvuldigen met $(AB)^{-1}$: $adj(AB) = (AB)^{-1} det(A) det(B) = B^{-1} A^{-1} det(A) det(B) =  det(B)B^{-1} det(A)A^{-1}$. Hieruit volgt het te bewijzen via derde eigenschap. 
+
+\item[(b)] $adj(QAQ^{-1}) = adj(Q^{-1}) adj(A) adj(Q) $ via vorige eigenschap in a). Dan $adj(Q)=det(Q) Q^{-1}$ toepassen op $Q$ en ook op $Q^{-1}$, en wetende dat $det(X^{-1}) = \frac{1}{det(X)}$, geeft het gevraagde. 
+
+\item[(c)] Gegeven $AB=BA$. Hint gekregen in oefeningzitting: gebruik vorige eigenschap. 
+$AB=BA$, dan is $ ABB^{-1} = BAB^{-1} $ of $A = BAB^{-1}$. Dan is ook  $adj(A) = adj(BAB^{-1})$. Voor rechterlid kan eigenschap uit (b) gebruikt worden, en dan is: $adj(A) = B adj(A) B^{-1}$. Links en rechts via rechter-matrix-vermenigvuldiging met $B$: $ adj(A) B = B adj(A) $. QED. 
+
+
+
+\end{enumerate}
+
+Oefening 2.4.29 (p. 82-83): begonnen, maar best moeilijk. Hint in opgave suggereert bewijs door volledige inductie. Niet meer zelf gemaakt, maar in oefenzitting heeft Tom drie verschillende bewijzen (of toch outlines van bewijzen) gegeven. 
+\begin{enumerate}
+    \item[(1)] bewijs alternatief 1: via volledige inductie. 
+    \item[(2)] bewijs alternatief 2: via determinant van een trapvorm (stelling 2.4, driehoeksmatrix: product diagonaalelementen), en via een Lemma dat $det(P)=det(A)det(B)$ blijft gelden na een ERO. 
+    \item[(3)] bewijs alternatief 3: via formule (2.2) voor determinanten. 
+\end{enumerate}
+
+
+Bewijs alternatief 1: stap 1: we tonen aan dat $det(P)=det(A).det(B)$ geldig is voor $k=1$. Gewoon ontwikkelen naar 1e kolom, geeft $det(P)=a_{11}det(B)= det(A)det(B)$. QED. 
+Dan stap 2, de inductiestap. Inductiehypothese: we nemen aan dat voor $A \in \mathbb{R}^{(k-1)\times (k-1)}$ geldt: $det(P) = det(A)det(B)$. Schrijven we dan $det(P)$ uit voor $A \in \mathbb{R}^{k\times k}$: $det(P) = det 
+\begin{pmatrix}
+a_{11} & ... & a_{1k}  &  \\
+       & ... &   &  C \\
+a_{k1} & ... & a_{kk}  & \\
+       &   &         &   \\ 
+       & O   &         & B 
+\end{pmatrix}$, en ontwikkelen we naar kolom 1 ($j = $ rij-index). 
+$det(P) = \sum_{j=1}{k} (-1)^{j+1} $
+TODO: afwerken. 
+
+Oefening 3: zie opgave (vrij lang). 
+
+Oefening 4 = Doe opdracht 3.9 = p. 96 in boek. Toon aan dat $\lambda v = 0 \implies \lambda = 0$ of $v=0$. Contrapositie, we mogen ook aantonen $\lambda \neq 0 \land v \neq 0 \implies  \lambda v \neq 0$ . Uit definitie 3.3, co\"eff.1: $1.v = v$. Omdat $\lambda \neq 0$, volgt $ (\lambda \frac{1}{\lambda}) v = v$, of ook $  \frac{1}{\lambda} ( \lambda v ) = v$. Maar $v \neq 0$, dus is ook $  \frac{1}{\lambda} ( \lambda v ) \neq 0 $. In ongelijkheid links en rechts maal $\lambda$ geeft: $ \lambda v \neq 0$ (via Lemma 3.7 $\lambda 0 = 0$). 
+
+Oefening 5: Maak oefening 3.6.3. (p. 128): Wat neergesschreven en geprobeerd: optelling niet commutatief. Ik vind geen neutraal element. Optelling niet associatief. Gemengde associativiteit wel OK.  
 
 \end{document}
