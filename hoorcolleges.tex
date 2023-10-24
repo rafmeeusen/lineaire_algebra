@@ -424,6 +424,72 @@ OK, gelezen en over nagedacht. (ivm de voortgebrachte ruimte van een deelverzame
 
 \section{Les 5, 24 okt}
 
+Voorbeelden deelruimten. 
+
+Voorbeeld 1: veeltermen $P$ met  graad $\leq n$, is een deelruimte van $\mathbb{R}[X]$. 
+
+Voorbeeld 2: veeltermen met graad exact $n$ zijn geen deelruimte. (zie oefening ergens; van zichzelf aftrekken = graad minder). Overigens zit nul-veelterm hier ook niet in. 
+
+Voorbeeld 3: wat zijn alle deelruimten van het vlak? Alle rechten door de oorsprong (nul zit erin, en veelvouden blijven op rechte liggen). En dan nog de twee triviale: {0}, de ganse ruimte. 
+
+Voorbeeld 4: deelruimten van $\mathbb{R}^3$? Vlakken door de oorsprong, ook alle rechten door de oorsprong, en de twee triviale deelruimten. We voelen hier al aan: de dimensie is verschillend voor al deze deelruimten. 
+
+Nieuw concept dat vaak terugkomt: lineaire combinaties. (\emph{de} prototypische operatie bij vectorruimten). De vector $\alpha_1 v1 + \alpha_2 v2 + ... \alpha_n v_n$ noemen we een lineaire combinatie van $v_1, ..., v_n$. Andere notatie: $\sum_{i-1}^n \alpha_i v_i $. 
+We voelen hier al aan voor $\mathbb{R}^3$: alle lineaire combinaties van twee vectoren (die niet op 1 rechte liggen), die vormen een vlak. Dit kan veralgemeend worden. 
+
+Definitie 3.15. Deelruimte voorgebracht door $D$. Noteer: dit is de kleinst mogelijke deelruimte waarin alle vectoren van $D$ in zitten. In woorden uitgelegd in de les waarom dit een deelruimte is. Notatie $vct(D)$, en andere notaties zie boek. 
+
+Bekijken we deelruimten van de ruimte, "een rechte" en "een vlak". Ze gaan door de oorsprong (dus niet evenwijdig tenzij rechte in vlak ligt). Bekijken we twee rechten (die niet samenvallen), de voortgebrachte ruimte is het vlak door die twee rechten. Wat valt er op: de veelvouden van de vectoren op de rechten zitten allemaal in de deelruimten, voor de "nieuwe" vectoren van de voortgebrachte ruimte moeten we alleen kijken naar de sommen van vectoren. Weer een interessant concept: 
+
+Definitie somruimte: Als $V_1, ... V_n \subset V$ allemaal deelruimten, dan is $V_1 + V_2 + ... V_n = \{ v_1 + ... + v_n | v_i \in V_i \}$  terug een deelruimte. Notatie $V_1 + V_2 + ... V_n = vct(V_1 \cup V_2 ... \cup V_n)$ . Nagaan: waarom is dat een deelruimte? (via eigenschappen voor deelruimte). 
+
+Definitie "directe som" (eerst voor twee deelruimten gezien, verderop voor meer dan twee): is ook een somruimte, maar hierbij kunnen we elke vector van de somruimte op \emph{unieke} wijze kunnen schrijven als som van iets in $U$ en iets in $V$. Voorbeeld: somruimte van vlak en rechte, vs. somruimte van twee rechten. Beide geven volledige 3D ruimte, maar alleen de somruimte van twee rechten is een directe som. 
+
+Propositie: $U+W$ is een directe som als en slechts als $U \cap W = \{ 0 \} $. Bewijs van een "asa", dus twee implicaties. Stap 1 de pijl terug: via veronderstelling dat $v=u_1 + w_1$ maar ook $v=u_2 + w_2$, en dan bewijzen dat $u_1=u_2$ en $w_1=w_2$. (met gegeven dat doorsnede $V$ en $W$ alleen de nulvector is). We komen tot een gelijkheid van twee vectoren waarvan we weten dat ene in $V$ zit en andere in $W$, dus ze zitten alle twee in de doorsnede, dus ze moeten beide $0$ zijn, en dus ... 
+Stap 2 de pijl naar rechts. Gegeven direct som, bewijzen dat doorsnede alleen $0$ bevat. Of via contrapositie: als doorsnede niet gelijk is aan $\{ 0 \} $, bewijzen dat er een vector is in $U+W$ die twee schrijfwijzen heeft. In les helemaal uitgeschreven. 
+
+Opnieuw even bekijken in termen van dimensies. We verwachten dat voor direct som, de som van de dimensies gelijk is aan de dimensie van de somruimte. Voor niet-directe som: we gaan te veel hebben, hoeveel te veel? Ah, de dimensie van de doorsnede moeten we er misschien van aftrekken? Zie volgende les. 
+
+Definitie 3.20: directe som voor meer dan 2 deelruimten. Uitbreiding propositie in verband met doorsnede: kijken naar doorsnede van 1 van de deelruimten met de somruimte van al de rest! En vooral: moet gelden voor elke van de deelruimten die je apart neemt! 
+Niet zo evident, maar denk aan drie rechten door 0 in hetzelfde vlak. Somruimte van twee rechten is al het vlak, en doorsnede van dat vlak met derde rechte is opnieuw rechte. Bewijs is quasi zelfde als voor som van twee deelruimten. 
+
+(pauze; voorstelling POC, permanente onderwijscommissie, studentenvertegenwoordiging hierin) 
+
+Volgende (fundamenteel) concept: lineaire afhankelijkheid, onafhankelijkheid. Hangt ook samen met begrip dimensie. Zolang je van een groep vectoren een vector kan schrijven als lineaire combinatie van de andere vectoren, dan is hij eigenlijk overtollig wat betreft de somruimte. Hij is dan ook niet lineair onafhankelijk. Als we zo'n groep vectoren in een deelverzameling $D$ steken, dan spreken we van de lineaire afhankelijkheid of onafhankelijkheid van die deelverzamling $D$. Definitie 3.26. Ook "vrij" als concept! (lineair onafhankelijk). 
+
+Als $D$ maar 1 vector bevat: uiteraard lineair onafhankelijk. Tweede vector erbij: lineair onafhankelijk als hij geen veelvoud is van de eerste. Derde erbij: als hij niet in het vlak ligt (als we over ruimte spreken). Vraag: kunnen we een vierde vinden in $\mathbb{R}^3$? We voelen aan dat dat niet kan. 
+
+Met voorbeelden gezien: hoe nagaan of vectoren lineair onafhankelijk zijn. Met veeltermen gezien. We voelen al dat het moeilijk kan zijn om heel zeker te zijn van ons stuk bij bvb. $\{ 1, 1+X, 1+X+X^2 \}$. En zeker bij  $\{ X,X^2-X^3,  1+X+X^3, 1-X+X^2 \}$
+
+Propositie 3.27: voldoende om te bewijzen dat enige lineaire combinatie die nulvector oplevert, diegene is wanneer de co\"effici\"enten nul zijn. Opgelet: er staat iets voor eindige en niet per se eindige $D$ in de propositie, dat had ik niet helemaal door. 
+
+Dan eerst de propositie toegepast op paar voorbeelden. Stellen dat een lineaire combinatie 0 is, en dan bewijzen dat hieruit volgt dat alle co\"effici\"enten nul zijn, is tegelijk een bewijs dat de vectoren lineair onafhankelijk zijn. 
+En dat is vrij gemakkelijk bij veeltermen. 
+
+Bewijs in de les gedaan. Maar alleen voor eindig aantal vectoren in $D$. Opnieuw twee richtingen van de "asa" apart te bewijzen. Pijl rechts: te bewijzen dat alle $\lambda_i=0$. Uit ongerijmde: stel een $\lambda_j \neq 0$. We brengen in dat bewijs die $\lambda_j v_j$ apart uit de vergelijking. Dan alles delen door $\lambda_j$, en dan kunnen we die $v_j$ schrijven als lineaire combinatie van de andere $v_i$. Maar dat kon niet, was de aanname, ... tegenspraak. 
+Dan pijl terug. Stel ze zijn lineair afhankelijk. T.B. we kunnen $\lambda_i$ vinden niet alle 0 en toch lineaire combinatie gelijk aan 0. Bewijs van dit deel ook in les uitgeschreven gezien. Vrij eenvoudig om dan een lin. combinatie te schrijven met minstens een niet-0 co\"effici\"ent. 
+
+Zeer belangrijke propositie, gaan we vaak gebruiken als criterium voor lineaire onafhankelijkheid van gegeven vectoren. 
+
+Volgende concept: wanneer hebben we genoeg vectoren om de hele ruimte op te spannen. Concept heet "voortbrengend". Definitie 3.31. Voortbrengend gaat over "genoeg". Concept "vrij" gaat over "niet te veel". Combinatie vrij en voortbrengend: 
+
+Concept "basis". Definitie 3.33: een basis is vrij en voortbrengend. 
+
+Voorbeeld basis voor veeltermen met graad $\leq n$. Dat het voortbrengend is, is triviaal, want volgt uit definitie van de verzameling van die veeltermen (is al geschreven als lineaire combinatie van die basis). Dat die basis vrij is, is ook vrij logisch (hoewel ik bewijs in de les niet heel formeel vond). 
+Ander voorbeeld, van een basis voor de veeltermen met graad hoogstens 2. Je voelt wel aan dat het kan. 
+
+We zien dus al onmiddellijk met die voorbeelden: een basis is niet per se uniek. Wel is het aantal elementen in een basis precies altijd hetzelfde. Dat gaan we later de dimensie noemen. 
+
+
+
+
+
+
+
+
+
+
+
 
 \section{KEEP ME TO JUMP TO END}
 

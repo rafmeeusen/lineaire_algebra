@@ -175,15 +175,18 @@ Oefening 2.4.29 (p. 82-83): begonnen, maar best moeilijk. Hint in opgave suggere
 
 
 Bewijs alternatief 1: stap 1: we tonen aan dat $det(P)=det(A).det(B)$ geldig is voor $k=1$. Gewoon ontwikkelen naar 1e kolom, geeft $det(P)=a_{11}det(B)= det(A)det(B)$. QED. 
-Dan stap 2, de inductiestap. Inductiehypothese: we nemen aan dat voor $A \in \mathbb{R}^{(k-1)\times (k-1)}$ geldt: $det(P) = det(A)det(B)$. Schrijven we dan $det(P)$ uit voor $A \in \mathbb{R}^{k\times k}$: $det(P) = det 
+Dan stap 2, de inductiestap. Inductiehypothese: we nemen aan dat voor $A \in \mathbb{R}^{(k-1)\times (k-1)}$ geldt: $det(P) = det(A)det(B)$. Schrijven we dan $det(P)$ uit voor $A \in \mathbb{R}^{k\times k}$: 
+\[ det(P) = det 
 \begin{pmatrix}
 a_{11} & ... & a_{1k}  &  \\
        & ... &   &  C \\
 a_{k1} & ... & a_{kk}  & \\
        &   &         &   \\ 
        & O   &         & B 
-\end{pmatrix}$, en ontwikkelen we naar kolom 1 ($j = $ rij-index). 
-$det(P) = \sum_{j=1}{k} (-1)^{j+1} $
+\end{pmatrix} \]  
+en ontwikkelen we naar kolom 1 ($j = $ rij-index, en nultermen voor $j \leq k$):  
+\[ det(P) = \sum_{j=1}^k (-1)^{j+1} a_{j1} C_{j1} \]
+Met $C_{j1}$ de cofactoren, niets te maken met deelmatrix $C$. 
 TODO: afwerken. 
 
 Oefening 3: zie opgave (vrij lang). 
