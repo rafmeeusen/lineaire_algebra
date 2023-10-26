@@ -483,12 +483,104 @@ We zien dus al onmiddellijk met die voorbeelden: een basis is niet per se uniek.
 
 
 
+\section{Les 5, nabeschouwing}
+
+\subsection{Deelruimten} 
+NB 5.1: Maak oefening 3.6.2 (p. 128-129) voor W2, W5, W6 en W8: 
+$W_2$ is geen vectorruimte. Eigenlijk "pythagorese drietallen". Nemen we (3,4,5) en (5,12,13), beide in $W2$. Eenvoudige lineaire combinatie, de som: (8,16,18).   Kwadraten: (64, 256, 324): $64 + 256 - 324 \neq 0$. 
+Kunnen ook formeel aantonen dat voor willekeurige $r(x_1,y_1,z_1) + s(x_2,y_2,z_2)$ niet geldt dat hij in $W_2$ zit. 
+
+$W_5$ is geen vectorruimte. Neem bvb. $det(rA_1 + sA_2$, en neem $A_2 = -\frac{r}{s} A_1$. Je kan nagaan dat als $det(A_1) \neq 0$, dan ook $det(A_2) \neq 0$, dus beide in $W_5$. Maar de lineaire combinatie is de nulmatrix, dus $det(rA_1 + sA_2) = 0$. 
+
+$W_6$ is een vectorruimte. Bekijk $A_3 = rA_1 + sA_2$. Dan is $A_3^T = (rA_1 + sA_2)^T = (rA_1)^T + (sA_2)^T = r(A_1^T) + s(A_2^T) = rA_1 + sA_2 = A_3$. Dus elke $A_3$ is ook symmetrisch. En de deelruimte is niet de nulruimte want er bestaan symmetrische matrices of course. 
+
+$W_8$ is geen vectorruimte. Eenvoudig: $rf_1 + sf_2$ geeft als functiewaarde op $0$ natuurlijk niet meer $1$ maar $r+s$. 
+
+NB 5.2:  Teken Venn-diagram met $V, D, vct(D)$. OK, getekend. Als $D$ een deelruimte is, dan is $vct(D)=D$. 
+
+NB 5.3a:  Neem propositie 3.14 p.98. Toon aan voor oneindig veel deelruimten. 
+Propositie: algemene doorsnede van deelruimten $U_i$ is opnieuw een deelruimte (ook voor oneindig veel deelruimten). 
+Bewijs: de nulvector zit in alle deelruimten, dus ook in de algemene doorsnede,  dus aan dit criterium voor deelruimten is voldaan. Volgend deel criterium: zit een willekeurige $rx +sy$ met $x,y \in \bigcap$ en $r,s \in \mathbb{R}$ ook in $\bigcap$? Antwoord is ja, want voor elke $U_i$ geldt dat $x,y \in U_i$, en elke $U_i$ is een vectorruimte, dus elke $rx +sy$ zit in $U_i$, en dat geldt voor alle $i$. Dus zit $rx +sy$ ook in $\bigcap$. QED. 
+
+NB 5.3b:  opdracht 3.18, p.100. Toon aan dat $vct(D)$ de doorsnede is van alle deelruimten die $D$ bevatten. 
+Definitie $vct(D)$: de vectorruimte voortgebracht door $D$, of ook: de verzameling van alle lineaire combinaties van $x_i \in D$. Wat over nagedacht, maar uiteindelijk geskipt, ik vond het een lastige. Er stond ook nog een hint (je mag gebruiken dat vct(D) de kleinste deelruimte is van $V$ die $D$ omvat). 
+Opnieuw bekeken: de hint wil eigenlijk zeggen: noem $\{ U_i | i \in I, D \subset  U_i \subset V \}$  de verzameling van alle deelruimten van $V$ die $D$ omvatten. Dan geldt: $vct(D) \subset U_i$ voor alle $i \in I$, want $vct(D)$ is een deelruimte, en is de kleinste van alle. ?? is dit zo? wat is dat juist, "de kleinste". opnieuw in boek lezen... 
 
 
+\subsection{Som/direct som} 
+NB 5.4:  Venn-diagram getekend. Met in achterhoofd: $V=\mathbb{R}^3$, $U$ is x-as, $W$ is y-as, dan is $U+W$ het vlak door x-as en y-as. En dan in Venn-diagram paar punten gezet $(0,0,0), (x_1,0,0), (0,y_1,0), ... (x_1,y_2,0)$. $U+W$ omspant duidelijk $U \cup W$. 
+
+NB 5.5:  oefening 3.6.28 p. 132. Hint: oefening 1.7.21. Die oefening zegt ergens: elke matrix $A$ kan op precies 1 manier als som van een symmetrische en een scheefsymmetrische matrix geschreven worden. 
+$U$ is deelruimte van alle symmetrische matrices. $W$ is deelruimte van alle scheefsymmetrische matrices. 
+Notatie $U \oplus W$ betekent twee dingen: het is de somruimte, en het gaat over een directe som. 
+Aantonen dat $U \oplus W = \mathbb{R}^{n\times n}$ : kan bvb. door dubbele inclusie. Neem willekeurige $v \in U \oplus W$, en toon aan dat hij in $\mathbb{R}^{n\times n}$ zit. En omgekeerd. Via die oefening, is het eigenlijk vrij triviaal. Niet duidelijk of je moet aantonen dat het direct som is, en geen gewone som. Ook nog rekening houden met dimensies (moet voor alle $n$ gelden; wel steeds vierkante matrices). 
+
+Test latex: grote directe som: $\bigoplus_{i=1}^k$ of \[ \bigoplus_{i=1}^k \]
+
+NB 5.6:  
+Propositie 3.23, p. 102. Puntje 2. Voorbeeld: neem $V=\mathbb{R}^2$, $U_1$ de x-as, $U_2$ de y-as, en $U_3$ de diagonaal tussen x- en y-as. Dan gelden dat alle paarsgewijze doorsneden gelijk zijn aan $\{0\}$. En er geldt ook $U_1+U_2+U_3=W$. Toch is het geen directe som, want je kan elke vector op meerdere manieren schrijven als $u_1+u_2+u_3$. 
+Kijken we naar de echte voorwaarde van propositie 3.23: $U_1 \cap ( U_2 + U_3 ) = U_1 \neq \{0\}$. Verschil tussen de beweringen: in propositie wordt uit de som 1 deelruimte uitgelicht, en dan gezien dat de overblijvende som niks gemeenschappelijk heeft met de uitgelichte deelruimte (behalve nulvector). Dat is iets helemaal anders dan twee aan twee doorsnedes bekijken. 
 
 
+\subsection{Lin. (on)afh.}
+NB 5.7, opdracht 3.30 p. 106, puntje 1: 
+Uitgerekend: $\lambda_1 v_1 + \lambda_2 v_2 + \lambda_3 v_3$ gelijkgesteld aan nulmatrix, stelsel van gemaakt, en opgelost naar $\lambda_i$. Drie $\lambda_i$ zijn effectief 0. Dus lineair onafhankelijk. 
 
 
+\section*{Les 6, voorbereiding}
+
+\subsection*{1}
+Geef een basis voor vectorruimte $\mathbb{R}^{n \times m}$ , dus alle $(n \times m)$-matrices.
+
+Definitie basis terug opgezocht: een basis is vrij (lin. onafh.) en voortbrengend $vct(basis) = V$.
+Mij lijkt dat je $m\timesn$ matrices moet hebben van de vorm \begin{pmatrix}
+    0 & ... & 0 \\
+      & ... & \\ 
+    0 &  a_{ij} =1 & 0 \\
+      & ... & \\
+    0 & ... & 0 
+\end{pmatrix} met $i = \{1,2,...m\} $ en $j=\{ 1,2,...n\}$.
+
+Dus voor $2 \times 2$ matrices: $B = \left\{  \begin{pmatrix} 1 & 0\\ 0&0 \end{pmatrix}, \begin{pmatrix} 0 & 1\\ 0&0 \end{pmatrix}, \begin{pmatrix} 0 & 0\\ 1&0 \end{pmatrix}, \begin{pmatrix} 0 & 0\\ 0&1 \end{pmatrix}    \right\} $ is een basis. 
+
+\subsection*{2}
+De vectorruimte voortgebracht door $(1, 2, 3)$ en $(4, 5, 6)$. 
+Aan welke voorwaarden moeten $a, b, c \in \mathbb{R} $ voldoen opdat de vector $(a, b, c)$ in die voorgebrachte ruimte zit? 
+
+Voortgebrachte ruimte: alle lineaire combinaties $(x+4y, 2x+5y, 3x+6y)$, of $a=x+4y$, $b=2x+5y$ en $c=3x+6y$. 
+Nu willen ze dit graag geschreven zien als vergelijking van het vlak door die twee punten en door $(0,0,0)$. 
+Eigenlijk staat dit er toch al: parameters $x$ en $y$ te kiezen, en er komen 3 co\"ordinaten uit. 
+Algemeen vlak: $lx + my + nz = 0$. Dus stelsel is: 
+$\left\{ \begin{aligned}
+l1 + m2 + n3 &= 0 \\
+l4 + m5 + n6 &= 0 
+\end{aligned} \right.$ 
+Of 
+$\left\{ \begin{aligned}
+1l + 2m + 3n &= 0 \\
+4l + 5m + 6n &= 0 
+\end{aligned} \right.$ 
+Als en slechts als
+$\left\{ \begin{aligned}
+1l + 2m + 3n &= 0 \\
+   - 3m - 6n &= 0 
+\end{aligned} \right.$ 
+of
+$\left\{ \begin{aligned}
+1l + 2m + 3n &= 0 \\
+    m + 2n &= 0 
+\end{aligned} \right.$ 
+
+Noem $n=\lambda$, dan: 
+$\left\{ \begin{aligned}
+l  &=  \lambda \\
+m &= -2 \lambda
+\end{aligned} \right.$ 
+Dus het vlak: $x -2  y + z = 0$
+
+Djuu, ik maak hier een rekenfout, of erger: redeneerfout, en ik vind ze niet. Later opnieuw bekijken! 
+
+\section{Les 6}
 
 
 \section{KEEP ME TO JUMP TO END}
