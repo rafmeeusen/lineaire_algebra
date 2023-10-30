@@ -222,19 +222,43 @@ Oefening 5: Maak oefening 3.6.3. (p. 128): Wat neergesschreven en geprobeerd: op
 
 \section{Oefenzitting week 6}
 
+\subsection{3.6.2 p.128-129}
+
+W2, W5, W6, en W8: voorbereiding oefenzitting (ook in nabeschouwing)
+
+$W_2$ is geen vectorruimte. Eigenlijk "pythagorese drietallen". Nemen we (3,4,5) en (5,12,13), beide in $W2$. Eenvoudige lineaire combinatie, de som: (8,16,18).   Kwadraten: (64, 256, 324): $64 + 256 - 324 \neq 0$. 
+Kunnen ook formeel aantonen dat voor willekeurige $r(x_1,y_1,z_1) + s(x_2,y_2,z_2)$ niet geldt dat hij in $W_2$ zit. 
+
+$W_5$ is geen vectorruimte. Neem bvb. $det(rA_1 + sA_2$, en neem $A_2 = -\frac{r}{s} A_1$. Je kan nagaan dat als $det(A_1) \neq 0$, dan ook $det(A_2) \neq 0$, dus beide in $W_5$. Maar de lineaire combinatie is de nulmatrix, dus $det(rA_1 + sA_2) = 0$. 
+
+$W_6$ is een vectorruimte. Bekijk $A_3 = rA_1 + sA_2$. Dan is $A_3^T = (rA_1 + sA_2)^T = (rA_1)^T + (sA_2)^T = r(A_1^T) + s(A_2^T) = rA_1 + sA_2 = A_3$. Dus elke $A_3$ is ook symmetrisch. En de deelruimte is niet de nulruimte want er bestaan symmetrische matrices of course. 
+
+$W_8$ is geen vectorruimte. Eenvoudig: $rf_1 + sf_2$ geeft als functiewaarde op $0$ natuurlijk niet meer $1$ maar $r+s$. 
+
+\subsection{3.6.5 p. 129}
+$U, W$ deelruimten van een vectorruimte $(\mathbb{R},V,+)$. 
+
+\subsection{3.6.6 p.129}
+Als stelsel geschreven (willekeurige lineair combinatie van die 3 vectoren gelijkstellen aan gegeven vector). Stel in matrix, proberen oplossen, ik kwam strijdig stelsel uit, dus antwoord: Nee. 
+
+
+\subsection{3.6.28 p. 132}
+(was in nabeschouwing) 
+Hint: oefening 1.7.21. Die oefening zegt ergens: elke matrix $A$ kan op precies 1 manier als som van een symmetrische en een scheefsymmetrische matrix geschreven worden. 
+$U$ is deelruimte van alle symmetrische matrices. $W$ is deelruimte van alle scheefsymmetrische matrices. 
+Notatie $U \oplus W$ betekent twee dingen: het is de somruimte, en het gaat over een directe som. 
+Aantonen dat $U \oplus W = \mathbb{R}^{n\times n}$ : kan bvb. door dubbele inclusie. Neem willekeurige $v \in U \oplus W$, en toon aan dat hij in $\mathbb{R}^{n\times n}$ zit. En omgekeerd. Via die oefening, is het eigenlijk vrij triviaal. Niet duidelijk of je moet aantonen dat het direct som is, en geen gewone som. Ook nog rekening houden met dimensies (moet voor alle $n$ gelden; wel steeds vierkante matrices). 
+
+Test latex: grote directe som: $\bigoplus_{i=1}^k$ of \[ \bigoplus_{i=1}^k \]
+
+
 \subsection{Voorbereiding}
-
-Oefening 3.6.2 (p.128), voor W2, W5, W6, en W8. Ah, maar dit was nabeschouwing al. Mannekes toch, ... 
-
-Oef. 3.6.6 (p.129): als stelsel geschreven (willekeurige lineair combinatie van die 3 vectoren gelijkstellen aan gegeven vector). Stel in matrix, proberen oplossen, ik kwam strijdig stelsel uit, dus antwoord: Nee. 
 
 Opdracht 3.25, p. 103: 
 Deel 1: voorbeelden $U_1, U_2, U_3 \subset \mathbb{R}^3$. $U_2$ zit in beide directe sommen, dus ik zou $U_2$ een vlak nemen. En dan zijn $U_1$ en $U_3$ bvb. twee verschillende rechten die dat vlak snijden in de oorsprong. 
 Deel 2: beschrijf $U+W$ voor gegeven deelruimten. $U = \{ k + lX \}$, dus is $U+W = \{ (a+k) + (a+l)X + bX^2 + bX^3 | a,b,k,l \in \mathbb{R} \} = \{ k' + l'X + bX^2 + bX^3 | b,k',l' \in \mathbb{R} \}$. Niet directe som, omdat er oneindig veel manieren zijn om twee willekeurige re\"ele getallen $(k' , l')$ te schrijven als $(a+k, a+l)$, en dus oneindig veel manieren om een vector in $U+W$ te schrijven als som van vectoren uit resp. $U$ en $W$. 
 
-\subsection{Oefenzitting}
-
-Oefening 1. (uit PDF) 
+\subsection{Oefening 1 uit PDF}
 (a) Waar of fout? Toon aan of geef een tegenvoorbeeld. Zij $V$ een vectorruimte en $U_1$ en $U_2$ deelruimten van $V$ . Dan is de unie $U_1 \cup U_2$ opnieuw een deelruimte van $V$.
 Antwoord: niet waar. Neem x-as en y-as in het vlak. Het zijn deelruimten, maar de unie niet, want een vector op x-as opgeteld bij vector op y-as ligt bijna nooit in de unie. 
 
@@ -242,15 +266,15 @@ Antwoord: niet waar. Neem x-as en y-as in het vlak. Het zijn deelruimten, maar d
 TODO 
 
 
-Oefening 2. Maak oefening 3.6.5 (p. 129). 
 
-Oefening 3. Maak oefening 3.6.7 (p. 129). 
+\subsection{Oefening 3. Maak oefening 3.6.7 (p. 129). }
 
-Oefening 4. Maak oefening 3.6.9 (p. 129). 
 
-Oefening 5. Maak oefening 3.6.13 (p. 130). 
+\subsection{Oefening 4. Maak oefening 3.6.9 (p. 129). } 
 
-Oefening 6. Maak oefening 3.6.28 (p. 132). 
+\subsection{Oefening 5. Maak oefening 3.6.13 (p. 130). } 
+
+\subsection{Oefening 6. Maak oefening 3.6.28 (p. 132). } 
 
 
 \end{document}

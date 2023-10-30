@@ -486,15 +486,7 @@ We zien dus al onmiddellijk met die voorbeelden: een basis is niet per se uniek.
 \section{Les 5, nabeschouwing}
 
 \subsection{Deelruimten} 
-NB 5.1: Maak oefening 3.6.2 (p. 128-129) voor W2, W5, W6 en W8: 
-$W_2$ is geen vectorruimte. Eigenlijk "pythagorese drietallen". Nemen we (3,4,5) en (5,12,13), beide in $W2$. Eenvoudige lineaire combinatie, de som: (8,16,18).   Kwadraten: (64, 256, 324): $64 + 256 - 324 \neq 0$. 
-Kunnen ook formeel aantonen dat voor willekeurige $r(x_1,y_1,z_1) + s(x_2,y_2,z_2)$ niet geldt dat hij in $W_2$ zit. 
-
-$W_5$ is geen vectorruimte. Neem bvb. $det(rA_1 + sA_2$, en neem $A_2 = -\frac{r}{s} A_1$. Je kan nagaan dat als $det(A_1) \neq 0$, dan ook $det(A_2) \neq 0$, dus beide in $W_5$. Maar de lineaire combinatie is de nulmatrix, dus $det(rA_1 + sA_2) = 0$. 
-
-$W_6$ is een vectorruimte. Bekijk $A_3 = rA_1 + sA_2$. Dan is $A_3^T = (rA_1 + sA_2)^T = (rA_1)^T + (sA_2)^T = r(A_1^T) + s(A_2^T) = rA_1 + sA_2 = A_3$. Dus elke $A_3$ is ook symmetrisch. En de deelruimte is niet de nulruimte want er bestaan symmetrische matrices of course. 
-
-$W_8$ is geen vectorruimte. Eenvoudig: $rf_1 + sf_2$ geeft als functiewaarde op $0$ natuurlijk niet meer $1$ maar $r+s$. 
+NB 5.1: Maak oefening 3.6.2 (p. 128-129) voor W2, W5, W6 en W8: zie oefenzittingen. 
 
 NB 5.2:  Teken Venn-diagram met $V, D, vct(D)$. OK, getekend. Als $D$ een deelruimte is, dan is $vct(D)=D$. 
 
@@ -510,12 +502,7 @@ Opnieuw bekeken: de hint wil eigenlijk zeggen: noem $\{ U_i | i \in I, D \subset
 \subsection{Som/direct som} 
 NB 5.4:  Venn-diagram getekend. Met in achterhoofd: $V=\mathbb{R}^3$, $U$ is x-as, $W$ is y-as, dan is $U+W$ het vlak door x-as en y-as. En dan in Venn-diagram paar punten gezet $(0,0,0), (x_1,0,0), (0,y_1,0), ... (x_1,y_2,0)$. $U+W$ omspant duidelijk $U \cup W$. 
 
-NB 5.5:  oefening 3.6.28 p. 132. Hint: oefening 1.7.21. Die oefening zegt ergens: elke matrix $A$ kan op precies 1 manier als som van een symmetrische en een scheefsymmetrische matrix geschreven worden. 
-$U$ is deelruimte van alle symmetrische matrices. $W$ is deelruimte van alle scheefsymmetrische matrices. 
-Notatie $U \oplus W$ betekent twee dingen: het is de somruimte, en het gaat over een directe som. 
-Aantonen dat $U \oplus W = \mathbb{R}^{n\times n}$ : kan bvb. door dubbele inclusie. Neem willekeurige $v \in U \oplus W$, en toon aan dat hij in $\mathbb{R}^{n\times n}$ zit. En omgekeerd. Via die oefening, is het eigenlijk vrij triviaal. Niet duidelijk of je moet aantonen dat het direct som is, en geen gewone som. Ook nog rekening houden met dimensies (moet voor alle $n$ gelden; wel steeds vierkante matrices). 
-
-Test latex: grote directe som: $\bigoplus_{i=1}^k$ of \[ \bigoplus_{i=1}^k \]
+NB 5.5:  oefening 3.6.28 p. 132. Zie oefeningen. 
 
 NB 5.6:  
 Propositie 3.23, p. 102. Puntje 2. Voorbeeld: neem $V=\mathbb{R}^2$, $U_1$ de x-as, $U_2$ de y-as, en $U_3$ de diagonaal tussen x- en y-as. Dan gelden dat alle paarsgewijze doorsneden gelijk zijn aan $\{0\}$. En er geldt ook $U_1+U_2+U_3=W$. Toch is het geen directe som, want je kan elke vector op meerdere manieren schrijven als $u_1+u_2+u_3$. 
