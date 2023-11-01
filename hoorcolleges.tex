@@ -569,6 +569,79 @@ Djuu, ik maak hier een rekenfout, of erger: redeneerfout, en ik vind ze niet. La
 
 \section{Les 6}
 
+Herhaling concepten voor 6de-jaars in de les. Vectorruimte, vrij of lineair onafhankelijk, lineair afhankelijk. Concept voortbrengend (deel, of verzameling). Concept basis. 
+
+Interessante vraag: is de nulvector dan altijd lineair afhankelijk? Bij conventie, is een verzameling vectoren met de nulvector erbij altijd "niet vrij". 
+
+Vandaag gaan we zien: in een vectorruimte heeft elke basis even veel elementen. (en dat aantal gaan we dan dimensie noemen). 
+Basis voor veeltermen: oneindig grote basis, dus dimensie oneindig. Basis: $\{1, X, X^2, X^3,...  \}$
+
+Stelling 3.35, Lemma van Steinitz. I.v.m. voortbrengend deel, dat voldoende heeft, meer elementen zijn lineair afhankelijk, en i.v.m. vrij deel, dat uit vrij deel een vector weghalen, of algemeen minder elementen hebben in een deel, kan nooit voortbrengen. 
+Anders gezegd: aantal elementen in een vrij deel is altijd $leq$ van aantal elementen in een voortbrengend deel. 
+Bewijs in de les gezien (al op examen gevraagd). Eerst op een manier waarop je zelf bewijs zou proberen te vinden door wat te proberen en te rekenen. 
+Stel $\{v_1, ... v_n \}$ is voortbrengend, en stel ik neem een $\{u_1, ... u_k \}$ met $k > m$, dan bewijzen we dat $\{u_1, ... u_k \}$ lineair afhankelijk zijn. Of ook: te bewijzen dat er $\lambda_i$ bestaan zodat $\sum \lambda_i u_j =0$. Bewijs te vinden via som uit te werken (dubbele sommering, en dan omdraaien en wat herwerken).  Wat we dan vinden, en willen zoeken, is eigenlijk een stelsel waarvoor we een niet-nul oplossing zoeken. Het zijn $m$ vergelijkingen (elke sommatie is een vergelijking), met $k$ onbekenden (de $\lambda_j$). En dit soort stelsel heeft altijd een oplossing verschillend van de nuloplossing. Cool bewijske. 
+Het rechtstreekse bewijs loopt eigenlijk omgekeerd, en dan komt het stelsel natuurlijk uit de lucht gevallen. 
+
+Veel voorkomende verwarringen: 
+\begin{itemize}
+    \item de "voldoende" in het bewijs; het is voldoende om $\lambda_1 ... \lambda_k$ te vinden, niet alle 0, zodat voor alle $i=1,...m$ geldt: ... 
+    \item verwarring rond $m$ en $k$ ; $k$ is groter, we nemen een of meerdere extra vectoren in onze tweede. 
+\end{itemize}
+
+
+Gevolgen 3.36 en 3.37. Vraag die nog niet beantwoord is: is er wel altijd een basis? (!! dat hadden we nog niet bewezen).
+Kan ook aangetoond worden voor eindig voortgebrachte ruimten. 
+
+Eerst een oefening: vectoren $\{ v_1,...,v_n \}$ zijn L.A. als en slechts als er een $v_k$ is die een lineaire combinatie is van de vectoren $\{ v_1,...,v_{k-1} \}$. Dit principe komt terug in komende bewijzen. Niet heel moeilijk te bewijzen (in vergelijking van LC die nul wordt, alles delen door de eerste $\alpha_k \neq 0$). 
+
+Nu beperken we ons tot eindig voortgebrachte vectorruimten. 
+Er zijn verschillende manieren om tot een basis te komen: ofwel vertrekkende van lineair onafhankelijke vectoren, extra vectoren toevoegen. Ofwel van voortbrengende set vectoren schrappen. 
+En dankzij het lemma weten we dat dit proces altijd stopt. 
+
+Pak een voortbrengend deel. Loop van links naar rechts. Bij elke vector: is hij LC van voorgangers? Zo ja: schrappen. We weten dat hij voortbrengend blijft, want hij was een LC van de vorige. Blijven doen, uiteindelijk krijg je automatisch een vrij deel. 
+
+Opgelet: als er een voortbrengend deel is, dan is er een basis. Maar het is niet zeker dat er altijd een voortbrengend deel is. 
+
+Vraag: hebben alle vectorruimten een basis? Niet zo simpel te beantwoorden. 
+Voorbeeld: VR van continue functies op interval 0-1, de basis bestaat, maar niemand kan hem neerschrijven. 
+De kwestie hangt samen met het zogenaamde keuze-axioma in de verzamelingenleer. 
+
+Stelling 3.45: aantal equivalente beweringen. Niet schokkend. 
+
+Noot: ben niet meer helemaal mee met wanneer juist een basis te vinden, wanneer ze bestaat, of ze eindig is, etc. Nog eens laten bezinken. 
+
+(pauze)
+
+De co\"ordinatenafbeelding. Als er een eindige basis is, kan kunnen we elke vector op \emph{unieke} wijze beschrijven als LC van de basisvectoren. Het bestaan is triviaal (voortbrengend). Het unieke: uniciteitsbewijs in les gezien. (heel simpel, te maken met het vrij karakter van een basis). 
+Notatie: de co\"ordinaat of de co\"ordinaten van vector $v$ ten opzichte van $\beta$, wat een afbeelding is van $V$ naar $\mathbb{R}^n$. Ze is bijectief, en ze bewaart de som en het scalair product. 
+Goed over nadenken: er is een \"e\"en op \"e\"en verband tussen $\mathbb{R}^n$ en elke eindig-dimensionale vectorruimte! We noemen dit isomorf. Dus alles wat je kan bewijzen in $\mathbb{R}^n$, geldt ook voor een willekeurige eindig-dimensionale vectorruimte. 
+
+Terug naar somruimte/direct som. (direct som als en slechts als doorsnede alleen de nulvector bevat). Vraag: wat is de dimensie $dim(U+W)$. Voor directe som is dit som van de dimensies, voelen we aan: vrijheidsgraden apart, want elke som te kiezen met ene in $U$ en ene in $W$. Voor algemene som: dimensie doorsnede aftrekken van som van dimensies. Zie stelling 3.53. Heel belangrijke stelling. 
+
+Stelling 3.47 gezien. Evident, maar nog niet bewezen. Bewijs van eerste deel in woorden gezien in de les. Constructief, begin met 1 vector en voeg toe zolang er vectoren zijn die geen LC zijn van onze set vectoren. Dit proces stopt omdat $V$ eindig dimensionaal is. 
+
+Bewijs van stelling 3.53. Dimensiestelling voor somruimten. (later: dimensiestelling voor ...). Het principe bij die bewijzen is: goede basis construeren en tellen hoeveel vectoren daar in zitten. Start: kies een basis voor de doorsnede $U \cap W$. Uitbreiden tot basis voor $U$, dat kan. Je kan ook uitbreiden tot basis van $W$, dan krijg je andere set. We hebben dus drie basissen nu, met ene een deelverzameling van de twee uitgebreide. De unie van die twee uitgebreide is een basis voor de somruimte. (denk bvb. aan 3D ruimte met rechten en vlakken). Nu nog bewijzen dat dit een basis is voor $U+W$. Want als dit zo is, hebben we een basis voor elke ruimte in de formule, en blijkt ook dat de formule klopt. 
+Dan bewijs zelf dat die voorgestelde verzameling een basis is van $U+W$. Moet dus vrij zijn, en voortbrengend. Het voortbrengend stuk: makkelijk aan te tonen. Het bewijs dat deze vrij is, is moeilijker. 
+Het vrij zijn van de voorgestelde basis voor $U+W$: neem een lineaire combinatie die nul is, en toon aan dat alle co\"effi\"enten nul zijn. Stap 1 is de $\sum w_i$ naar andere kant brengen. Dan staat links een vector in $U$ want LC van basis van $U$. Rechterlid is vector in $W$. Een vector in $U$ gelijk aan een vector in $W$, moet in doorsnede zitten. We hebben een basis voor die doorsnede, dus die vector kan ook geschreven worden als LC van die basisvectoren. Opnieuw alles aan een kant in die vergelijking, zodat we een LC krijgen gelijk aan nul. Het is een LC van $u_i$ en $w_i$, allemaal vrije vectoren. Kan alleen nul zijn, als alle co\"effi\"enten nul zijn. Invullen in eerdere vergelijking, geeft dat ook een hoop andere co\"effi\"enten nul zijn. QED. 
+
+\section{Les 6, nabeschouwing}
+
+1. Toon aan dat het omgekeerde van Stelling 3.49 ook geldt. 
+
+Gegeven: $\beta = \{e_1, \dots , e_n\}$ is een eindige deelverzameling van $V$, en elke vector $v$ kan op een
+unieke manier geschreven kan worden als een lineaire combinatie van de vectoren van $\beta$. 
+
+Te bewijzen: $\beta$ is een basis van $V$.
+
+Bewijs: 
+We moeten 2 zaken bewijzen:  (1) $\beta$ is voortbrengend, en (2) $\beta$ is vrij. 
+Voor (1): aangezien gegeven is dat elke vector $v$ geschreven kan worden als LC van de vectoren in $\beta$, is $\beta$ voortbrengend, dus dit deel is triviaal. Voor (2): we bewijzen dat $\beta$ uit het ongerijmde. Stel $\beta$ niet vrij, bestaan er $\lambda_i$ niet alle $0$ zodat $\sum_{i=1}^n \lambda_i e_i = 0$ (vgl.1). Gegeven is dat een willekeurige $v \in V$ kan geschreven worden als $v=\sum_{i=1}^n a_i e_i$ (vgl.2) met alle $a_i$ uniek. Echter, tellen we (vgl.1) op bij (vgl.2), kan krijgen we: $v=\sum_{i=1}^n (a_i + \lambda_i) e_i $. Aangezien $\lambda_i$ niet alle $0$ zijn, hebben we een tweede manier gevonden om $v$ te schrijven als LC van $e_i$, dus waren onze $a_i$ niet uniek, wat een tegenspraak is met ons uitgangspunt. Bijgevolg klopt onze aanname dat $\beta$ niet vrij is, niet. En dus moet $\beta$ vrij zijn. QED. 
+
+2. Maak Opdracht 3.52 (p. 118).  
+Ik zie wel dat als er een lineair afhankelijke vector bij zit, dat er dan door opeenvolgende rijoperaties een nulrij kan gemaakt worden, en dat dan de determinant nul is. Maar ik ben niet zeker dat "det = 0" en "er kan een nulrij gemaakt worden" equivalent zijn.  "er kan een nulrij gemaakt worden" => "det = 0" (want det verandert niet van niet-nul naar nul door rij-operaties). Omgekeerd: geldt "det = 0" => "er kan een nulrij gemaakt worden"?? Toch nog wat moeilijk, zo vlot nadenken over stelsels, determinanten etc. 
+
+3. Controleer alle beweringen van Voorbeeld 3.32(2) op p. 107.
+Raar, het woordje "controleer", want je moet iets bewijzen. Bewijs: stel dat we een eindige $D$ hebben die $V$ (alle veeltermen) voortbrengt. Dan kunnen we voor elke $d \in D$ de hoogste graad bepalen, en $D$ ordenen volgens graad: $(d_1, d_2, ..., d_n)$, met $d_n$ de vector in $D$ met de hoogste graad. Stel dat de graad van $d_n$ gelijk is aan $k$. 
 
 \section{KEEP ME TO JUMP TO END}
 

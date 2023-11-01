@@ -235,15 +235,35 @@ $W_6$ is een vectorruimte. Bekijk $A_3 = rA_1 + sA_2$. Dan is $A_3^T = (rA_1 + s
 
 $W_8$ is geen vectorruimte. Eenvoudig: $rf_1 + sf_2$ geeft als functiewaarde op $0$ natuurlijk niet meer $1$ maar $r+s$. 
 
-\subsection{3.6.5 p. 129}
+\subsection{3.6.5 p. 129} 
+(noot: tweede implicatie niet zelf gevonden, hulp nodig assistent; best moeilijk!) 
 $U, W$ deelruimten van een vectorruimte $(\mathbb{R},V,+)$. 
+Twee implicaties te bewijzen. 
+Implicatie ($\Leftarrow$): Gegeven is dat $U \subset W$ of $W \subset U$, met $U,W$ deelruimten van $V$.  T.B. $U \cup W$ is een deelruimte van $V$. 
+Bewijs: geval $U \subset W$, dan is $U \cup W = W$, dus is $U \cup W$ een deelruimte. Gelijkaardig voor geval $W \subset U$. 
+
+Implicatie ($\Rightarrow$): Gegeven is dat $U,W$ en $U \cup W$ deelruimten van $V$. T.B. $U \subset W$ of $W \subset U$. Bewijs: 
+Via contrapositie: we tonen aan dat als $\neg(U \subset W \lor W \subset U)$, dan is $U \cup W$ geen deelruimte. Stel dus $U \not\subset W \land W \not\subset U$. Kies willekeurige $u \in U, u\not\in W$ en willekeurige $w \in W, w\not\in U$. We kijken na of $u+w$ in $U$ zit. Stel $u+w \in U$, dan geldt $u' = u+w, u' \in U$, maar dan geldt ook $w= u' - u$. Dit is echter een tegenspraak, want $w \not\in U$ en $u' - u \in U$. Zo kunnen we ook nagaan dat $u+w \not\in W$. We hebben een vector $u \in U \cup W$, en een vector $w \in U \cup W$, en de som $u+w \not\in U \cup W$. Dus $U \cup W$ is geen vectorruimte. QED. 
+
 
 \subsection{3.6.6 p.129}
 Als stelsel geschreven (willekeurige lineair combinatie van die 3 vectoren gelijkstellen aan gegeven vector). Stel in matrix, proberen oplossen, ik kwam strijdig stelsel uit, dus antwoord: Nee. 
 
+\subsection{3.6.7 p. 129}
+Dit is oefening 3 in oefenzitting. 
+Volgens mijn gewoon stelsel oplossen. Niet gedaan. 
+
+\subsection{3.6.9 p. 129 } 
+Dit is oefening 4 in oefenzitting. 
+Komt er ook op neer stelsels op te lossen. Niet afgewerkt, lijkt me doenbaar. 
+
+\subsection{3.6.13 p. 130} 
+Dit is oefening 5 in oefenzitting. 
+Nee. Tegenvoorbeeld: e1=(1,0) en e2=(0,1) zijn basis; maar e1-e2 en e2-e1 niet vrij, want ene is gewoon tegengestelde van andere, dus niet lin. onafh. 
+
 
 \subsection{3.6.28 p. 132}
-(was in nabeschouwing) 
+(was in nabeschouwing, maar ook oefening 6 in oefenzitting) 
 Hint: oefening 1.7.21. Die oefening zegt ergens: elke matrix $A$ kan op precies 1 manier als som van een symmetrische en een scheefsymmetrische matrix geschreven worden. 
 $U$ is deelruimte van alle symmetrische matrices. $W$ is deelruimte van alle scheefsymmetrische matrices. 
 Notatie $U \oplus W$ betekent twee dingen: het is de somruimte, en het gaat over een directe som. 
@@ -252,9 +272,8 @@ Aantonen dat $U \oplus W = \mathbb{R}^{n\times n}$ : kan bvb. door dubbele inclu
 Test latex: grote directe som: $\bigoplus_{i=1}^k$ of \[ \bigoplus_{i=1}^k \]
 
 
-\subsection{Voorbereiding}
-
-Opdracht 3.25, p. 103: 
+\subsection{Opdracht 3.25, p. 103}
+(was voorbereiding)  
 Deel 1: voorbeelden $U_1, U_2, U_3 \subset \mathbb{R}^3$. $U_2$ zit in beide directe sommen, dus ik zou $U_2$ een vlak nemen. En dan zijn $U_1$ en $U_3$ bvb. twee verschillende rechten die dat vlak snijden in de oorsprong. 
 Deel 2: beschrijf $U+W$ voor gegeven deelruimten. $U = \{ k + lX \}$, dus is $U+W = \{ (a+k) + (a+l)X + bX^2 + bX^3 | a,b,k,l \in \mathbb{R} \} = \{ k' + l'X + bX^2 + bX^3 | b,k',l' \in \mathbb{R} \}$. Niet directe som, omdat er oneindig veel manieren zijn om twee willekeurige re\"ele getallen $(k' , l')$ te schrijven als $(a+k, a+l)$, en dus oneindig veel manieren om een vector in $U+W$ te schrijven als som van vectoren uit resp. $U$ en $W$. 
 
@@ -262,19 +281,25 @@ Deel 2: beschrijf $U+W$ voor gegeven deelruimten. $U = \{ k + lX \}$, dus is $U+
 (a) Waar of fout? Toon aan of geef een tegenvoorbeeld. Zij $V$ een vectorruimte en $U_1$ en $U_2$ deelruimten van $V$ . Dan is de unie $U_1 \cup U_2$ opnieuw een deelruimte van $V$.
 Antwoord: niet waar. Neem x-as en y-as in het vlak. Het zijn deelruimten, maar de unie niet, want een vector op x-as opgeteld bij vector op y-as ligt bijna nooit in de unie. 
 
-(b) Doe Opdracht 3.21 (p. 101) (voor $k = 2$). Hint: Je moet twee inclusies aantonen. Voor \"e\"en van beide kan je de bewering dat $vct(D)$ de kleinste deelruimte is van $V$ die $D$ omvat gebruiken (boven Definitie 3.15 op p. 99). 
-TODO 
+(b) Doe Opdracht 3.21 (p. 101) (voor $k = 2$). Hint: Je moet twee inclusies aantonen. Voor \'e\'en van beide kan je de bewering dat $vct(D)$ de kleinste deelruimte is van $V$ die $D$ omvat gebruiken (boven Definitie 3.15 op p. 99). 
+
+Beginnen we met $k=2$. 
+Gegeven: $U_1,U_2$ deelruimten van $V$. 
+T.B.1: $U_1+U_2 \subset vct(U_1 \cup U_2)$
+T.B.2: $vct(U_1 \cup U_2) \subset U_1+U_2  $
+Bewijs 1: Neem willekeurige $u \in U_1+U_2$. Uit definitie volgt: $u = u_1 + u_2$ met $u_1 \in U_1$ en $u_2 \in U_2$. Maar er geldt dan ook: $u_1 \in U_1 \cup U_2$ en $u_2 \in U_1 \cup U_2$. We kunnen dus een willeurige $u$ schrijven als de lineaire combinatie $u = 1 u_1 + 1u_2$, met $u_1,u_2 \in  U_1 \cup U_2$, waaruit volgt dat $u \in vct(U_1 \cup U_2)$. 
+Bewijs 2: todo 
 
 
 
-\subsection{Oefening 3. Maak oefening 3.6.7 (p. 129). }
+\section{Oefenzitting week 7}
 
+Huistaak: 3.6: 12, 14
 
-\subsection{Oefening 4. Maak oefening 3.6.9 (p. 129). } 
+Voor te bereiden: 3.6: 21
 
-\subsection{Oefening 5. Maak oefening 3.6.13 (p. 130). } 
+In de oefenzitting: Zie PDF (oefenzitting 6) 
 
-\subsection{Oefening 6. Maak oefening 3.6.28 (p. 132). } 
 
 
 \end{document}
