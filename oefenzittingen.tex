@@ -220,7 +220,7 @@ Oefening 5: Maak oefening 3.6.3. (p. 128): Wat neergesschreven en geprobeerd: op
 
 
 
-\section{Oefenzitting week 6}
+\section{Oefenzitting 5, week 6}
 
 \subsection{3.6.2 p.128-129}
 
@@ -284,22 +284,91 @@ Antwoord: niet waar. Neem x-as en y-as in het vlak. Het zijn deelruimten, maar d
 (b) Doe Opdracht 3.21 (p. 101) (voor $k = 2$). Hint: Je moet twee inclusies aantonen. Voor \'e\'en van beide kan je de bewering dat $vct(D)$ de kleinste deelruimte is van $V$ die $D$ omvat gebruiken (boven Definitie 3.15 op p. 99). 
 
 Beginnen we met $k=2$. 
+
 Gegeven: $U_1,U_2$ deelruimten van $V$. 
+
 T.B.1: $U_1+U_2 \subset vct(U_1 \cup U_2)$
+
 T.B.2: $vct(U_1 \cup U_2) \subset U_1+U_2  $
+
 Bewijs 1: Neem willekeurige $u \in U_1+U_2$. Uit definitie volgt: $u = u_1 + u_2$ met $u_1 \in U_1$ en $u_2 \in U_2$. Maar er geldt dan ook: $u_1 \in U_1 \cup U_2$ en $u_2 \in U_1 \cup U_2$. We kunnen dus een willeurige $u$ schrijven als de lineaire combinatie $u = 1 u_1 + 1u_2$, met $u_1,u_2 \in  U_1 \cup U_2$, waaruit volgt dat $u \in vct(U_1 \cup U_2)$. 
+
 Bewijs 2: todo 
 
 
 
 \section{Oefenzitting week 7}
 
-Huistaak: 3.6: 12, 14
+( Niet geweest. )
+
+Huistaak: 3.6: 12, 14 (zie aparte tex) 
 
 Voor te bereiden: 3.6: 21
 
 In de oefenzitting: Zie PDF (oefenzitting 6) 
 
 
+
+
+\section{Oefenzitting week 8}
+
+Voor te bereiden: 
+
+Voorbeeld 4.4(9 en 11), 
+
+\subsection{Oefening 4.8.5 p. 186}
+
+Afbeelding $L_1$. Ik had intu\"itief een oplossing gezocht en gevonden, door ervan uit te gaan dat $L_1$ een lineaire afbeelding is, en via $(0,1)=(1,2)+(-1,-1)$ het beeld van $(0,1)$ te vinden, en dan nog wat verder te zoeken voor beeld van $(1,0)$. Je hebt dan beeld van een basis, en bijgevolg beeld van alles. 
+Ik kwam uit: 
+$L_1((1,0))=(-4,-1)$ en 
+$L_1((0,1))=(2,0)$. 
+Omdat $(x,y)=x(1,0) + y(0,1)$ geldt: 
+$L_1((x,y)) = ( 2y-4x, -x )$
+Oefenzitting Tom: je kan ook $L_1$ voorstellen als matrix-vermenigvuldiging: 
+\[
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix}
+\begin{pmatrix}
+1\\
+2
+\end{pmatrix}
+=
+\begin{pmatrix}
+0\\
+-1
+\end{pmatrix}
+\]
+Ook zo'n matrixvermenigvuldiging voor de tweede gegeven $L_1(v_1)$, geeft dan vier vergelijkingen voor vier onbekenden $a,b,c,d$. 
+
+Afbeelding $L_2$. Redelijk triviaal denk ik, want $L_2$ van basis is gegeven. 
+
+Afbeelding $L_3$. Nee, want derde gegeven beeld is van een LC van eerste twee: $(2,1,0) = (4,5,6)-2(1,2,3)$. Klopt het beeld met eerste twee: ja, dat klopt, dus geen tegenspraak, $L_2$ lijkt te bestaan. Maar dan zijn er vele $L_2$ vermoed ik. 
+Derde gegeven beeld weglaten, en in matrix gieten, geeft matrix met 12 onbekenden, en geeft 8 vergelijkingen (stel $2x2$ matrix voor als 1 kolom met afspraak wat wat is). Dus 4 vrijheidsgraden bij wijze van spreke. 
+
+Nog interessant bij discussie met Tom: ik sprak van contstante lineaire afbeelding. Hij zei: pas op, die gaat altijd nul zijn. Wat natuurlijk logisch is, anders kan je nooit aan lineariteit voldoen. 
+
+
+
+In de oefenzitting: 
+\subsection{3.6.24 p.131}
+Voor $A_2$, vind een basis voor $R(A_2)$, $C(A_2$ en $N(A_2)$. 
+
+Even over nadenken voor we beginnen tellen 
+Rijruimte $R(A_2)$ is een deelverzameling van $\mathbb{R}^{3}$. En als in $A_2$ drie lineair onafhankelijke rijen zitten (van de 4 rijen die we hebben), dan is $R(A_2) = \mathbb{R}^{3}$. 
+
+Kolomruimte 
+
+\subsection{3.6.19 p.131}
+
+\subsection{3.6.25 p.132}
+
+\subsection{3.6.35 p.134}
+
+\subsection{3.6.36 p.134}
+
+
+ter ondersteuning: een extra document over de praktijk van het het uitbreiden en uitdunnen van basissen, zie 
 
 \end{document}

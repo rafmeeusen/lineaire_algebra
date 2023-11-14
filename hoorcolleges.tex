@@ -643,6 +643,99 @@ Ik zie wel dat als er een lineair afhankelijke vector bij zit, dat er dan door o
 3. Controleer alle beweringen van Voorbeeld 3.32(2) op p. 107.
 Raar, het woordje "controleer", want je moet iets bewijzen. Bewijs: stel dat we een eindige $D$ hebben die $V$ (alle veeltermen) voortbrengt. Dan kunnen we voor elke $d \in D$ de hoogste graad bepalen, en $D$ ordenen volgens graad: $(d_1, d_2, ..., d_n)$, met $d_n$ de vector in $D$ met de hoogste graad. Stel dat de graad van $d_n$ gelijk is aan $k$. 
 
+\section{Les 7, voorbereiding}
+
+niet helemaal gedaan; best nog eens bekijken want zijn interessante opdrachten. 
+
+1. Zij $v1 = (1, 1, 1), v2 = (1, 0, 1), v3 = (0, 1, 0)$ vectoren in $\mathbb{R}^3$.
+
+(a) Laat zien dat $vct\{v1, v2, v3\} = \{(x, y, z) \in \mathbb{R}^3 \mid x = z\}$. 
+Voortgebrachte ruimte is de rijruimte van 
+\[
+\begin{pmatrix}
+    1&1&1\\
+    1&0&1\\
+    0&1&0
+\end{pmatrix}
+\] 
+maar ook van (rij-operaties bewaren de rijruimte): 
+
+\[
+\begin{pmatrix}
+    1&0&1\\
+    0&1&0\\
+    0&0&0
+\end{pmatrix}
+\]
+
+Alle vectoren in $vct\{v1, v2, v3\}$ zijn dus van de vorm: 
+$\lambda_1 (1,0,1) + \lambda_2 (0,1,0) = (\lambda_1, \lambda_2, \lambda_1)$. QED. 
+
+\section{Les 7}
+
+Uitdunnen van elk voortbrengend deel tot een basis, we weten dat dat kan, maar hoe doe je dat? We willen graag een algoritme. Of omgekeerd: gegeven een vectorruimte, hoe vinden we op een effici\"ente manier een basis? 
+
+Definitie 3.61. Wat we doen hier: associ\"eren van vectorruimten met matrices, via rijruimten, kolomruimten, nulruimte. 
+Voor elke $vct$ definitie kan je de voortgebrachte ruimte schrijven als een rij- of kolomruimte. 
+
+We gaan zien: kolomruimte kunnen we uitdunnen tot een basis. Rijruimte kunnen we ... (stukje gemist). 
+
+Definities: rijrang en kolomrang. En we gaan zien: ze zijn altijd gelijk! Dus we gaan ze gewoon rang noemen. 
+
+
+Stelling 3.64: nulruimte en rijruimte veranderen niet door rijreductie. Punt 1 van stelling kennen we al: stelsel oplossen doen we via rij-operaties. De twee eerste ELO's: evident dat de rijruimte niet verandert. Maar de 3e ELO iets minder evident: moet je in twee richtingen bekijken, de rijruimte na ELO3 is sowieso deelruimte van de rijruimte voor de ELO. Maar we kunnen rijoperaties ongedaan maken, dus geldt het in andere richting ook. 
+Derde punt van stelling: over de dimensies. 
+Redenering om derde punt te bewijzen. Houd de echelonvorm voor ogen. Dimensie $N(U)$. Bij een stelsel: aantal vrijheidsgraden is van belang! Vrije variabelen en gebonden variabelen. In termen van vrije/gebonden variabelen: aantal vrije variabelen is de dimensie van de nulruimte. En de dimensie van $R(U)$: in de echolonvorm zie je een basis staan: de rijen die niet-nul rijen zijn. De basis van de rijruimte = de niet-nul rijen van $U$. Dus 
+dimensie van $R(U)$ is aantal gebonden variabelen. Som hiervan is $n$ (aantal rijen). We hebben dus al gezegd hoe we die basis krijgen: gewoon de rijen van echolonvorm zijn een basis. 
+
+Dan naar kolomruimte gekeken. De basis hiervoor zijn de kolomen die horen bij een gebonden variabele. MAAR: de kolomruimte blijft \emph{NIET} behouden bij rij-operaties. De gebonden/ongebonden variabelen blijven wel dezelfde door rij-operaties. Maar de kolomruimte verandert bij de ELO's. 
+
+Goeie vraag in hoorcollege: zegt aantal nulrijen iets? Antwoord: nee, je kan er altijd toevoegen, en er verandert niks aan de dimensies. 
+
+Nu over naar afbeeldingen tussen structuren. We zijn ge\"interesseerd in afbeeldingen tussen vectorruimten die structuur van optelling en scalaire vermenigvuldiging bewaren. Lineaire afbeeldingen. 
+
+Eerste paar voorbeelden van lineaire afbeelding. O.a. co\"ordinaatafbeelding $co_\beta$, die elke vector in $V$ afbeeldt op een vector in $\mathbb{R}^n$. Ook deze afbeelding is lineair. 
+
+Definitie 4.1. Ook: lineaire transformatie, lineaire vorm gedefineerd. 
+
+Nog een voorbeeld van een lin. afb. De rotatie rond $o$ in het vlak (of de ruimte). Een spiegeling rond/langs rechte door $o$ in vlak of ruimte. Wat zijn niet-lineaire transformaties: een verschuiving bvb. Want: de nulvector moet de nulvector blijven. 
+
+Nog helemaal ander voorbeeld uit de analyse. Vectorruimte $V$ van afleidbare functies van $\mathbb{R}$, en vectorruimte $W$ van alle functies. $D: V \to W: D(f) = f'$ (afleiden) : is een linaire afbeelding. Want afgeleide van som van functies is som van afgeleiden, ... 
+Ook integreren: afbeelding van continue functies naar afleidbare functies. Voorbeeld op bord: functies van $[0,1]$ naar $\mathbb{R}$. Afbeelding $I: V \to W: f \mapsto I(f)$ en $I(f)(x) = \int_0^x f(t)dt$ is een lineaire afbeelding. En $D \circ I $ is de identieke functie. 
+
+Lemma 4.2, gevolg 4.3: basiseigenschappen van lineaire afbeeldingen. O.a. een lineaire afbeelding ligt volledig vast door beelden van een basis!! Heel belangrijke eigenschap. Willekeurige afbeeldingen/functies hebben deze eigenschap niet. 
+
+Heel fundamenteel voorbeeld: lineaire afbeelding van $\mathbb{R}^n$ naar $\mathbb{R}^k$: $L_A(X)=A \cdot X$, met $A \in \mathbb{R}^{kxn}$. 
+
+Na de pauze: nog een veralgemening van elke lineaire afbeelding van $\mathbb{R}^n$ naar $\mathbb{R}^k$: kan altijd door een matrix voorgesteld worden. 
+
+pauze: \url{https://www.youtube.com/watch?v=uqwC41RDPyg} 
+
+Conventie: vectoren uit $\mathbb{R}^n$ en $\mathbb{R}^k$ stellen we voor als kolommen zodat die matrixvermenigvuldiging klopt qua dimensies. 
+
+Eigenschap: elke lineaire afbeelding $L: \mathbb{R}^n \to \mathbb{R}^k$ is van de vorm $L=L_A$ (matrixvermenigvuldiging van kolommatrix naar kolommatrix). 
+Bewijs op bord gezien. 
+Vluchtig samengevat: via standaardbasis $\{ e_1, ...\}$, en ..., en definitie van $A$ als matrix met kolommen $L(e_1) ... L(e_n)$. Dan staat daar bij die sommatie dus een matrixvermenigvuldiging. 
+
+Lineaire afbeeldingen en matrices zijn dus echt wel zeer nauw verwant, om niet te zeggen: hetzelfde. 
+
+Algmeen: $V$ vectorruimte met gegeven basis, en $W$ andere vectorruimte met gegeven basis, en een $L: V \to W$. Definitie: matrix $L_{\beta_V}^{\beta_W}$ die zo'n transformatie defineert. En die hangt af van de basis (vandaar die $\beta$ in de notatie bij $L$.  
+We gebruiken hiervoor co\"ordinaten van vectoren, eigenlijk van de getransformeerde basisvectoren van $V$. Die co\"ordinaten zetten we in de kolommen van die matrix. We hadden gezien dat de transformatie van basisvectoren de volledige lineaire transformatie bepaald, dus we kunnen inzien dat alle informatie voor $L$ in deze matrix zit. 
+
+Voorbeeld van transformatie tussen twee dezelfde vectorruimten van veeltermen graad $\leq$ 2, afbeelding die afgeleide van veelterm geeft. (bijgevolg is beeld een deelruimte, graad $\leq$ 1). Voorbeeld eerst gezien met basis zelfde voor $V$ en $W$:  $(1,X,X^2$. Dan eens met andere basis om te zien dat er andere matrix uitkomt. Basis $V$ behouden van vorige voorbeeld, basis $W$ nu $\{ 1+X^2, 1+X, X \}$. Geeft andere matrix. 
+
+Recap: we maken een matrix van een lineaire afbeelding, maar de matrix verandert met de basis die we kiezen. Maar de vraag is: hoe verandert die matrix? Want het is dezelfde afbeelding die we beschrijven. Dat zien we volgende week. 
+
+Voor lineaire transformaties (afbeeldingen op een ruimte), nemen we typisch dezelfde basis voor $V$ en $W$. We zullen volgende week zien dat de determinant dezelfde blijft voor alle transformaties, ook al verandert de basis. 
+
+Eigenschap van $A = L_{\beta_V}^{\beta_W}$. Voor alle $v \in V: co_{\beta_W}(L(v)) = A \cdot co_{\beta_V}(v)$. Voorstelling in vierkant met pijlen beetje zoals op de kaft van boek, met hoekpunten $V$, $W$, $\mathbb{R}^n$ en $\mathbb{R}^k$. Je van van $V$ naar $\mathbb{R}^k$ op twee manieren: eerst $L$, dan co\"ordinaten nemen, of eerst co\"ordinaten nemen en dan $L_A$ toepassen. 
+Bewijs in de les gezien. Heel kort, is maar paar lijnen. Maar complex met $V$ en $W$ met verschillende basissen en co\"ordinaten. 
+
+Recap: 
+elke lineaire afbeelding heeft een matrix. Matrixces hebben veel eigenschappen, bvb. we kunnen ze optellen. We gaan zien dat we ook lineaire afbeeldingen kunnen optellen en zo. En we kunnen ook de verzameling van alle lineaire afbeeldingen beschouwen, en dit is ook een vectorruimte, want ook hier kunnen we optellen en scalair vermenigvuldigen. 
+
+Propositie 4.11 vat dit samen. 
+
 \section{KEEP ME TO JUMP TO END}
 
 \end{document}

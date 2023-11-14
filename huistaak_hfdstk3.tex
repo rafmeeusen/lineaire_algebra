@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\title{Huistaak 2 lineaire algebra, week 7}
+\author{Raf Meeusen}
+\date{achteraf gemaakt; niet ingediend}
+
+\begin{document}
+\maketitle
+
+\section{Oefening 3.6.12 p.130}
+
+Gegeven: re\"ele vectorruimte $V$, 
+en $n+1$ vectoren $v, v_1, v_2, v_3, ... v_n \in V$ zodat de $n$ vectoren $v_1,...,v_n$ LO zijn. 
+
+T.B.: $v, v_1, v_2, v_3, ... v_n \in V$ zijn LA als en slechts als $v$ is een LC van
+$v_1,...,v_n$. 
+
+Bewijs van $\implies$: Gegeven zijn $n+1$ LA vectoren uit $V$, $v, v_1, v_2, v_3, ... v_n$, waarvan $n$ vectoren $v_1,...,v_n$ LO zijn. 
+LA wil zeggen: er bestaat een LC van $v, v_1, v_2, v_3, ... v_n$ dus nul is, zonder dat alle co\"effici\"enten nul zijn. Noemen we deze LC: $\lambda v + \sum \lambda_i  v_i = 0$. Uit ongerijmde kunnen we ook aantonen dat $\lambda \neq 0$ (stel  $\lambda = 0$ en $\lambda_i \neq 0$, dan hebben we tegenspraak met LO). Dus kunnen we delen door $\lambda$ en dus $v$ schrijven als een LC van de $v_i$. QED. 
+
+ 
+Bewijs van $\impliedby$: Gegeven zijn  $n$ LO vectoren $v_1,...,v_n$, en gegeven is dat een vector $v$ een LC is van $v_1,...,v_n$. M.a.w. $v=\sum \lambda_i v_i$. We moeten aantonen dat vectoren  $v, v_1, v_2, v_3, ... v_n$ LA zijn. Triviaal, want formule met sommatie kunnen we zodanig schrijven dat we een LC hebben met co\"effici\"ent van $v$ gelijk aan $1$, dus niet nul, en toch is de LC nul. Dus een niet-triviale LC die nul geeft, dus LA. 
+
+Opmerking na vergelijking met modeloplossing: ik ging ervan uit dat definitie van LA/LO ging over triviale/niet-triviale oplossing van LC=0. Maar dat is niet zo! Definitie LA/LO gaat over het schrijven van een van de vectoren als LC van andere vectoren! En de zaak met de triviale/niet-triviale dinges, is een propositie! Zie p.104. Dus bewijs van $\impliedby$ is eigenlijk nog eenvoudiger en helemaal triviaal!! 
+
+\section{Oefening 3.6.14 p.130}
+
+
+\end{document}
