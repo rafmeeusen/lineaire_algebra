@@ -15,7 +15,7 @@
 
 \maketitle
 
-\section{Les 1, 26 sept}
+\section*{Les 1, 26 sept}
 
 Toepassingen matrices: 
 \begin{itemize}
@@ -567,7 +567,7 @@ Dus het vlak: $x -2  y + z = 0$
 
 Djuu, ik maak hier een rekenfout, of erger: redeneerfout, en ik vind ze niet. Later opnieuw bekijken! 
 
-\section{Les 6}
+\section*{Les 6}
 
 Herhaling concepten voor 6de-jaars in de les. Vectorruimte, vrij of lineair onafhankelijk, lineair afhankelijk. Concept voortbrengend (deel, of verzameling). Concept basis. 
 
@@ -624,7 +624,7 @@ Bewijs van stelling 3.53. Dimensiestelling voor somruimten. (later: dimensiestel
 Dan bewijs zelf dat die voorgestelde verzameling een basis is van $U+W$. Moet dus vrij zijn, en voortbrengend. Het voortbrengend stuk: makkelijk aan te tonen. Het bewijs dat deze vrij is, is moeilijker. 
 Het vrij zijn van de voorgestelde basis voor $U+W$: neem een lineaire combinatie die nul is, en toon aan dat alle co\"effi\"enten nul zijn. Stap 1 is de $\sum w_i$ naar andere kant brengen. Dan staat links een vector in $U$ want LC van basis van $U$. Rechterlid is vector in $W$. Een vector in $U$ gelijk aan een vector in $W$, moet in doorsnede zitten. We hebben een basis voor die doorsnede, dus die vector kan ook geschreven worden als LC van die basisvectoren. Opnieuw alles aan een kant in die vergelijking, zodat we een LC krijgen gelijk aan nul. Het is een LC van $u_i$ en $w_i$, allemaal vrije vectoren. Kan alleen nul zijn, als alle co\"effi\"enten nul zijn. Invullen in eerdere vergelijking, geeft dat ook een hoop andere co\"effi\"enten nul zijn. QED. 
 
-\section{Les 6, nabeschouwing}
+\section*{Les 6, nabeschouwing}
 
 1. Toon aan dat het omgekeerde van Stelling 3.49 ook geldt. 
 
@@ -643,7 +643,7 @@ Ik zie wel dat als er een lineair afhankelijke vector bij zit, dat er dan door o
 3. Controleer alle beweringen van Voorbeeld 3.32(2) op p. 107.
 Raar, het woordje "controleer", want je moet iets bewijzen. Bewijs: stel dat we een eindige $D$ hebben die $V$ (alle veeltermen) voortbrengt. Dan kunnen we voor elke $d \in D$ de hoogste graad bepalen, en $D$ ordenen volgens graad: $(d_1, d_2, ..., d_n)$, met $d_n$ de vector in $D$ met de hoogste graad. Stel dat de graad van $d_n$ gelijk is aan $k$. 
 
-\section{Les 7, voorbereiding}
+\section*{Les 7, voorbereiding}
 
 niet helemaal gedaan; best nog eens bekijken want zijn interessante opdrachten. 
 
@@ -671,7 +671,7 @@ maar ook van (rij-operaties bewaren de rijruimte):
 Alle vectoren in $vct\{v1, v2, v3\}$ zijn dus van de vorm: 
 $\lambda_1 (1,0,1) + \lambda_2 (0,1,0) = (\lambda_1, \lambda_2, \lambda_1)$. QED. 
 
-\section{Les 7}
+\section*{Les 7}
 
 Uitdunnen van elk voortbrengend deel tot een basis, we weten dat dat kan, maar hoe doe je dat? We willen graag een algoritme. Of omgekeerd: gegeven een vectorruimte, hoe vinden we op een effici\"ente manier een basis? 
 
@@ -732,11 +732,11 @@ Eigenschap van $A = L_{\beta_V}^{\beta_W}$. Voor alle $v \in V: co_{\beta_W}(L(v
 Bewijs in de les gezien. Heel kort, is maar paar lijnen. Maar complex met $V$ en $W$ met verschillende basissen en co\"ordinaten. 
 
 Recap: 
-elke lineaire afbeelding heeft een matrix. Matrixces hebben veel eigenschappen, bvb. we kunnen ze optellen. We gaan zien dat we ook lineaire afbeeldingen kunnen optellen en zo. En we kunnen ook de verzameling van alle lineaire afbeeldingen beschouwen, en dit is ook een vectorruimte, want ook hier kunnen we optellen en scalair vermenigvuldigen. 
+elke lineaire afbeelding heeft een matrix. Matrices hebben veel eigenschappen, bvb. we kunnen ze optellen. We gaan zien dat we ook lineaire afbeeldingen kunnen optellen en zo. En we kunnen ook de verzameling van alle lineaire afbeeldingen beschouwen, en dit is ook een vectorruimte, want ook hier kunnen we optellen en scalair vermenigvuldigen. 
 
 Propositie 4.11 vat dit samen. 
 
-\section{Les 7, nabeschouwing}
+\section*{Les 7, nabeschouwing}
 
 Voorbeeld 3.62 gelezen en over nagedacht. Ik snap het wel, maar kan niet direct bewijzen of zeggen welke uitspraak van welke definitie of stelling af te leiden is. 
 
@@ -751,6 +751,117 @@ Puntje 5: Maak oefening 4.8.1a: L3 en L5. (p.185). L3 niet lineair (neem $-(x,y)
 Puntje 6: nog niet gedaan.
 
 Puntje 7: nog niet gedaan. Deze best eens doen! TODO. 
+
+\section*{Les 8, voorbereiding}
+vergeten te doen, wel snel gelezen voor de les, en snap wel waar het over gaat. 
+
+\section*{Les 8, 21 nov}
+Abstracte variant van matrices gezien: de lineaire afbeeldingen. 
+
+Even recap wat matrix van lineaire afbeelding is. 
+Per definitie is de matrix $L_{\beta_V}^{\beta_W}$ met als kolommen de co\"ordinaten van de beelden van de basisvectoren van $V$. En in het vierkante schema met $V, W, \mathbb{R}^n, \mathbb{R}^m$ is de matrix de afbeelding van $\mathbb{R}^n$ naar $\mathbb{R}^m$.
+
+Propositie 4.11. Verzameling van alle lineare afbeeldingen van $V$ naar $W$ ook een re\"ele vectorruimte. Notaie voor deze verzameling: $Hom(V,W)$. 
+
+We hebben nu heel veel verbanden gezien tussen lineaire afbeeldingen en matrices. Definitie 4.12 en stelling 4.13 gaan over dit homomorfisme. $Hom_{\mathbb{R}}$. Dit is redelijk logisch. Alleen hebben we het product van twee matrices nog niet gezien in dit homomorfisme. 
+
+Stelling 4.14: samenstelling van twee lineaire afbeeldingen is opnieuw lineair. Bewijs in de les gezien. 
+V.T.B. (voldoende te bewijzen): samenstelling respecteert lineaire combinaties: $(K \circ L) (\alpha v + \beta w) =...$. Via $K(L(...))=...$ en wat herschikken. Eenvoudig bewijs. 
+
+Eigenschap: de matrix van $K \circ L$ is het matrixproduct van de individuele afbeeldingen. Hier komen we eigenlijk op het punt dat verklaart waarom de matrixvermenigvuldiging is zoals ze is. Bewijs is kort, maar best abstract. Neem vector $v \in V$. Dan is $co_{\beta_U}( (K \circ L) (v) ) =... $. Gaan we op twee manieren uitrekenen: eerst door $K \circ L$ als \'e\'en lineaire afbeelding te zien en te schrijven als matrix-vermenigvuldiging. Dan uitrekenen door te schrijven als $co$ van $K (L(v))$. Door associativiteit matrixproduct komt een gelijkheid te voorschijn, maar je kan hier niet direct uit afleiden dat nieuwe matrix van samenstelling gelijk is aan product (je kan kolomvector niet inverteren, dus kolomvector niet wegwerken). Omweg nodig: neem de basisvectoren stuk voor stuk in de vergelijking, dan komt telkens de $i$-de kolom te voorschijn, dus zijn alle kolommen van deze matrices gelijk, dus is hele matrix gelijk. Punt is: vierkante matrix maal kolommatrix heeft opnieuw kolom, en voor 1 bepaalde kolommatrix in een vergelijking is er niet 1 oplossing! Dus sowieso andere redenering nodig. Ik dacht eerst dat het sowieso duidelijk was, maar dat is niet! 
+
+Definitie 4.16. Stelling 4.18. Isomorfisme: bijectieve afbeelding die alle structuur bewaart. Het isomorfisme dat we al hele tijd gebruiken: de co\"ordinaatafbeelding. Stelling 4.18 vult het gebrek aan symmetrie aan in de definitie van 4.16 (om daar van $V$ naar $W$ wordt gewerkt en niet omgekeerd, terwijl uiteraard omgekeerd ook het isomorfisme geldt). 
+
+Bewijs stelling 4.18 op bord gezien. Ook interessant. Eerst via definitie lineariteit van $L^{-1}$ een gelijkheid genoteerd.  V.T.B. is dat $L$(linkerlid) = $L$(rechterlid), en dit is voldoende omdat $L$ injectief is. Aantonen dat twee vectoren in $V$ gelijk zijn, kan ook door aan te tonen dat hun beelden door injectieve functie gelijk zijn. Dan gewoon uitrekenen, waarbij $L(L^{-1})$ gaat wegvallen. 
+
+Voorbeelden. 
+
+Het woord standaardbasis is paar keer gevallen (ook in oefenzitting). Maar hadden we dit gezien? Spreekt wel voor zich eigenlijk, maar toch... 
+
+Stelling 4.20. Als isomorf, dan dimensies gelijk. Waarom? Eigenlijk, alle eigenschappen blijven bewaard, dus dit is evident. Omgekeerd. Als dimensies gelijk, zijn ze beide isomorf met $\mathbb{R}^n$ met zelfde $n$, dus ook onderling isomorf. 
+
+Vraag: kan re\"ele vectorruimte isomorf zijn met complexe vectorruimte? In principe valt dat buiten de definitie. Maar: je kan voor complexe vectorruimten altijd jezelf beperken tot scalairen uit $\mathbb{R}$ en daar wel mee aan de slag.
+
+Propositie 4.23. Verband tussen isomorfismen en inverteerbaarheid van matrices. En de inverse afbeelding $L^{-1}$ heeft als matrix de inverse matrix. In les alleen in woorden uitgelegd. 
+
+(pauze) 
+
+Basisverandering. Stel twee basissen $\beta_1 en \beta_2$. Verband tussen de twee co\-\"or\-di\-naat\-afbeeldingen? Vraag twee: stel we hebben een $L$ en we veranderen de basis, wat is het verband tussen de matrices van de lineaire afbeeldingen? 
+
+I.v.m. vraag 1: bekeken via de identieke afbeelding, en de matrix t.o.v. de verschillende basissen. Matrix $P$ gevonden die dan verband geeft tussen de twee co\"ordinaten. Voorbeeld gegeven. (maar we hadden al zoiets in de oefeningen gedaan). 
+
+Dan naar vraag 2: lineaire transformaties, en basisverandering. Uitgewerkt op bord, vertrekken van definitie van toepassen matrix van $L$ op een $co_{\beta_2}(v)$. Dan erbij geschreven formule uit vraag 1 ($P$ maal $co_{\beta_1}(v)$). Dan verder gerekend ... Ook gebruik gemaakt van feit dat $P$ inverteerbaar is. Waarom? Omdat identieke afbeelding (waar die $P$ vandaan kwam) inverteerbaar is. We bekomen opnieuw (zoals voor de pauze bij samenstellen van afbeeldingen) een gelijkheid van matrixproducten met rechts een kolom, en die geldig is voor alle mogelijke kolomvectoren. Dus zijn die matrices voor de kolommatrix gelijk. Resultaat: $L_{\beta_2}^{\beta_2}  = P \cdot L_{\beta_1}^{\beta_1} \cdot P^{-1}$. Naam van dit soort eigenschap: gelijkvormigheid. Definitie 4.26. Gevolg 4.27. 
+Veralgemening: met vier basissen in plaats van twee. Maar in de praktijk niet vaak nodig. Zie boek. 
+
+Toepassing: determinant en spoor van een matrix blijven behouden als $A$ en $B$ gelijkvormige matrices zijn. Bewijzen kort op bord, via definitie, eigenschap det(product matrices), eigenschap det(inverse matrix), etc. Voor spoor: via eigenschap $Tr(AB)=Tr(BA)$. 
+
+Even voorbereiden volgende les: de kern. En het beeld. En de rang.  Gaat over lineaire afbeeldingen (matrix equivalent kern: nulruimte, matrix equivalent beeld: kolomruimte). Logisch: de beelden van de basisvectoren zitten in die matrix, dus dat beeld van de afbeelding equivalent is met de kolomruimte is logisch. 
+Definitie 4.31. Even stilgestaan bij feit dat dit deelruimten zijn (lineaire combinatie blijft behouden in ker en Im). 
+
+Propositie 4.34. I.v.m. injectiviteit van $L$ asa $ker(L)=\{0\}$. Bewijs op bord gezien. 
+
+\section*{Les 9, 28 nov}
+
+Vandaag: dimensiestelling voor lineaire afbeeldingen bewijzen. 
+Stelling 4.36. 
+
+Bij matrices: verschillende deelruimten gezien (C, R, N), en lineaire afbeeldingen zijn abstractie van matrices, dus deze dimensiestelling gaat ook verband houden met rang van matrices. 
+Denk bvb. aan: dimensiestelling van deelruimten van $V$, en hoe die bewezen is door vinden van een basis. 
+
+Bewijs voor 4.36. Begin met basis voor de kern. ($Ker L$ is deelruime van $V$). Basis deelruimte kunnen we uitbreiden tot basis van hele ruimte $V$. (dit kan, want elke vrij deel in $V$ kan uitgebreid worden). Noemen we deze basis $\{ v_1 ... v_n\} $, dan zal gelden dat $Im L = vct\{ L(v_1), ..., L(v_n)  \}$. Maar $L(v_1)=0, etc.$ (definitie kern). Kunnen we weglaten uit $vct$, dus we hebben voortbrengend deel voor $Im L$. Nu nog aantonen dat deze LO (vrij) zijn, en we zijn er. Ook dit staat er al bijna. Neem LC die nul is, en bewijs dat co\"effi\"enten nul zijn. 
+$L()$ operator kan buiten gebracht worden, dus die LC vector zit in de kern. Elke vector in de kern kan als LC geschreven worden van kernvectoren. Dit uitschrijven geeft opnieuw LC gelijk aan nul, met alle vectoren $v_1,...,v_n$ erin, en hiervan weten we dat deze LO zijn, dus alle $\lambda_i$ zijn nul, ook de $\lambda_i$ van onze "te bewijzen". 
+
+Interpretatie van deze stelling voor matrices. Neem matrix $A$ en bijhorende lineaire afbeelding $L_A$. De kern zijn dan de oplossingen van het homogene stelsel, of ook: de nulruimte $N(A)$. Wat is $Im(L_A)$? Neem standaardbasis van $\mathbb{R}^n$. Dan is $Im(L_A) = vct \{ L_A(e_1), ..., L_A(e_n)  \} = vct \{ 
+ \text{kolom 1 van }A, \text{kolom 2 van } A, ... \} = C(A)$.  
+Dus, dimensiestelling zegt: $n = dim(\mathbb{R}^n) = dim(Ker L_A) + dim(Im L_A) = dim(N(A)) + \text{kolomrang } A$. 
+Eerder gezien: $n = dim( N(A)) + \text{rijrang } A$. 
+En dus: kolomrang = rijrang. 
+Even over redeneren: voor $k \times n$ matrix, wat is hoogst mogelijke rang? Antwoord: kleinste van de twee. Logisch: dim rijruimte nooit groter dan aantal rijen. Maar dim kolomruimte nooit grotere dan lengte van kolommen, dit is ook aantal rijen.   
+
+Verder op redeneren. Neem $A \in \mathbb{R}^{k \times n}$ met rang $k$. Dit kan alleen als $C(A) =\mathbb{R}^{k} $. Dit kan alleen als $ \text{Im } L_A = \mathbb{R}^{k}$. Asa voor elke $b \in  \mathbb{R}^{k}$ er een $X$ bestaat met $A \cdot X = b$. Asa elke $AX=b$ heeft minstens 1 oplossing. 
+Maar dit alles is ook equivalent met: rijen van $A$ zijn lineair onafhankelijk. Bovenstaande redenering is stelling 4.45. 
+
+Andere geval. Neem $A \in \mathbb{R}^{k \times n}$ met rang $n$.
+Uit dimensiestelling volgt dan: $dim(N(A)=0$ , of $N(A)=\{ 0 \}$. Of $Ker (L_A) = \{ 0 \}$. Of: $L_A$ is injectief. Dan heeft $AX=b$ voor elke $b$ hoogstens \"e\"en $X$. Asa kolommen van $A$ zijn lineair onafhankelijk. Bovenstaande is stelling 4.46. 
+
+Stelling 4.47 voor $n \times n$ met rang $n$. 
+
+Interessant gevolg: voor $L_A$ in eindig-dimensionale vectorruimte (lineaire transformatie dus), is injectiviteit hetzelfde als surjectiviteit! Zie gevolg 4.40. 
+"Tegenvoorbeeld" voor oneindig-dimensionale ruimte: veeltermen van willekeurige graad. En neem $L: V \to V: L(P) = P \cdot X$. Dus elke term met graad verhogen. Dit is injectief maar niet surjectief, omdat constante veeltermen niet bereikt worden. 
+
+(pauze) 
+
+Nieuw hoofdstuk: eigenwaarden/eigenvectoren. Veel toepassingen. Bvb. page rank Google is een eigenvectorprobleem van gigantische matrix. Ander voorbeeld: goed passende ellips rond een puntenwolk met hoge correlatie, die ellips bepalen kan met eigenwaarden. 
+
+Voorbeeld evolutie van marktaandeel bij 2 telecomoperatoren. Gelijkaardig: populatiemodel met prooien en jagers en voortplanting. Populatiemodel marktaandeel: klanten die van operator veranderen: 99\% van P blijft trouw, 1\% stapt over. Bij T: 94\% trouw, en 6\% stap over. Hoe evolueert aantal gebruikers/klanten maand na maand. Dit kan makkelijk gemodeleerd worden met linaire algebra. Twee rijen variabelen $x_1, x_2, ...$ klanten van P in maand $1, 2, ...$. En $y_1, y_2, ...$. Dus elke maand kan nieuwe $(x_2, y_2)$ berekend worden door matrixproduct met vorige $(x_1, y_1$. En na 10 maanden: $A^10$, ... Machten van matrices dus. Wat we met eigenwaarden gaan kunnen doen, is ook machten van matrices berekenen! 
+Vraagstuk convergeert. En eigenlijk was evenwicht te voorspellen: als er evenveel overlopers zijn aan elke kant, dan verandert het niet meer. Evenwicht: $A \begin{pmatrix} 6 \\ 1\end{pmatrix} = \begin{pmatrix}  6 \\ 1 \end{pmatrix}$. Dus $(x,y)$ verandert niet meer. 
+
+Beperking: het gaat alleen over vierkante matrices. $n$ variabelen in en $n$ out van onze transformatie. 
+
+Definitie eigenwaarde $\lambda$ van matrix $A$: ... $A \cdot v = \lambda v$, $v \neq 0$, en deze $v$ noemen we een eigenvector van $A$. Voor lineaire transformaties: zelfde definitie via equivalent matrices en lineaire transformaties. Het evenwicht daarstraks was met een eigenwaarde 1. 
+
+Vinden van alle eigenwaarden van $A$ (en bijhorende eigenvectoren). $A \cdot v = \lambda v$ asa $(\lambda \mathbb{I}_n - A)\cdot v = 0$ asa stelsel $(\lambda \mathbb{I}_n - A)\cdot v = 0 $ heeft niet alleen nuloplossing, asa $det(\lambda \mathbb{I}_n - A) = 0 $. 
+
+Voorbeeld. Neem vierkante matrix $ \begin{pmatrix} a & b \\ c & d \end{pmatrix}$. Uitwerken geeft: $\lambda^2 - (a+d)\lambda + (ad-bc)=0$.
+
+Voor $A \in \mathbb{R}^{n \times n}$: we bekijken $\phi_A(X) = det(X \cdot \mathbb{I}_n -A)$, een $n$-de graadsveelterm, en we zoeken hiervan de re\"ele nulpunten. Definitie: $\phi_A(X)$ is de karakteristieke veelterm van $A$. 
+
+Meetkundige betekenis: lineaire transformaties in $\mathbb{R}^2$, dus  $2 \times 2$ matrices,  kan je zien als transformaties in het vlak. Bvb. spiegeling t.o.v. x-as. We zien al dat er eigenwaarde 1 gaat zijn (punten op as naar zichzelf), en andere punten naar spiegelbeeld die geen eigenwaarde hebben. 
+Andere transformatie: rotatie. Nul telt niet mee, dus nooit op zichzelf afgebeeld, dus geen eigenwaarden hier. (geogebra.org). 
+Heel interessant om wat inzicht te krijgen. Afgebeelde vector moet in verlengde komen van originele (maal re\"eel getal $\lambda$). 
+
+Karakteristieke vergelijking voor matrices: kan zelfs met re\"ele elementen in matrix complexe eigenwaarden uitkomen, en bijhorende complexe eigenvectoren. Maar tellen niet mee hier. En bij lineaire transformaties overigens ook geen betekenis. (?? niet helemaal gesnapt hier). 
+
+Intermezzo, in verband met matrices met veel eigenwaarden. Neem transformatie $L: V \to V$ en basis $\beta$. Dan bestaat $\beta$ uit eigenvectoren asa $L_\beta^\beta$ is een diagonaalmatrix. 
+Bewijs: op bord gezien. Eigenlijk logisch, diagonaalmatrix vermenigvuldigt elke $v_i$ met $\lambda_i$ (uit diagonaalmatrix). 
+
+Definitie 5.7. Diagonaliseerbaarheid. Belangrijk concept! Heeft te maken met "genoeg" eigenwaarden te hebben om de diagonaalmatrix te vullen. 
+
+Extreme gevallen: eenheidsmatrix: elke vector is een eigenvector voor de eenheidsmatrix, met eigenwaarde 1. 
+
+
+
+
 
 
 \section{KEEP ME TO JUMP TO END}
