@@ -860,10 +860,181 @@ Definitie 5.7. Diagonaliseerbaarheid. Belangrijk concept! Heeft te maken met "ge
 Extreme gevallen: eenheidsmatrix: elke vector is een eigenvector voor de eenheidsmatrix, met eigenwaarde 1. 
 
 
+\section*{Les 10, voorbereiding}
+niet gedaan
+
+\section*{Les 10, 5 dec}
+
+Even herhaling concepten: def. 5.3 eigenvector/eigenwaarde van $L$, en $L$ is abstractie van matrix dus geldt dit ook voor matrices, def. 5.7 diagonaliseerbaar: te maken met "genoeg eigenvectoren" in de betekenis "genoeg om een basis te maken". Noot: het hebben van een matrix met basisvectoren is hetzelfde als diagonaliseerbaarheid. Prof heeft veel inzichtelijke uitleg gegeven, maar ik vond het moeilijk te volgen. 
+
+Vandaag eerst: hoe begin je aan diagonaliseren? Welk algoritme hebben we? We hebben een $L$ op $V$, met 1 basis $\beta$, en met $dim V=n$. En de matrix $A = L_{\beta}^{\beta}$. Eigenwaarden van $L$ vinden: nulpunten van karakteristieke veelterm $\phi_A(X)$. Dit is een n-de graadsveelterm. Stelling 5.9 zegt dan: die veelterm is karakteristiek voor $L$, want staat los van de basis. Andere basis is andere matrix $A$, maar er zal dus blijken dat gelijkvormige matrices dezelfde hebben. Vergelijk met: gelijkvormige matrices hebben dezelfde determinant. Noot: $X \cdot \mathbb{I}_n$ kan je zien als $X$ keer de identieke afbeelding. 
+Dan de eigenvectoren vinden: dat doen we voor elk nulpunt $\lambda$ van $\phi_A$, door de niet-nul oplossingen te vinden van het stelsel $(\lambda \cdot \mathbb{I}_n -A) \cdot v = 0$. 
+
+Nu paar voorbeelden met 2x2 matrices. Eerst $det( X \cdot \mathbb{I}_2 - A)$, dan re\"ele nulpunten zoeken. Eigenvectoren dan per eigenwaarde door eenvoudigweg een stelsel op te lossen. In voorbeeld waarbij we twee eigenwaarden hadden voor een 2x2 matrix: de matrix is dan diagonaliseerbaar. Eerste voorbeeld: geen re\"ele eigenwaarden. Tweede voorbeeld: twee verschillende re\"ele eigenwaarden. Derde voorbeeld: slechts 1 re\"ele eigenwaarde. Eerste en derde voorbeeld: niet diagonaliseerbaar. 
+Noot: deze voorbeelden zijn zeer instructief. Om te diagonaliseren hebben we twee lineair onafhankelijke vectoren nodig in $\mathbb{R}^2$. 
+Dan nog 4e voorbeeld gegeven: $A = \begin{pmatrix}
+    2 & 0 \\ 0 & 2
+\end{pmatrix}$. Alle vectoren verschillend van $0$ zijn hier nu eigenvectoren. 
+
+Nieuw jargon, maar geen nieuw concept: def. 5.12: spectrum van $L$. 
+
+Definitie 5.13: alg. multipliciteit $m$ van een eigenwaarde (op basis van multipliciteit van een nulpunt van de KV). Te maken met meervoudige nulpunten. Ook te maken met schrijven een veelterm $P \in \mathbb{R}[X]$ als $P(X) = (X-\lambda_1)^{n_1}(X-\lambda_2)^{n_2} ...$. Anders gezegd: $(X-\lambda)$ buiten brengen tot overblijvende $Q(X)$ geen nulpunt $\lambda$ meer heeft. 
+
+Definitie 5.14: meetkundige multipliciteit $d$: de dimensie van de eigenruimte van de eigenwaarde. 
+
+We hebben dus per $\lambda$ twee multipliciteiten: de algebra\"ische $m$ en de meetkundige $d$. 
+
+Waar we naartoe werken: stelling 5.16 bewijzen. Voor elke eigenwaarde is $d \leq m$. 
+
+Bewijs. Gegeven is $L: V \to V$ en $\lambda$ is een eigenwaarde. T.B. $1 \leq d(\lambda) \leq m(\lambda)$. 
+Bewijs: eerste ongelijkheid is triviaal (er is minstens een oplossing anders was het geen eigenwaarde). Tweede ongelijkheid: neem basis voor eigenruimte $E_\lambda$. Breid deze basis uit tot basis van $V$. Stel dan $A=L_\beta^\beta$. En dan beschouwen we $A$ als kolomvectoren die co\"ordinaten zijn van de beelden van de basisvectoren. Omdat we basisvectoren uitdrukken in co\"ordinaten van basisvectoren, zijn deze vectoren allemaal met nullen en $\lambda$! Die hele $A$ wordt in blokken uitgedrukt. Dan wordt karakteristieke veelterm uitgerekend, en truuk van een determinant met blokken met een nulblok (ooit oefening geweest), gelijk aan product van determinanten van de diagonale blokken. Dan kunnen we $(X-\lambda)^k$ buitenbrengen, en onze T.B.  neerschrijven. 
+
+(pauze) 
+
+Vraag: kunnen eigenvectoren lineair afhankelijk zijn? Antwoord komt nu. Uiteraard: die bij eenzelfde eigenwaarde horen natuurlijk wel lineair afhankelijk.
+
+Stelling 5.18.  Eigenvectoren die bij verschillende eigenwaarden horen: die zijn lineair onafhankelijk. Bewijs per inductie op aantal vectoren. Start met $k=1$. Trivaal, \'e\'en niet-nulvector is per definitie lineair onafhankelijk. Dan inductiehypothese: het geldt voor $k$. T.B. het geldt voor $k+1$. 
+Bewijs: we nemen aan dat  $v_1,...,v_k$ zijn LO.  
+Neem een LC (co\"ef. $\alpha$) van $k+1$ vectoren gelijk aan 0. Bewijs in twee gevallen. Geval 1: $\alpha_{k+1}=0$, geval 2: $\alpha_{k+1} \neq 0$. In geval 1: laatste term niet aanwezig, dus via inductiehypothese volgt dat alle andere $\alpha_i$ nul zijn. Geval 2: som herschrijven met $v_{k+1}$ links, en delen door $\alpha_{k+1}$. Dan lineaire afbeelding $L$ toepassen op die vergelijking. Maar uit dezelfde eerste vergelijking kan je ook links en rechts met constante $\lambda_{k_1}$ vermenigvuldigen, en we krijgen gelijkheid van twee sommen. Naar zelfde kan vergelijking brengen, sommen samenbrengen: nieuwe LC gevonden die nul oplevert. Uit inductiehypothese (LO van die vectoren), volgt dat al die nieuwe co\"effici\"enten nul zijn. Maar hierin zit verschil van $\lambda_i$ die verschillend zijn, dus die zijn niet nul, en moet andere deel (de $\beta$) nul zijn. Maar dit is een contradictie. Dus geval 2 kan niet voorkomen. QED. Best complex bewijske. Niet moeilijk maar complex (inductie, gevalsonderscheid en ongerijmde allemaal gebruikt). 
+
+Definitie 5.19: enkelvoudig spectrum. (alle eigenwaarden hebben multipliciteit 1). Gevolg 5.20. een $L$ met enkelvoudig spectrum is diagonaliseerbaar. 
+
+Lemma 5.22 en stelling 5.23. Eerder in de les gesproken van twee obstructies om niet te kunnen diagonaliseren. 
+Lemma 5.22: we moeten eerstegraadsfactoren hebben (genoeg verschillende eigenwaarden). Stelling 5.23: maar zelfs als hebben we volledige ontbinding hebben van KV, dan nog moeten we gelijkheid hebben tussen alg. en meetk. multipliciteit. 
+
+Bewijs stelling, twee richtingen van de asa. 
+
+Richting "als diagonaliseerbaar, dan ...". Neem basis van eigenvectoren. Groepeer per eigenwaarde via twee indices. Totaal aantal vectoren gelijk aan dimensie. Opgelet: notatie-nachtmerrie. Bijhorende matrix is een diagonaalmatrix, met verschillende $\lambda_i$ die meerdere keren voorkomen. De karakteristieke veelterm kan dan uitgeschreven worden. En dan kan bijna afgelezen worden dat de $d$ gelijk zijn aan de $m$. 
+
+Bewijs in andere richting: gegeven dat $\phi_L(X)$ volledig ontbindt als $\phi_L = (X-\lambda_1)^{m_1}...(X-\lambda_k)^{m_k}$ met alle $\lambda_i$ verschillend, en dat $d=m$ voor alle $\lambda$, en $m_1+...+m_k = dim V$. 
+Te bewijzen: $L$ diagonaliseerbaar. 
+Bewijs: kies voor elke $i$ een basis voor $E_{\lambda_i}$. Dit kan omdat $dim(E_{\lambda_i})=d(\lambda_i)=m_i$. Bewering is dan: alle $v_{i,j}$ met $1 \leq j \leq m_i$ en $1 \leq i \leq k$ vormen samen een basis van $V$. Aantal van die vectoren: $m_1+m_2+... + m_k$. Dus dat klopt. Dan nog gewoon bewijzen dat deze vectoren LO zijn. Zoals bijna altijd: we maken LC die nulvector oplevert. Dubbele sommatie over de twee indices. Dan bewijzen dat alle co\"effici\"enten nul zijn. Binnenste som hernoemen naar $w_i$, dan zit elke $w_i$ in $E_{\lambda_i}$. En we weten ook dat som van alle $w_i$ nul is. Dan moeten alle $w_i$ nul zijn, want som van eigenvectoren, en die zijn lineair onafhankelijk. Dan volgt uit andere vergelijking: dat die oorspronkelijke co\"effici\"enten nul. QED. 
+Vond ik moeilijk te volgen, dit bewijs, ging nogal snel op einde van de les. 
+
+Dan nog rap stelling 5.27 gezien in verband met vectorruimten over $\mathbb{C}$. Deze hoofdstelling van de algebra is moeilijk te bewijzen! (analyse nodig). Gevolg: de eerste obstructie voor diagonaliseerbaarheid vervalt bij complexe nulpunten. 
+
+\section*{Les 10, nabeschouwing}
+
+\subsection*{(1) oefening 5.7.4(A3)}
+Niet gemaakt, zou moeten lukken. Karakteristieke vergelijking opstellen (det van matrix met diagonalen min $X$), gelijk aan nul en oplossingen voor $X$ zoeken. Dat zijn de eigenwaarden dan. 
+Eigenruimte: de eigenvectoren vinden natuurlijk: stelsels oplossen door eigenwaarde-definitie uit te schrijven met gekende eigenwaarden, en de herschikken zodat onbekende vector aan 1 kant staat, zie voorbeelden. 
+
+\subsection*{(2) oefening 5.7.8.}
+We hebben een lin. trans. $L$. Eigenwaarden gegeven, eigenvectoren niet. Dus: 
+\begin{itemize}
+    \item $L(v_1)=-1v_1$
+    \item $L(v_2)=0$
+    \item $L(v_3)=1v_3$
+\end{itemize}
+Gevraagd: ker($L$) en Im($L$). 
+Redenering: 
+De vraag die ik me stel: is die lineaire transformatie eigenlijk helemaal gekarakteriseerd door die eigenwaarden? Sowieso geldt: alle scalaire veelvouden van vector $v_2$ beelden af op $0$, en zitten in de kern. En zo ook: alle niet-nul scalaire veelvouden van $v_1$ en $v_3$ beelden zeker niet af op $0$, dus zitten niet in de kern (eigenvectoren zijn altijd niet-nul vectoren). 
+
+Maar wat ik me nu afvraag: zijn eigenvectoren lineair onafhankelijk? Want als dat zo is, dan heb ik 3 LO vectoren uit $\mathbb{R}^3$, en kan ik dat als basis zien. 
+
+Ah: stelling 5.8 gaat daarover: er is een basis die uit eigenvectoren van matrix $A$ bestaat, asa de matrix $A$ diagonaliseerbaar is. (en matrix is een 1-op-1 met lineaire transformaties binnen bepaalde basis). En aha2: stelling 5.18 zegt dat bij eindig-dimensionale vectorruimte de eigenvectoren (uiteraard diegene die bij verschillende eigenwaarden horen) LO zijn. 
+
+Dus: ik heb 3 LO vectoren $\{ v_1, v_2, v_3 \}$ in een 3-dim ruimte $\mathbb{R}^3$, dus ik kan die als basis zien. Of ook: ik kan elke vector schrijven als LC van die drie. 
+Bijgevolg kan ik zien wanneer ik als beeld nul heb: nulvector zelf, en alle niet-nul veelvouden van $v_2$. Beeld Im($L$) is dan uiteraard $vct(v_1, v_3)$
+
+\subsection*{(3) Bewijs opmerking 5.11 p. 211}
+
+In detail alle beweringen van opmerkingen 5.11 bewijzen. 
+Hint: toon eerst puntje (2) aan.
+
+Punt (2): zijn $\alpha$ een basis van $V$. De co\"ordinaatvectoren tov $\alpha$ van de eigenvectoren bij een eigenwaarde $\lambda$ zijn de eigenvectoren van $L_{\alpha}^{\alpha}$ bij $\lambda$.
+
+We gaan ervan uit dat puntje 2 ook over eindigdimensionale $V$ gaat (bij puntje 1 staat dit expliciet erbij), en $dim V=n$. En we hebben gegeven een lineaire transformatie $L$ met een bepaalde eigenwaarde $\lambda$ en bijhorende eigenvectoren. 
+Even ter herinnering: wat is $L_{\alpha}^{\alpha}$ ook al weer? Dit is de \emph{matrix} die $L$ voorstelt bij basis $\alpha$, die met andere woorden de afbeelding kan uitrekenen op basis van co\"ordinaten van een vector. 
+
+Benoemen we de basisvectoren: $\alpha=\{ v_1, v_2, ... v_n  \}$.
+En noemen we de $k$ eigenvectoren bij $\lambda$: $w_1, w_2, ... w_k $. 
+Dan geldt voor elke $w_i$: $L(w_i)=\lambda \cdot w_i$. 
+Elke $w_i$ kan ook als LC geschreven worden van de basisvectoren: 
+$w_i = \sum_{j=1}^{n} \delta_{ij} w_i$. M.a.w.: de co\"ordinatenvector van $w_i$ is: $(\delta_{i1}, \delta_{i2}, ... \delta_{ik})$, anders geschreven: co$_{\alpha}(w_i)=(\delta_{i1}, \delta_{i2}, ... \delta_{ik})$. 
+De betekenis van $L_{\alpha}^{\alpha}$ is gewoon: co$L(v) 
+ = L_{\alpha}^{\alpha}$co$(v)$. 
+Dus ook voor $w_i$:   co$L(w_i)= L_{\alpha}^{\alpha} (\delta_{i1}, \delta_{i2}, ... \delta_{ik})$
+... nog niet klaar...
+
+\subsection*{(4) als algebra\"ische multipliciteit 1, ook de meetkundige multipliciteit}
+
+Toon aan dat indien de algebra ̈ısche multipliciteit van een eigenwaarde λ  ́e ́en is (m(λ) = 1),
+ook de meetkundige mulipliciteit  ́e ́en is (d(λ) = 1).
+
+\subsection*{(5) }
+Zij A ∈ R 3×3
+een diagonaliseerbare matrix. We onderscheiden de volgende gevallen:
+ A heeft precies drie verschillende eigenwaarden,
+ A heeft precies twee verschillende eigenwaarden,
+ A heeft precies  ́e ́en eigenwaarde.
+Bespreek in ieder van deze gevallen hoe de eigenruimten van A eruit zien en hoe deze
+ruimten in R3 liggen. 
+Beschrijf ook hoe je een basis bestaande uit eigenvectoren van A
+
+kunt kiezen.
+
+\section*{Les 11, 12 dec}
+
+Voorlaatste les. 
+Hoeken tussen vectoren, lengtes van vectoren, nog niet aan bod gekomen, terwijl we dat allemaal al gebruikt hebben. Scalair product gebruikt beide. Standaard inproduct op $\mathbb{R}^n$. Notatie (std?) inproduct: $<v,w>$. In dit vak beschouwen we deze informatie als deel van een nieuwe structuur bovenop wat we tot nu in vectorruimten gezien hebben. 
+Paar eigenschappen overlopen die je op zicht kan zien. Een ervan: lineariteit, bvb. als je 1 vector vasthoudt en dan afbeelding beschouwt van andere vector op scalair product, dan is dit lineair t.o.v. scalaire vermenigvuldiging van de vectorruimte. 
+Alle eigenschappen in definitie: 6.1, voor re\"ele vectorruimten. 
+
+Dan: wat als we over $\mathbb{C}$ gaan? Opgelet, er komt een subtiel verschil: als voor alle $v$ geldt dat $<v,v> \geq 0$. Dan ook voor $<iv, iv> = i<v,iv> = -<v,v>$. Aha, dat is een probleem, want niet meer positief. 
+Oplossing: toegevoegde lineariteit in de eerste variabele: de scalairen komen naar buiten met hun complex toegevoegd. En in de tweede variabele: gewone lineariteit. Bijgevolg moet symmetrie ook aangepast worden: volgorde van vectoren veranderen geeft ook toegevoegde van resulterende scalaire product. 
+Zie definitie 6.3. 
+Opgelet: in andere wiskunde boeken is het lineair in de eerste component. Maar in fysica-wereld is het zoals hier. 
+Opgelet2: die $<v,v> \geq 0$: wat betekent dat in $\mathbb{C}$? Het komt erop neer dat het re\"eel moet zijn. 
+
+Latex juiste manier: $\langle v \; , \; w \rangle$
+
+Paar voorbeelden, ik heb niet alles genoteerd hier wat op bord stond: 
+
+Voorbeeld 1: standaard Hermitisch product op $\mathbb{C}^n$. 
+
+Voorbeeld 2: complexe continue functies met domein $[0,1]$. Een mogelijk Hermitisch product is een bepaalde integraal van complex toegevoegde van f maal g (integreren van 0 tot 1). 
+
+Voorbeeld 3: matrices $nxk$: $\langle A \; , \; B \rangle = Tr(A \cdot B^T) $ (spoor). Remember, spoor is product van diagonaalelementen. 
+
+Voorbeeld 4: een ander inproduct met $\alpha_i$ erbij ($\alpha_1$ voor waarde $v_i$, etc.). Blijkt alleen een inprodcut te zijn als die $\alpha_i$ strikt positief zijn. 
+
+Dan: definitie van de norm/lengte. Def. 6.9. En definitie 6.13: afstand tussen twee vectoren (=norm van verschil). 
+Fundamentele eigenschap van afstand: driehoeksongelijkheid moet gelden. En ook: ongelijkheid van Cauchy-Schwarz, om daarna de hoek (of toch zijn cosinus) tussen twee vectoren te kunnen defini\"eren. Krachtige eigenschap voor allerhande vectorruimten, ook die met functies. Stelling 6.14. 
+Bewijs in de les gezien. Interessant bewijs, via truukje. Kwadratische functie/vergelijking in $\lambda$ erin die positief is. Kan alleen als er 1 of geen nulpunten zijn, discriminant $D \leq 0$. En hieruit volgt het T.B. Deel (2) van de stelling is oefening. 
+
+Gevolg van CS: we kunnen def. 6.16 maken: hoek tussen twee vectoren (tussen $0$ en $\pi$). 
+
+Stelling 6.19 driehoeksongelijkheid volgt hier ook uit. Volgt meteen uit C-S. 
+
+Conclusie: in elke inproductruimte geldt CS en de driehoeksongelijkheid, etc.  
+
+(pauze) 
+
+Standaardbasissen in bvb. $\mathbb{R}^3$: hebben lengte 1 en staan onderling loodrecht. De vraag laat zich dan stellen of dit algemeen zo is: kunnen we altijd zo'n basis vinden? 
+
+Maar eerst: vectoren loodrecht op mekaar zijn per definitie LO. Dit geldt ook algemeen en ook voor meerdere vectoren die twee-aan-twee loodrecht zijn. Stelling 6.23. Kort bewijs op bord. Zoals altijd: neem LC die nulvector oplevert en bewijs dat alle co\"effici\"enten nul zijn. (altijd zo doen, Raf, ook op examen!) 
+
+Opm: nulvector staat per conventie loodrecht op alle vectoren, maar heeft niet veel betekenis. 
+
+Waarom willen we zo'n orthonormale basis (ONB) van inproductruimte $V$ met lengten 1 en allemaal loodrecht? Motivatie van wat we nu gaan doen: stel we vinden zo'n basis, dan: als we kijken naar de inproducten van co\"ordinaten (met standaard inproduct in $\mathbb{R}^n$), dan blijkt dit hetzelfde inproduct te geven. Bewijs in les aan bord gezien: gewoon uitrekenen en nadenken over de sommaties die veel nultermen hebben behalve ene. Heel triviaal bewijs. 
+
+Conclusie: we hadden al eerder gezien dat $\mathbb{R}^n$ een soort prototype voor vectorruimten is, via co\"ordinaatafbeelding. Nu blijkt dat standaard inproduct hier ook een prototype is voor eender wel inproduct. 
+
+Reflectie: ofwel snap ik het niet goed, maar ik vind dit precies mind-blowing: los van hoe inproduct gedefinieerd is (we hebben er al een aantal verschillende gezien op dezelfde vectorruimte), blijkt dat het inproduct bij een orthornormale basis altijd hetzelfde is als het inproduct van de co\"ordinaten. Ik moet dat even laten bezinken. 
+
+Nu nog niet bewezen dat zo'n orthonormale basis altijd bestaat. En dat gaan we nu zien: Gramm-Schmidt algoritme geeft hiervoor een methode. 
+
+Stelling: elke eindig-dim inproductruimte heeft zo een ONB. 
+Bewijs is een algoritme. Start met basis ... etc. Proced\'e van Gramm-Schmidt. Proces is iteratief, bewijs dus eigenlijk per inductie, dus eerst $u_1$, dan $u_2$, enz. op zo'n manier dat bij elke stap de voorgebrachte vectorruimte dezelfde is als die voorgebracht door de oorspronkelijke deelruimte van de overeenkomstige reeds verwerkte vectoren van de oorspronkelijke basis. 
+Stap 1, $k=1$. Triviaal. Norm klopt, en voortgebrachte ruimte blijft dezelfde. 
+Stap 2, $k=2$. Eerst maken we een vector loodrecht op $u_1,v_1$. Via formuleke dat nog uit de lucht valt. Nakijken: loodrecht? ja. Is niet de nulvector (stel wel nul, dan zou er een linaire afhankelijkheid geweest zijn, en dat was niet): Ja. Dan nog even normaliseren. En we hebben hem. Dan nog even kijken dat voortgebrachte ruimte van de $u_i$ nog klopt met de originele $v_i$. 
+Stap $k+1$ (gesteld dat tot en met k al orthonormaal): ... 
+Niet moeilijk, wel complexe notatie en veel schrijfwerk. Wat er eigenlijk gebeurt: we schrijven een oude vector eerst als loodrechte component plus component in reeds gemaakte deelruimte. Projecties/ontbinden dus. Telkens checken we dat de gemaakte vectoren niet nul zijn, en dan kunnen/mogen we normeren, en telkens checken dat voorgebrachte ruimte niet verandert.  
 
 
 
 
-\section{KEEP ME TO JUMP TO END}
+\section*{KEEP ME TO JUMP TO END}
 
 \end{document}
