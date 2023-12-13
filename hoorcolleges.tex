@@ -937,25 +937,35 @@ Ah: stelling 5.8 gaat daarover: er is een basis die uit eigenvectoren van matrix
 Dus: ik heb 3 LO vectoren $\{ v_1, v_2, v_3 \}$ in een 3-dim ruimte $\mathbb{R}^3$, dus ik kan die als basis zien. Of ook: ik kan elke vector schrijven als LC van die drie. 
 Bijgevolg kan ik zien wanneer ik als beeld nul heb: nulvector zelf, en alle niet-nul veelvouden van $v_2$. Beeld Im($L$) is dan uiteraard $vct(v_1, v_3)$
 
-\subsection*{(3) Bewijs opmerking 5.11 p. 211}
+\subsection*{(3) opmerking 5.11 p. 211}
 
 In detail alle beweringen van opmerkingen 5.11 bewijzen. 
 Hint: toon eerst puntje (2) aan.
 
-Punt (2): zijn $\alpha$ een basis van $V$. De co\"ordinaatvectoren tov $\alpha$ van de eigenvectoren bij een eigenwaarde $\lambda$ zijn de eigenvectoren van $L_{\alpha}^{\alpha}$ bij $\lambda$.
+Punt (2): zijn $\alpha$ een basis van $V$. De co\"ordinaatvectoren tov $\alpha$ van de eigenvectoren van $L$ bij een eigenwaarde $\lambda$ zijn de eigenvectoren van $L_{\alpha}^{\alpha}$ bij $\lambda$.
 
 We gaan ervan uit dat puntje 2 ook over eindigdimensionale $V$ gaat (bij puntje 1 staat dit expliciet erbij), en $dim V=n$. En we hebben gegeven een lineaire transformatie $L$ met een bepaalde eigenwaarde $\lambda$ en bijhorende eigenvectoren. 
 Even ter herinnering: wat is $L_{\alpha}^{\alpha}$ ook al weer? Dit is de \emph{matrix} die $L$ voorstelt bij basis $\alpha$, die met andere woorden de afbeelding kan uitrekenen op basis van co\"ordinaten van een vector. 
+Ook even ter herinnering: je hebt eigenvectoren van een matrix (definitie 5.1), maar ook eigenvectoren van een lineaire transformatie (definitie 5.3). Ik heb de indruk dat het zaak is goed onderscheid houden bij het begrijpen van deze opmerking. 
 
-Benoemen we de basisvectoren: $\alpha=\{ v_1, v_2, ... v_n  \}$.
-En noemen we de $k$ eigenvectoren bij $\lambda$: $w_1, w_2, ... w_k $. 
+Benoemen we de basisvectoren van basis $\alpha$ van $V$: $\alpha=\{ v_1, v_2, ... v_n  \}$.
+En noemen we de $k$ eigenvectoren van $L$ bij $\lambda$: $w_1, w_2, ... w_k $. 
+En noemen we de $l$ eigenvectoren van matrix  $L_{\alpha}^{\alpha}$ bij $\lambda$: $x_1, x_2, ... x_l$. 
+
+Om te beginnen: 
+Hoe weten we dat $\lambda$ een eigenwaarde is van zowel $L$ als $L_{\alpha}^{\alpha}$? Wel, dat is exact dat gevolg 5.10: de karakteristiek veelterm is onafhankelijk van de gekozen basis. Maar ik snap dat gevolg nog niet helemaal: $L(v)$ schrijven als matrixvermenigvuldiging, hoe ging dat weeral? 
+Vorig hoofdstuk nog niet goed verwerkt denk ik. Ah ja, het grote vierkant van de cover, het gaat altijd via de coordinaten tov een basis (want anders kan je niet zomaar veeltermen in een matrixproduct gooien. 
+
+En hoe weten we dat het er even veel zijn, dus dat $l=k$???
+
 Dan geldt voor elke $w_i$: $L(w_i)=\lambda \cdot w_i$. 
 Elke $w_i$ kan ook als LC geschreven worden van de basisvectoren: 
 $w_i = \sum_{j=1}^{n} \delta_{ij} w_i$. M.a.w.: de co\"ordinatenvector van $w_i$ is: $(\delta_{i1}, \delta_{i2}, ... \delta_{ik})$, anders geschreven: co$_{\alpha}(w_i)=(\delta_{i1}, \delta_{i2}, ... \delta_{ik})$. 
 De betekenis van $L_{\alpha}^{\alpha}$ is gewoon: co$L(v) 
  = L_{\alpha}^{\alpha}$co$(v)$. 
 Dus ook voor $w_i$:   co$L(w_i)= L_{\alpha}^{\alpha} (\delta_{i1}, \delta_{i2}, ... \delta_{ik})$
-... nog niet klaar...
+
+... nog niet klaar... conclusie is: ik sta wat achter met vorige hoofdstukken goed begrijpen!! 
 
 \subsection*{(4) als algebra\"ische multipliciteit 1, ook de meetkundige multipliciteit}
 
