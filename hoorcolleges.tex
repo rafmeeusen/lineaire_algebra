@@ -1118,22 +1118,31 @@ Even herhaling gelijkvormigheid.
 Definitie. $\exists P \text{ inverteerbaar met } B=PAP^{-1}$. 
 Denk aan $A$ en $B$ als matrices van zelfde transformatie maar met andere basissen. Dan is $P$ de verandering van basis. 
 
-Even denken: wat maakt symmetrische matrix bijzonder? Kijken we naar standaard inproduct op $\mathbb{R}^n$, en herschrijven we als kolomvectoren en getransponeerden hiervan dus rijvectoren. In $\mathbb{C}^n$ moeten we met complex toegevoegden werken. 
-Als $A=A^T$ dan is $<AX,Y> = <X,AY>$ (toverformule) voor alle $X,Y$ in $\mathbb{R}^n$ (en zelfs in $\mathbb{C}^n$).
+Even denken: wat maakt symmetrische matrix bijzonder? Kijken we naar standaard inproduct op $\mathbb{R}^n$, en herschrijven we als kolomvectoren en getransponeerden hiervan dus rijvectoren. 
+Als $A=A^T$ dan is 
+\[ \langle A \cdot X,Y \rangle = \langle X,A \cdot Y \rangle \text{  (toverformule) } \] 
+voor alle $X,Y$ in $\mathbb{R}^n$ (en zelfs in $\mathbb{C}^n$).
 
-Neem $X,Y \in \mathbb{C}^n$. $<AX,Y> = (AX)^T$. 
-... niet alles opgeschreven TODO
-A is reele symmetrische matrix dus complex toegevoelgde doet niks. 
-... komt <X,AX> uit. 
-(op einde in de les: ook complexe matrices erbij halen). 
+Algemeen schrijven van inproduct als matrixproduct: 
+\[ \langle X,Y \rangle = \sum x_i y_i = X^T Y \] 
 
-Definitie: een complex matrix noemen we Hermitisch als $A=A-toegvoegd-getransponeerd$. Dan blijft bovenstaande formule gelden. Maw: als je transponeert, krijg je complex toegevoegde. 
+In $\mathbb{C}^{n \times n}$ moeten we met Hermitische matrices werken. Dit zijn matrices waarvoor geldt: $ \overline{A}^T = A $. Die zijn niet noodzakelijk symmetrisch. 
+Opgelet: standaard Hermitisch product is met getransponeerde van complex toegevoegde gedefinieerd: p.247 in cursus: $\langle X,Y \rangle = \overline{X}^T \cdot Y$ . 
+
+Bewijs ineens voor complexe geval: 
+Neem $X,Y \in \mathbb{C}^n$. Dan $\langle AX,Y \rangle = \overline{AX}^T Y =  \overline{X}^T \overline{A}^T  Y =  \overline{X}^T A Y = \langle X , A \cdot Y \rangle $. 
+
+(noot: complex toegevoegde van som/product is som/product van de complex toegevoegden) 
+
+Als $A$ toch een re\"ele matrix is: $\overline{A} = A$, dus $  \overline{A}^T = A^T $, dus Hermitische re\"ele matrix is een symmetrische matrix. 
+
+(op einde in de les: gaan we complexe matrices erbij halen bij de spectraalstelling. 
 
 Die ene toverformule, daar gaan we alles uit afleiden nu. 
 
 (pauze) 
 
-Eigenschap 1: als matrix $A$ (nxn) en $A=A^T$ dan is elke nulpunt van $\phi_A$ re\"eel. 
+Eigenschap 1: als matrix $A$ ($n \times n$) en $A=A^T$ dan is elke nulpunt van $\phi_A$ re\"eel. 
 Bewijs in de les gezien. Via omweg complexe eigenwaarden en complex eigenvectoren, en dan T.B. $\lambda = \overline{\lambda}$.  
 Neem $X \in \mathbb{C}^n$, $X \neq 0$ en $AX=\lambda X$. Dan $<AX,X>$ op twee manieren uitrekenen: via $AX=\lambda X$, en dan lineariteit in eerste term voor Hermitisch prodcut;  en anderzijds via toverformule voor symmetrische matrices $<AX,X> = <X,AX>$. Etc. dan verschil nemen, moet nul zijn want gelijk, en $X \neq 0$, dus $||X|| \neq 0$, dus moet ... QED. 
 
@@ -1149,7 +1158,7 @@ Bewijs: neem vector $Y \in E_\lambda$. T.B. $AX \perp Y$.
 Toverformule: $<AX,Y> = <X,AY> = <X,\lambda Y> = \lambda <X,Y> = 0$. QED. 
 
 
-Eigenschap 3: Als $A \in \mathbb{R}^{nxn}$, $A=A^T$, en $\lambda \in \mathbb{R}$ is een eigenwaarde, dan is d($\lambda$) = m($\lambda$. 
+Eigenschap 3: Als $A \in \mathbb{R}^{n \times n}$, $A=A^T$, en $\lambda \in \mathbb{R}$ is een eigenwaarde, dan is d($\lambda$) = m($\lambda$. 
 
 Bewijs. Via basis van $E_\lambda$. We kunnen dan "aanvullen" met basis van $E_\lambda^{\perp}$. Omdat $\mathbb{R}^n$ gelijk is aan directe som, is unie van die basissen een basis van $\mathbb{R}^n$. 
 Noemen we de transformatie $L_A$, en de matrix ervan $A$: $L_A(X)=AX$. Matrix $L_A$ bouwen via co\"ordinaten van basisvectoren. Via eigenwaarde definitie herschrijven als co\"ordinaten van $\lambda u_1$. Maar dit is gewoon een kolom met $\lambda$ en de rest $0$. Dit doen we voor $k$ kolommen. 
@@ -1179,10 +1188,6 @@ Stelling 6.46. Interpretatie (2): elementen van product van matrices zien als in
 Definitie 6.47. Deze $A$ is eigenlijk de matrix $P$ uit de gelijkvormigheids-definitie. Die $P$ is een orthogonale matrix. 
 
 Wat met de complexe getallen: alles blijft hetzelfde, behalve dat het gaat over Hermitische matrices. (getransponeeerde gelijk aan toegevoegde). 
-
-
-Test latex: $\bar{abc}$. $\overline{abc}$. $\Bar{abc}$. 
-
 
 
 \section*{KEEP ME TO JUMP TO END}
