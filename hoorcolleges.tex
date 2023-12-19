@@ -1042,8 +1042,36 @@ Stap 2, $k=2$. Eerst maken we een vector loodrecht op $u_1,v_1$. Via formuleke d
 Stap $k+1$ (gesteld dat tot en met k al orthonormaal): ... 
 Niet moeilijk, wel complexe notatie en veel schrijfwerk. Wat er eigenlijk gebeurt: we schrijven een oude vector eerst als loodrechte component plus component in reeds gemaakte deelruimte. Projecties/ontbinden dus. Telkens checken we dat de gemaakte vectoren niet nul zijn, en dan kunnen/mogen we normeren, en telkens checken dat voorgebrachte ruimte niet verandert.  
 
+\section{Les 12, voorbereiding}
+
+\subsection{deelruimte vectoren loodrecht op een rechte}
+Rechte $U$ door $(0,0)$ en $(1,2)$ als deelruimte van $\mathbb{R}^2$. Dus $U=\{  (\lambda, 2\lambda) \in \mathbb{R}^2 | \lambda \in \mathbb{R} \}$. 
+(a) bereken alle vectoren loodrecht op $U$. $W = \{  (x,y) \in \mathbb{R}^2 | y=\frac{-x}{2} \}$. 
+Is $W$  deelruimte? Ja, want $(0,0)$ zit erin, en lineaire combinaties van willekeurige $w \in W$ zitten er ook altijd in (heb ik vlug nagegaan). 
+Dimensies van $U$ en $W$ telkens 1. 
+Directe som? Ja, als ik het teken in het vlak dan besluit ik van wel. 
+Bewijs? 
 
 
+Beschouw willekeurige $u, w$, dan is willekeurig element uit $U \bigoplus W$ een vector $  (\lambda, 2\lambda)  + (x,y=\frac{-x}{2}) = (\lambda + x , 2\lambda - \frac{x}{2})  $ met $\lambda, x$ vrij te kiezen. 
+Nemen we $x=-\lambda$ dan krijgen we $(0, \frac{5}{2}\lambda)$ die erin zit (en dus ook alle veelvouden).  Nemen we $ 2\lambda = \frac{x}{2} $ of $x=4 \lambda$, dan: $( 5\lambda , 0)$, en alle veelvouden. 
+TODO: intu\"itief voel ik aan dat directe som de volledige ruimte is, maar dit bewijs hierboven voelt niet juist aan om aan te tonen dat willekeurige $(x,y)$ kan geschreven worden als som van een $u$ en een $w$. Nog wat af te werken. 
+
+\subsection{eigenvectoren matrix: orthogonaal of niet?}
+
+$A = \begin{pmatrix} 6 & -4 \\ -4 & 6 \end{pmatrix}$. $B = \begin{pmatrix} 1 & 1 \\ 0 & 2 \end{pmatrix}$. 
+
+Eigenwaarden van $A$: uitgerekend en gevonden: $\{ 2, 10 \}$. 
+Eigenvectoren van $A$ bij $\lambda=2$: alle $(x,x)$. Eigenvectoren van $A$ bij $\lambda=10$: alle $(x,-x)$. 
+Zijn bvb. $(1,1)$ en $(1,-1)$ orthogonaal? Ja. Kunnen we ook orthonormale vectoren vinden? Ja, uiteraard, gewoon die beide normeren, zijn nog steeds eigenvectoren. 
+
+Voor $B$: eigenwaarden zijn $\{ 1,2 \}$. Eigenvectoren bij $1$: alles van de vorm $(x,0)$. 
+Eigenvectoren bij $2$: alles van de vorm $(x,x)$. Nooit orthogonaal, laat staan orthonormaal. 
+Want: $<(x,0), (x,x)> = x^2$ is alleen $0$ als $x=0$ dus voor inproduct van de nulvector met zichzelf. 
+
+Allez, ik verwacht straks in de les dus iets over orthogonaliteit van eigenvectoren... 
+
+\section{Les 12, 19 dec}
 
 \section*{KEEP ME TO JUMP TO END}
 
