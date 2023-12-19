@@ -1071,7 +1071,119 @@ Want: $<(x,0), (x,x)> = x^2$ is alleen $0$ als $x=0$ dus voor inproduct van de n
 
 Allez, ik verwacht straks in de les dus iets over orthogonaliteit van eigenvectoren... 
 
-\section{Les 12, 19 dec}
+\section*{Les 12, 19 dec}
+
+Eindigdimensionale inproductruimte = Euclidische ruimte. 
+We kunnen de bekende ruimte als beeld houden van wat we gaan zien, ook al gelden onze intu\"ities niet meer voor andere vectorruimten. Bvb. loodrechte projecties: gebaseerd op kortste afstand. Jpeg-standaard foto's: zeer hoog-dimensionale ruimte (bvb. elke pixel een vector). Algoritme is loodrechte projectie naar lager-dimensionale ruimte. En een snel algoritme. Bij bewegende beelden nog belangrijker om dit snel te doen. 
+
+Definitie 6.30. Loodrecht complement. Bvb.: voor een vlak is het loodrecht complement een loodrechte rechte op dat vlak). 
+
+Hoe vinden we een loodrechte projectie op abstracte manier? Ofwel op zoek naar kortste afstand. Beetje analyse-achtig. Andere methode via meetkundige constructie: langs loodlijn neerlaten = punt schrijven als ontbinding van stuk in vlak en stuk op loodlijn. (dus uit somruimte van oorspronkelijke ruimte en het loodrecht complement). Als dit bovendien op 1 en slechts 1 manier kan, hebben we een loodrechte projectie. 
+
+Stelling 6.31 gaat hierover. 
+
+Opm: loodrecht complement is altijd deelruimte (volgt uit lineariteit van scalaire product). 
+
+Bewijs van stelling 6.31: alleen punt (2) is echt te bewijzen. (1) omdat nulvector de enige is die loodrecht op zichzelf staat. En (3) volgt gewoon uit (2), en (4) uit (3). 
+Bewijs: schrijf eender welke vector uit $V$ als som van vector uit $U$ en vector uit $U^{\perp}$. (geg. $U \subset V$). Principe: willekeurige $v$, T.B. $\exists u \in U, w \in U^{\perp}: v=u+w$.
+Bewijs: via ONB (ortho-normale basis) voor $U$. Stel $w=v-u$, dan nog gewoon bewijzen dat $w \in U^{\perp}$. Voldoende te bewijzen dat $w$ loodrecht op elke basisvector (want dan loodrecht op elke LC hiervan, dus op volledige deelruimte). 
+Gewoon uitrekenen. 
+
+Uitwijding: 
+\begin{itemize}
+    \item notatie projectie $\text{pr}_U(v)$, loodrechte projectie van vector $v$ op deelruimte  $U$. 
+    \item we hebben expliciete formule: $\text{pr}_U(v) = \sum <v, u_i> u_i$. 
+    \item het zal blijken dat deze vector het dichtst ligt bij $v$ en toch in $U$. (zie kleinste kwadraten-benadering). 
+    \item wavelets: compressie door projectie op laagdimensionale ruimte; wavelets zijn voor spraakcompressie geschikt. (gsm compressie) 
+    \item $(U^{\perp})^\perp = U$. Via twee inclusies! Ene is evident: $U \subset  (U^{\perp})^\perp $. Andere inclusie: bewijs via dimensie-verbanden. Deelruimte met dezelfde dimensie. 
+    \item uniciteit van loodrecht complement: volgt uit directe som, dus op hoogstens 1 manier te schrijven als som, en we hebben 1 manier gevonden, dus is het uniek. Anders gezegd: (1) uit stelling zegt "hoogstens 1 manier", ... (nog eens over nadenken). 
+    \item praktisch: orthonormale basis vinden, en dan projecteren. Dit is ook de beste/snelste manier
+\end{itemize}
+
+Dan nog eigenschap: "de loodrechte projectie pr$_U(v)$ is het punt in $U$ zo dicht mogelijk bij $v$. Herinnering afstand $d(u,v) = || u-v || = \sqrt{ <...,...> }$. 
+Pythagoras algemeen: als $u \perp v$ dan is $|| u+v ||^2 = ||u||^2+||v||^2$.
+
+Dan bewijs zelf. 
+T.B. Stel $u = $pr$_U(v)$. Neem $u' \in U, u' \neq u$, dan is d$(v,u') >$ d$(v,u)$. 
+
+Bewijs: niet zo moeilijk. Definitie op beide afstanden, Pythagoras op de $u'$. Daarin zit $v-u$ en $u-u'$, dat is iets in $U\perp$ en iets in $U$, dus Pythagoras toepassen. Dan zien we extra term en ene die altijd $>0$. Dus grotere afstand. QED. 
+
+Stelling 6.42: spectraalstelling voor symmetrische matrices.
+
+Intro: diagonaliseren van matrices gezien, eigenwaarden/eigenvectoren gezien. Twee obstructies gezien voor diagonaliseerbaarheid: eerste: karakteristiek veelterm niet voldoende re\"ele nulpunten, en tweede: 
+voor specifieke eigenwaarden zou meetkundige multipliciteit strikt kleiner kunnen zijn dan de ... 
+Het straffe is: voor symmetrische matrices gelden geen van beide obstructies. Altijd diagonaliseerbaar, en altijd orthonormale basis van eigenvectoren te vinden. 
+
+Even herhaling gelijkvormigheid. 
+Definitie. $\exists P \text{ inverteerbaar met } B=PAP^{-1}$. 
+Denk aan $A$ en $B$ als matrices van zelfde transformatie maar met andere basissen. Dan is $P$ de verandering van basis. 
+
+Even denken: wat maakt symmetrische matrix bijzonder? Kijken we naar standaard inproduct op $\mathbb{R}^n$, en herschrijven we als kolomvectoren en getransponeerden hiervan dus rijvectoren. In $\mathbb{C}^n$ moeten we met complex toegevoegden werken. 
+Als $A=A^T$ dan is $<AX,Y> = <X,AY>$ (toverformule) voor alle $X,Y$ in $\mathbb{R}^n$ (en zelfs in $\mathbb{C}^n$).
+
+Neem $X,Y \in \mathbb{C}^n$. $<AX,Y> = (AX)^T$. 
+... niet alles opgeschreven TODO
+A is reele symmetrische matrix dus complex toegevoelgde doet niks. 
+... komt <X,AX> uit. 
+(op einde in de les: ook complexe matrices erbij halen). 
+
+Definitie: een complex matrix noemen we Hermitisch als $A=A-toegvoegd-getransponeerd$. Dan blijft bovenstaande formule gelden. Maw: als je transponeert, krijg je complex toegevoegde. 
+
+Die ene toverformule, daar gaan we alles uit afleiden nu. 
+
+(pauze) 
+
+Eigenschap 1: als matrix $A$ (nxn) en $A=A^T$ dan is elke nulpunt van $\phi_A$ re\"eel. 
+Bewijs in de les gezien. Via omweg complexe eigenwaarden en complex eigenvectoren, en dan T.B. $\lambda = \overline{\lambda}$.  
+Neem $X \in \mathbb{C}^n$, $X \neq 0$ en $AX=\lambda X$. Dan $<AX,X>$ op twee manieren uitrekenen: via $AX=\lambda X$, en dan lineariteit in eerste term voor Hermitisch prodcut;  en anderzijds via toverformule voor symmetrische matrices $<AX,X> = <X,AX>$. Etc. dan verschil nemen, moet nul zijn want gelijk, en $X \neq 0$, dus $||X|| \neq 0$, dus moet ... QED. 
+
+Ons eerste obstakel is weg: stelling van Gauss, karakteristiek veelterm te schrijven als eerstegraadstermen met complexe getallen. Maar hier voor symmetrische matrices zijn dat dus re\"ele getallen. 
+
+Waar we naartoe willen: meetkundige en algbra\"ische multipliciteiten gelijk voor alle eigenwaarden. 
+
+Maar eerst eigenschap 2: 
+Als $\lambda \in \mathbb{R}$ eigenwaarde, van $A \in \mathbb{R}^{nxn}, A=A^T$, dan zal voor alle $X \in E_\lambda^{\perp}: AX \in  E_\lambda^{\perp}$. 
+Herinner: $E_\lambda = \{ ...  \} $
+
+Bewijs: neem vector $Y \in E_\lambda$. T.B. $AX \perp Y$. 
+Toverformule: $<AX,Y> = <X,AY> = <X,\lambda Y> = \lambda <X,Y> = 0$. QED. 
+
+
+Eigenschap 3: Als $A \in \mathbb{R}^{nxn}$, $A=A^T$, en $\lambda \in \mathbb{R}$ is een eigenwaarde, dan is d($\lambda$) = m($\lambda$. 
+
+Bewijs. Via basis van $E_\lambda$. We kunnen dan "aanvullen" met basis van $E_\lambda^{\perp}$. Omdat $\mathbb{R}^n$ gelijk is aan directe som, is unie van die basissen een basis van $\mathbb{R}^n$. 
+Noemen we de transformatie $L_A$, en de matrix ervan $A$: $L_A(X)=AX$. Matrix $L_A$ bouwen via co\"ordinaten van basisvectoren. Via eigenwaarde definitie herschrijven als co\"ordinaten van $\lambda u_1$. Maar dit is gewoon een kolom met $\lambda$ en de rest $0$. Dit doen we voor $k$ kolommen. 
+Dan wordt het subtieler. Kolom $k+1$: co$_\beta(L_A(u_{k+1}$. Via vorige eigenschap: na afbeelding zit die vector nog steeds in $E_\lambda^\perp$. Maar wat is de co\"ordinaat hiervan? Sowieso nullen voor de vectoren die loodrecht staan, dus eerste rijen allemaal nul. Rest kennen we niet (lineaire combinatie van basisvectoren van deelruimte loodrecht).  
+Bekomen matrix als grote blokmatrix bekijken, met nul-matrices, $\lambda$ keer eenheidsmatrix, en stuk $B$ onbekend. 
+$\phi_A(X) = det(X \mathbb{I}_n - \text{onze blokmatrix} $. Dit soort determinant kennen we: product van determinanten van niet-nul blokken. We hebben dan iets staan waarvan $\lambda$ al $k$ keer een nulpunt is. Dus $m(\lambda)=k$. 
+Dan is nog voldoende te bewijzen: $\phi_B(\lambda) \neq 0$. 
+Uit ongerijmde: stel $\lambda$ wel nulpunt van $\phi_B$. Dan is $\lambda$ een EW van $B$. Dus er is een niet-nul eigenvector $Z$ zodat $BZ=\lambda Z$. Maar hiermee kunnen we een eigenvector maken voor oorspronkelijke matrix $A$: namelijk ..., en ik was den draad kwijt. Komt erop neer: nieuwe eigenvector gevonden niet in $E_\lambda$, maar dat is contradictie, dus hypothese fout. 
+Kijken naar die blokmatrix: rechts staat 0 en eronder B. Dan is eigenvector van B ook eigenvector van die volledige matrix. Dit zie ik zelf nog niet goed... TODO dit bewijs beter snappen. 
+
+We weten nu al dat $A$ diagonaliseerbaar is. 
+Nog te bewijzen: dat keuze van eigenvectoren ook orthornormaal kan. 
+Dit is nog een klein extra bewijs: 
+Als $A$ symmetrisch is, dan zijn eigenvectoren bij verschillende eigenwaarden diagonaal. Dit is de vierde eigenschap die we nog gaan bewijzen. 
+
+Eigenschap 4: stel A re\"eel en symmetrisch, dan zijn eigenvectoren uit verschillende eigenwaarden loodrecht. 
+Herinner: algemeen zijn ze lineair onafhankelijk. Dit is dus een extraatje voor symmetrische matrices. 
+Bewijs makkelijk: $AX=\lambda X$ en $AY=\mu Y$, en $\lambda \neq \mu$. 
+Schrijven we $\lambda<X,Y> = <\lambda X, Y> = <AX, Y> = ... = \mu <X,Y>$. Dus is $(\lambda - \mu) . <X,Y> = 0$, dus is ... QED. 
+(opnieuw zelfde toverformule gebruikt). 
+
+Nu hebben we spectraalstelling bewezen door  wat we afgelopen weken 
+gezien hebben te combineren. 
+De $P$ die de gelijkvormigheid "doet" is een transformatie van de ene orthonormale basis naar de andere orthonormale basis. Dit noemen we een orthogonale matrix. 
+Stelling 6.46. Interpretatie (2): elementen van product van matrices zien als inproduct van rijen/kolommen. 
+
+Definitie 6.47. Deze $A$ is eigenlijk de matrix $P$ uit de gelijkvormigheids-definitie. Die $P$ is een orthogonale matrix. 
+
+Wat met de complexe getallen: alles blijft hetzelfde, behalve dat het gaat over Hermitische matrices. (getransponeeerde gelijk aan toegevoegde). 
+
+
+Test latex: $\bar{abc}$. $\overline{abc}$. $\Bar{abc}$. 
+
+
 
 \section*{KEEP ME TO JUMP TO END}
 
