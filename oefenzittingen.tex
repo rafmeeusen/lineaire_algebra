@@ -426,11 +426,84 @@ In de oefenzitting:
 
 Niet geweest. Ik stond wat achter met theorie verwerken, en heb eerst wat voor/na beschouwingen bekeken. 
 
-\section{Oefenzitting week 13}
+\section*{Oefenzitting week 13}
+
+
+
 Oefenzitting
 
-    Voor te bereiden: 6.8: 1(A1, A2), 3, 5, bewijs Stelling 6.26
-    In de oefenzitting:  6.8: 15, 14(A1)
+    Voor te bereiden: 
+\subsection*{6.8: 1 p. 283}
+Aantonen dat dit Euclidische ruimte is: beetje raar, er staat in cursus al dat dit het standaard inproduct is (p.248), of toch voor omgekeerde. Dus ik vermoed dat het de bedoeling is om de 4 eigenschappen van definitie 6.1 in detail na te gaan voor dit inproduct. Opfrissing: (1) lineair in de eerste component, symmetrisch, inprod. met zichzelf positief, en inprod. met zichzelf definiet (alleen 0 voor nulvector). 
+Heb dit niet verder voorbereid, nog een interessante TODO. 
+
+Dan voor A1, A2: lengte, inproduct, afstand en hoek berekenen. 
+
+Lengte $A_1$: $||A_1|| = \sqrt{ <A_1, A_1>} = \sqrt{ \text{Tr} (A_1^T A_1)  }$. 
+
+$(A_1^T A_1) =\begin{pmatrix} 0 & 1 \\ 0 & 0  \end{pmatrix}    \begin{pmatrix} 0 & 0 \\ 1 & 0  \end{pmatrix} = \begin{pmatrix} 1 & 0 \\ 0 & 0  \end{pmatrix}$. 
+
+Dus is $||A_1|| = \sqrt{ \text{Tr} (A_1^T A_1)} = \sqrt{ 1 } = 1 $ 
+
+Lengte $A_2$:  
+$(A_2^T A_2) =\begin{pmatrix} 0 & 2 \\ 1 & 0  \end{pmatrix}  \begin{pmatrix} 0 & 1 \\ 2 & 0  \end{pmatrix} = \begin{pmatrix} 4 & 0 \\ 0 & 1  \end{pmatrix} $, dus is $|| A_2 || = \sqrt{5}$. 
+
+Inproduct $<A_1, A_2>$: 
+
+Eerst berekenen we $ A_1^T  A_2 = \begin{pmatrix} 0 & 1 \\ 0 & 0  \end{pmatrix} \begin{pmatrix} 0 & 1 \\ 2 & 0  \end{pmatrix} =\begin{pmatrix} 2 & 0 \\ 0 & 0  \end{pmatrix}  $
+
+Dus is $<A_1, A_2> = \sqrt{2} $
+
+Afstand: $ || A_1 - A_2 || = ||  \begin{pmatrix} 0 & 0 \\ 1 & 0  \end{pmatrix}  - \begin{pmatrix} 0 & 1 \\ 2 & 0  \end{pmatrix}  || = || \begin{pmatrix} 0 & -1  \\ -1 & 0  \end{pmatrix}  || $
+
+... enz. TODO, niet afgemaakt. 
+
+\subsection*{6.8:3 p. 283}
+
+Toon aan dat $\{ (3,-3,0),(2,2,-1),(1,1,4)  \}$ een orthogonale basis is voor de Euclidische ruimte $...,\mathbb{R}^3,...$. 
+
+Hiervoor moeten de 3 vectoren twee aan twee orthogonaal zijn, dus 3 inproducten nakijken: 
+$<(3,-3,0),(2,2,-1)>$, $<(2,2,-1),(1,1,4)  >$ , en 
+ $< (3,-3,0),(1,1,4) >$. Moeten alle 0 zijn. Zien we snel door rap uit het hoofd uit te rekenen. OK. 
+
+Tiens: hebben we de term "Euclidische ruimte" al gezien? Niet gevonden in mijn nota's, dus ik denk het niet ... 
+ 
+\subsection*{6.8:5 p. 283}
+
+Gram-Schmidt op gegeven basis in $\mathbb{R}^3$. Voorlopig overgeslagen.  
+
+
+\subsection*{6.8:6 p. 283}
+(was geen opgave, maar per ongeluk aan begonnen) 
+
+We beginnen met $\{ v_1=1, v_2=X, v_3=X^2 \}$. 
+Eerste vector normeren: $1$ heeft al norm 1 want $\int_0^1 dx = 1$ en $\sqrt{1}=1$. Dus $u_1=1$. 
+
+Dan vectur $u'_2$ vinden: $u'_2 = v_2 - < v_2 , u_1> u_1 = X - <v_2,u_1> 1$.
+
+$<v_2,u_1> = \int_0^1 X dx = \frac{1}{2}$. 
+Dus $u'_2 = X - \frac{1}{2}$. 
+Normeren. 
+$|| u'_2 || = \sqrt{ \int_0^1 (X - \frac{1}{2})^2 } = \frac{1}{\sqrt{12}}$. 
+Dus: $u_2 = \sqrt{12}X - \frac{\sqrt{12}}{2} $. 
+(nog eens online gecheckt: norm is 1, en staat loodrecht op veelterm $1$). 
+Nog verder proberen uit te rekenen, maar weer rekenfout gemaakt (online verificatie), en gestopt. 
+
+
+\subsection*{bewijs stelling 6.26, p. 259}
+Gegeven orthonormale basis $\beta=\{ v_1, v_2, ..., v_n\}$. 
+Bewijs voor twee willekeurige vectoren $v,w$ dat $<v,w> = \sum x_i y_i$, met $(x_1,...,x_n)$ de co\"ordinaatvector van $v$ ten opzichte van $\beta$, en de $y_i$ die van $w$. 
+
+We kunnen dus schrijven: $v = x_1v_1 + x_2v_2 +...$. En $w = y_1v_1 + y_2v_2 +...$ (betekenis van een co\"ordinaatvector). 
+
+En dan geldt: $<v,w> = \sum \sum <x_i v_i , y_j v_j > = \sum \sum x_i y_j < v_i , v_j >$ waarbij de beide sommen lopen over de $i$ en de $j$ van $1$ tot $n$. (wegens lineariteit van inproduct). 
+Nu staat er in elke term van de som een $<v_i , v_j>$, en wegens orthogonaal zijn deze $0$ voor alle $i \neq j$. Dus blijft over:  $<v,w> = \sum x_i y_i < v_i , v_i >$ voor $i=1,2,...n$. Maar de $v_i$ zijn ook genormaliseerd, dus elke $< v_i , v_i >$ is $1$. QED. 
+
+\subsection*{Oefeningen voor in de oefenzitting: }
+
+\subsection*{6.8: 15} 
+
+\subsection*{6.8: 14(A1)} 
     
 
 \section{Leeg} 
