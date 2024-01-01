@@ -1190,6 +1190,51 @@ Definitie 6.47. Deze $A$ is eigenlijk de matrix $P$ uit de gelijkvormigheids-def
 Wat met de complexe getallen: alles blijft hetzelfde, behalve dat het gaat over Hermitische matrices. (getransponeeerde gelijk aan toegevoegde). 
 
 
+\section*{Les 12, nabeschouwing}
+
+\subsection{Oef. 6.8.8c}
+
+Op papier aan gewerkt. 
+Eerst via lineaire combinaties de $vct$ beetje herwerkt naar meer nullen. 
+$\begin{pmatrix}0&-1\\0&1 \end{pmatrix}, \begin{pmatrix}1&1\\1&1 \end{pmatrix}, \begin{pmatrix}0&0\\2&1 \end{pmatrix}$
+Ik denk dat dit mag. TODO: op basis waarvan mag dit? Hoe weet ik dat ik niet per ongeluk informatie weggooi? Lijkt dit op rij-operaties bij matrices? 
+Dan stelsels gemaakt via inproduct van matrix $\begin{pmatrix}a&b\\c&c \end{pmatrix}$ met de basisvectoren. (TODO: is dit basis?). Ik kwam stelsel uit, en kom tot volgende matrixvorm die orthogonaal zou zijn op alle drie: 
+
+ $\begin{pmatrix}-\frac{3}{2} \lambda&\lambda\\ \frac{-1}{2}\lambda & \lambda \end{pmatrix}$. 
+
+ TODO: nakijken of dit klopt. Evtl. online rekentool. 
+
+\subsection{Definitie 6.35 p. 267}
+
+Uitgewerkt op papier. Klopte. 
+Gewoon die orthogonale basis vector per vector normeren, blijft natuurlijk (?TODO: is dit natuurlijk?) orthogonaal, en wordt dan orthonormale basis. 
+Met orthonormale basis kunnen we projecteren. 
+
+
+\subsection{complexe analogon van de toverformule}
+OK, had ik al gedaan in mijn theorie-nota's. Ik dacht dat dit zo in de les was gedaan, maar blijkbaar was het in de les toch re\"eel alleen. Ik kon toen niet goed volgen, dus ... 
+
+
+\subsection{Stelling 6.47 p.276}
+
+Bewijs equivalentie tussen (1) en (2). 
+
+Eerste equivalentie: matrixproduct kan gezien worden als standaard inproduct van rijen en kolommen. Als dat dezelfde (getransponeerde) orthonormale vectoren zijn, 
+dan komen uit die inproducten alleen 0 en 1, kan je schrijven als $(B)_{ij}$, en voor $i=j$ vs. $i\neq j$ argumenteren dat je dan eenheidsmatrix krijgt. 
+
+Tweede equivalentie: gegeven $A^T \cdot A = \mathbb{I}$.
+We werken gewoon omgekeerd: schrijf $A$ als kolommen van vectoren uit $\mathbb{R}^n$. Dan krijgen we bij vermenigvuldiging inproducten, waarvoor geldt dat ze 0 zijn behalve voor die met zichzelf vermenigvuldigd worden. Conclusie is dat ze loodrecht zijn en genormeerd zijn. 
+(TODO: nog eens nakijken definities hiervan) 
+
+\subsection{Opdracht 6.50 p. 276}
+
+Toon omgekeerde van stelling 6.49 aan. 
+Dus gegeven $P \in \mathbb{R}^{n \times n}$, $ P^T = P^{-1} $, $P^{-1}AP = P^TAP =$ diagonaal. 
+Te bewijzen: $A$ is symmetrisch. 
+
+Niet ver mee geraakt. Ik moet eerst die diagonalisering opfrissen en beter begrijpen. 
+
+
 \section*{KEEP ME TO JUMP TO END}
 
 \end{document}

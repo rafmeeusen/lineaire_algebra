@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Mijn samenvatting lineaire algebra}
+\author{Raf Meeusen}
+\date{2023-2024}
+
+% mark paragraphs with empty line instead of indented first line
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+\begin{document}
+
+
+
+\maketitle
+
+% H1 
+\section{Eerstegraadsvergelijkingen en matrices}
+
+\subsection{Definities, notaties}
+
+\begin{itemize}
+    \item p.15-17: drie ERO's, type I ($\lambda R_i$), type II ($R_i \leftrightarrow R_j$), type III ($R_i \rightarrow R_i + \lambda R_j$)
+    \item p.20: definitie 1.5 (leidend element, echolonform, trapvorm, rijgereduceerd) 
+    \item p.21: definitie 1.6 (gebonden variabelen, vrije variabelen) 
+    \item p.28-29: $A=(a_{ij})$ en $(A)_{ij} = a_{ij}$, soms met $1 \leq i \leq m$ etc. erbij
+    \item p.29: "we werken analoog voor kolomvectoren" TODO ik snap dit niet goed; is $\mathbb{R}^n$ voor zowel rij- als kolomvectoren? 
+    \item p.30 definitie 1.18  
+    \item p.32 definitie 1.22 matrixproduct;  TODO eens zelf uitschrijven zonder te spieken
+    \item p.32 definitie 1.23: scalaire matrix
+    \item p.34 definitie $A^n$, en afspraak $A^0 = \mathbb{I}_n$
+    \item p.34 definitie spoort (trace) 
+    \item p.35 definitie 1.29 links inverse en rechts inverse van $A \in \mathbb{R}^{m \times n} $; matrix vermenigvuldiging dus dimensies moeten kloppen, en bij niet-vierkante heeft links-inverse andere dimensies dan rechts-inverse! 
+    \item p.36 definitie 1.33: inverteerbare = reguliere = niet-singuliere matrix; omgekeerde: niet-inverteerbaar = singulier
+    \item definitie 1.36: elementaire matrix van type I, II of III, notatie $E_n$
+    \item definitie 1.43: bovendriehoeks en benedendriehoeks: ook voor niet-vierkante matrices! 
+\end{itemize}
+
+
+\subsection{Stellingen}
+
+\begin{itemize}
+    \item Propositie 1.8 (voor \emph{elke} matrix) 
+    \item Stelling 1.11 (strijdig/1 oplossing/oneindig veel oplossingen) 
+    \item Stelling 1.32 (p.36): hier al (eenvoudig) aangetoond dat bij vierkante $A$ de links en rechts inverse (als ze bestaan) gelijk moeten zijn 
+    \item Stelling 1.38: goed begrijpen, onthouden
+    \item Stelling 1.39: grappig bewijs in de zin dat equivalentie wordt bewezen in vorm van slang die zijn eigen staart bijt. 
+    \item Lemma 1.44: product van $L_1$ en $L_2$ is opnieuw een $L$; idem voor $U$ ; $L$ benedendriehoeks, $U$ bovendriehoeks. 
+\end{itemize}
+
+\subsection{Redeneringen, inzichten}
+
+p. 15 al: stelsel in matrixvorm: $A\cdot X=B$. Met in $X$ variabelen. Als $B=0$ dan homogeen stelsel. 
+
+ERO's veranderen de oplossingsruimte van het stelsel niet. Voor type I en II redelijk triviaal, voor type III minder triviaal (p.17: kan je dit uitleggen). TODO: ooit als oefening gedaan denk ik. 
+Elke ERO kan ongedaan gemaakt worden met inverse ERO, en telkens is inverse ERO van zelfde type. 
+
+De verbanden tussen $m \times n$ matrix in echelonvorm, aantal niet-nul rijen $r$, en oplosbaarheid: TODO eens goed voor mezelf samenvatten. Vraag: kan $r > n$  zijn?? 
+
+TODO: eens goed nakijken; zijn de type III operaties altijd met $j<i$ als we Gauss doen?? (zie verder LU decomp). 
+
+p.31: eigenschappen optelling. Vooral $(A+B)^T = A^T + B^T =  B^T+A^T  $ onthouden en inzien. 
+
+Stel $A =  \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_q  \end{pmatrix}$ met $a_i$ de rijen van $A$. En stel $B = (b_1 b_2 ... b_p)$, met $b_i$ kolommen van $B$. 
+Dan $A \cdot B = \begin{pmatrix} A\cdot b_1 & A\cdot b_2 & ... & A\cdot b_p) \end{pmatrix}$  (zie p. 33 punt 2). 
+En er is een rij-equivalent die hier niet bij staat: $A \cdot B = \begin{pmatrix} a_1\cdot B \\  a_2\cdot B \\ ... \\ a_q\cdot B \end{pmatrix}$. TODO: nakijken of dit allemaal klopt. 
+Ook: $1 \times n$ maal $n \times 1$ geeft 1 bij 1, maar omgekeerd n bij n. En ook: $n \times 1$ maal $1 \times m$ geeft $n \times m$, niet vierkant dus. En $1 \times m$ maal $B = m \times n$ heeft $n \times m$. 
+Soit, dit allemaal nog eens samenvatten misschien? 
+
+p.33 eigenschappen nu we ook vermenigvuldiging hebben. $(A \cdot B)^T = A^T B^T$. En $A \cdot \mathbb{I}_n = \mathbb{I}_n \cdot A$. 
+
+p.34 puntje 7: toch wel als $A$ inverteerbaar is? Komt normaal nog wel ergens terug... 
+
+TODO: opdracht 1.25 (p.34) voor inzicht
+
+TODO: opdracht 1.27 (p.34) voor inzicht
+
+p. 36, eigenschap 1.31: als $A \times B = \mathbb{I}_m$ dan is  $B^T \times A^T = \mathbb{I}_m$. Evident maar interessant. 
+
+TODO: opdracht 3 en 4 p. 36
+
+Elementaire operatie met elementaire matrix: links vermenigvuldigen! $E_n \times A$. 
+
+Procedure inverteren via $(A|\mathbb{I}_n)$: snappen hoe dit in mekaar zit. En ook onthouden: als je nulrij uitkomt, dan niet-inverteerbaar. Als je $\mathbb{I}_n)$ uitkomt, dan wel inverteerbaar. 
+
+Vraag die ik me stelde: zijn volgende twee uitspraken equivalent? en geldt dit dan voor alle $B$? Antwoord is denk ik ja, zie verder bij Cramer op p.75. 
+\begin{itemize}
+    \item $A\times X = 0$ heeft enkel de triviale oplossing $X=\mathbb{O}$
+    \item $A \times X = B$ heeft 1 oplossing 
+\end{itemize}
+
+LU decompositie. O.a. te onthouden: 
+\begin{itemize}
+    \item echelon en trapvorm zijn bovendriehoeks
+    \item elemenataire matrices type I zijn boven- en benedendriehoeks; type II zijn geen van beide; type III zijn benedendriehoeks als $j<i$
+\end{itemize}
+
+
+% H2
+\section{Determinanten}
+
+% H3
+\section{Vectorruimten}
+
+% H4
+\section{Lineaire afbeelingen en transformaties}
+
+% H5
+\section{Eigenwaarden, eigenvectoren, diagonaliseerbaarheid}
+
+
+% H6 
+\section{Inproductruimten en Euclidische ruimten}
+
+Hoogtepunt cursus: p.273: spectraalstelling i.v.m symnmetrische of Hermitische matrices. 
+Legt verband tussen: 
+\begin{itemize}
+    \item Euclidische ruimte (dus vectorruimte met inproduct)
+    \item lineaire transformatie
+    \item matrices
+    \item orthonormale basis
+    \item eigenvectoren
+\end{itemize}
+
+\end{document}
