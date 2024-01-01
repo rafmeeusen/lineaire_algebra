@@ -76,7 +76,7 @@ Methode: algoritme, technieken.
 
 Dan nog gezien: stelling 1.11. (ivm. 1 oplossing, 0 oplossingen, oneindig veel oplossingen)
 
-Notatie: $\mathbb{R}^{nxk}$ , voor n rijen / k kolommen. 
+Notatie: $\mathbb{R}^{n\times k}$ , voor n rijen / k kolommen. 
 
 Voorbeelden bewijzen eigenschappen matrices: onthouden dat een matrix defini{\"e}ren erop neerkomt om elk element te bepalen (notatie Aij = element op rij i en kolom j). 
 
@@ -89,6 +89,7 @@ Termen:
 \item diagonaalmatrix
 \end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Les 1 nabeschouwing}
 
 Oefening 1, S1 en S2 gemaakt. S3 begonnen, maar niet helemaal afgewerkt.
@@ -147,37 +148,41 @@ kolom van niet constanten: uitkomst van corresponderende var is gedeeld door lam
 \end{itemize}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Les 2 voorbereiding}
 
 Gelezen. 
 2a) toon aan dat I.A = A = A.I . Voor 2x2. 
 \[I = 
-1  0
-0  1 \]
+\begin{pmatrix}
+1  & 0 \\
+0  & 1    
+\end{pmatrix}
+ \]
 \[
 A = 
-a11  a12 \\
-a21 a22\]
+\begin{pmatrix}
+a_{11} & a_{12} \\
+a_{21} & a_{22}
+\end{pmatrix}
+\]
 
 (onthouden: rij vd linkse matrix x kolom vd rechtse matrix) 
 
-\[(I x A)11 = 1.a11 + 0.a21 =a11\]
-\[(I x A)12 = 1.a12 + 0.a22 = a12\]
-\[(I x A)21 = 0.a11 + 1.a21  =a21\]
-\[(I x A)22 = 0.a12 + 1.a22 =a22\]
+\[(I \cdot A)_{11} = 1.a_{11} + 0.a_{21} =a_{11} \]
+\[(I \cdot A)_{12} = 1.a_{12} + 0.a_{22} = a_{12}\]
+\[(I \cdot A)_{21} = 0.a_{11} + 1.a_{21}  =a_{21}\]
+\[(I \cdot A)_{22} = 0.a_{12} + 1.a_{22} =a_{22}\]
 
 
 idem voor andere. 
 
 2b) 
 Zoek voorbeeld van 2x2 matrices waarbij A . B niet gelijk is aan B. 
-\[A 
-1  0
-1  1 
-en
-0  1
-0  0 \]
+
+$A = \begin{pmatrix} 1 & 0\\ 1 & 1  \end{pmatrix}$ 
+en $B = \begin{pmatrix}0 & 1 \\0 & 0 \end{pmatrix}$  
 
 heb ik eens uitgeteld; verschillend. 
 
@@ -198,12 +203,13 @@ omgekeerd, wat drukt .. uit  ; OK, kan ik
 
 toon aan dat ... : OK, gedaan; is wat schrijfwerk en lastig, maar geen rocket science
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Les 2, 3 okt}
 
 
-Matrices vermenigvuldigen. Te onthouden: rij links, kolom rechts. Een rij x een kolom = 1 getal. (makkelijk te onthouden, want ik weet ook nog dat nxm matrix maal mxp matrix een nxp matrix geeft, en nxm matrix heeft n rijen met lengte m, en de lengte van de kolommen van de tweede is ook m. Logisch. Aantal rijen = lengte van de kolommen, en vice versa. 
+Matrices vermenigvuldigen. Te onthouden: rij links, kolom rechts. Een rij x een kolom = 1 getal. 
+(makkelijk te onthouden, want ik weet ook nog dat nxm matrix maal mxp matrix een nxp matrix geeft, en nxm matrix heeft n rijen met lengte m, en de lengte van de kolommen van de tweede is ook m. Logisch. Aantal rijen = lengte van de kolommen, en vice versa. 
 
 % even vooruitlopen waarom dat matrixproduct zo gedefinieerd is: 
 % 
@@ -216,10 +222,10 @@ Matrices vermenigvuldigen. Te onthouden: rij links, kolom rechts. Een rij x een 
 
 \begin{itemize}
     \item veel eigenschappen en rekenregels
-    \item een nulmatrix $O_{nxk}$
+    \item een nulmatrix $O_{n \times k}$
     \item een eenheidsmatrix $I_n$ (vierkante matrix) 
     \item MAAR: vermenigvuldiging niet-commutatief (logisch want niet eens gedefinieerd voor alle nxk en kxl dimensies. 
-    \item $AB$ kan nul zijn terwijl $A \neq O$ en $B \neq O$
+    \item $A \cdot B$ kan nul zijn terwijl $A \neq O$ en $B \neq O$
 \end{itemize}
 
 
@@ -269,6 +275,8 @@ Dan nog even over LU-decompositie gehad. (lower / upper triangular = benedendrie
 
 Ook "de spil" vernoemd hier ivm rij-herleiden. Dus ook leerstof (spil/gauss-eliminatie...). En volgende redenering: als je A in echelonvorm kan zetten zonder rijen te verwisselen, en we weten dat echelonvorm een U-vorm is. Dus $U= (\Sigma_k ... \Sigma_1) A$, met $\Sigma_k ... \Sigma_1$ inverteerbaar, en inverse hiervan is een L-vorm (indien geen rij-wissels). 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \section{Les 2 nabeschouwing}
 
 1. stelsel herleiden naar trapvorm, dan elementaire matrices hiervoor opschrijven, en dan A herschrijven als product van elementaire (die dan inverse zijn van oorspronkelijke elementaire!) en de trapvorm zelf. 
@@ -281,6 +289,8 @@ OK, alleen twijfelde ik wat bij inverteren van de elementaire. Niet slecht om ee
 4. Doenbaar, wat rekenwerk. Gevolg 1.40 is pagina 40. Maar nog niet gedaan. 
 
 5. Oefening 1.35 uit boek (is op p. 53, idempotente matrix). Nog niet gedaan. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Les 3 voorbereiding}
 
