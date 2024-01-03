@@ -100,25 +100,92 @@ LU decompositie. O.a. te onthouden:
     \item elemenataire matrices type I zijn boven- en benedendriehoeks; type II zijn geen van beide; type III zijn benedendriehoeks als $j<i$
 \end{itemize}
 
+Een bovendriehoeksmatrix is rij-equivalent met diagonaalmatrix met dezelfde diagonaalelementen (ALS er geen nullen op de diagonaal staan). 
+Als er wel nullen op de diagonaal staan: dan komt er een nulrij bij rij-gereduceerde vorm. Idem voor benedendriehoeks. Welke rij-operaties? Alleen type III nodig! (rijwissels niet nodig, en gewone herschaling van 1 rij ook niet nodig). Van belang bij determinanten. 
+
+TODO: eens kijken naar transponeren van elementaire matrices. Wat voor matrices worden het? Blijven het elemenataire matrices? (van belang bij determinanten) 
+
 
 % H2
 \section{Determinanten}
 
+\subsection{Definities, notaties}
+
+\begin{itemize}
+    \item definitie 2.1: definitie van "een" determinantafbeelding, met 3 eigenschappen D1 ($f(\mathbb{I}_n=1$) , D2 (2 rijen wisselen, teken $f$ verandert), D3 ($f(A)$ is lineair in de eerste rij)
+    \item (p.60-63)  permutatie, transpositie, inversie, sgn, identieke permuatie $Id$ 
+    \item "de determinant" det($A$) of $|A|$ of det $A$
+    \item definitie 2.19: cofactor $C_{ij}$ en minor $M_{ij}$ ; verband $C_{ij} = (-1)^{i+j} \cdot \text{det}(M_{ij})$
+    \item definitie 2.22: adjunctmatrix = toegevoegde matrix : adj($A$) = $(C_{ij})^T$
+\end{itemize}
+
+\subsection{Stellingen}
+\begin{itemize}
+    \item stelling 2.2: direct gevolg van definitie determinant: D4 (lineair in elke rij) en D5 (nulrij of 2 gelijke rijen: 0) ; opgelet: bewijs voor nulrij vind ik niet zo triviaal; volgens mij gebaseerd op $x = \lambda x$ voor alle $\lambda$. Als $x \neq 0$, dan moet $\lambda=1$ en dus niet voor alle $\lambda$, dus moet $x=0$? of zoiets? 
+    \item stelling 2.3: (1) impact op $f(A)$ van type III ERO, (2) beeld $f(E)$ voor elementaire matrices type I, type II en type III, en (3) $f(E\cdot A)= f(E)\cdot f(A)$ met $E$ elemenataire matrix
+    \item (p.59) stelling 2.4: (1) $f(U)$ en $f(L)$ (driehoeksmatrices), (2) verband inverteerbaarheid $A$, (3) $f(A\cdot B) = f(A) \cdot f(B)$, en (4) $f(A^T)$.  
+    \item gevolg 2.5: (1) $f(A)$ bepaalt inverteerbaarheid, (2) $f(A^{-1}) = \frac{1}{f(A)}$, en (3) eigenschappen D2, D3, D4 en D5 ook voor kolommen. 
+    \item stelling 2.7: elke permuatie is samenstelling van transposities (geen bewijs) 
+    \item stelling 2.10: willekeurige permutatie $\sigma$ en willekeurige transpositie $\tau$: sgn($\tau\circ\sigma$) = -sgn($ \sigma$). 
+    \item (geen stelling) \[ f(A) = \sum_{\sigma \in \mathbb{S}_n} \text{sgn} (\sigma) a_{1\sigma(1)} a_{2\sigma(2)} ... a_{n \sigma(n)} \] 
+    \item stelling 2.20 ivm rij-ontwikkeling/kolom-ontwikkeling
+    \item stelling 2.23: $A\cdot$ adj($A$) = det($A$)$\mathbb{I}_n$
+    \item gevolg 2.24: $A^{-1} = \frac{1}{\text{det}A} \text{adj}A$
+\end{itemize}
+
+Ivm bewijs voor 2.4: Bewijs van (1) interessant: gaat via $f(D)$ met $D$ diagonaalmatrix, en via principe dat bovendriehoeks zonder nullen op diagonaal rij-equivalent is met diagonaalmatrix met dezelfde diagonaalelementen! (heb dit inzicht toegevoegd in H1) ; benedendriehoeks: zijn ze vergeten te vermelden in bewijs! maar een benedendriehoeks kan ook via ERO's naar diagonaal omgezet worden via ERO's. $f(D)$ berekenen: herhaaldelijk lineariteit toepassen geeft uiteindelijk product van $d_i$ en $f(\mathbb{I})$. Bewijs voor (2): loopt via $A = E_k \cdot E_{k-1} \cdot ... E_1$, en via $f(E\cdot A) = f(E)f(A)$. Bewijs voor (4): gebaseerd op $f(E)=f(E^T)$. 
+
+\subsection{Redeneringen, inzichten}
+
+Een permutatie schrijven als samenstelling van transposities is niet uniek. Toch is het aantal steeds even of oneven. En ook: $\tau \circ \tau = Id$
+
+Formule voor determinant afleiden: niet zo triviaal, nogal wat gedoe en truken. 
+Formule voor rij-ontwikkeling afleiden: ook niet zo triviaal. 
+
+
 % H3
 \section{Vectorruimten}
+
+\subsection{Definities, notaties}
+
+\subsection{Stellingen}
+
+\subsection{Redeneringen, inzichten}
+
 
 % H4
 \section{Lineaire afbeelingen en transformaties}
 
+\subsection{Definities, notaties}
+
+\subsection{Stellingen}
+
+\subsection{Redeneringen, inzichten}
+
+
+
+
 % H5
 \section{Eigenwaarden, eigenvectoren, diagonaliseerbaarheid}
+
+\subsection{Definities, notaties}
+
+\subsection{Stellingen}
+
+\subsection{Redeneringen, inzichten}
+
+
+
 
 
 % H6 
 \section{Inproductruimten en Euclidische ruimten}
 
+
+
 Hoogtepunt cursus: p.273: spectraalstelling i.v.m symnmetrische of Hermitische matrices. 
 Legt verband tussen: 
+
 \begin{itemize}
     \item Euclidische ruimte (dus vectorruimte met inproduct)
     \item lineaire transformatie
@@ -126,5 +193,14 @@ Legt verband tussen:
     \item orthonormale basis
     \item eigenvectoren
 \end{itemize}
+
+
+\subsection{Definities, notaties}
+
+\subsection{Stellingen}
+
+\subsection{Redeneringen, inzichten}
+
+
 
 \end{document}
