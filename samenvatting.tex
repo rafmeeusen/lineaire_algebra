@@ -64,11 +64,16 @@ TODO: eens goed nakijken; zijn de type III operaties altijd met $j<i$ als we Gau
 
 p.31: eigenschappen optelling. Vooral $(A+B)^T = A^T + B^T =  B^T+A^T  $ onthouden en inzien. 
 
-Stel $A =  \begin{pmatrix} a_1 \\ a_2 \\ ... \\ a_q  \end{pmatrix}$ met $a_i$ de rijen van $A$. En stel $B = (b_1 b_2 ... b_p)$, met $b_i$ kolommen van $B$. 
-Dan $A \cdot B = \begin{pmatrix} A\cdot b_1 & A\cdot b_2 & ... & A\cdot b_p) \end{pmatrix}$  (zie p. 33 punt 2). 
-En er is een rij-equivalent die hier niet bij staat: $A \cdot B = \begin{pmatrix} a_1\cdot B \\  a_2\cdot B \\ ... \\ a_q\cdot B \end{pmatrix}$. TODO: nakijken of dit allemaal klopt. 
+Matrixvermenigvuldiging: 
+Stel $A =  \begin{pmatrix} R_1 \\ R_2 \\ ... \\ R_m  \end{pmatrix}$ met $R_i$ de rijen van $A$. En stel $B = \begin{pmatrix}  K_1 & K_2 & ... & K_n \end{pmatrix}$, met $K_i$ kolommen van $B$. 
+Dan $A \cdot B = \begin{pmatrix} A\cdot K_1 & A\cdot K_2 & ... & A\cdot K_n \end{pmatrix}$, zie p. 33 punt 2. 
+En er is een rij-equivalent die hier niet bij staat: $A \cdot B = \begin{pmatrix} R_1\cdot B \\  R_2\cdot B \\ ... \\ R_m\cdot B \end{pmatrix}$. 
+Hieruit is makkelijk in te zien dat als $A$ een nulrij heeft, neem $R_k$, dan heeft ook $A\cdot B$ een nulrij op rij $k$, onafhankelijk van $B$. En dat als $B$ een nulkolom heeft, ook $A\cdot B$ een nulkolom heeft, onafhankelijk van $A$. Inzicht kan nog van pas komen bij inverteerbaarheid van $A\cdot B$. 
+
 Ook: $1 \times n$ maal $n \times 1$ geeft 1 bij 1, maar omgekeerd n bij n. En ook: $n \times 1$ maal $1 \times m$ geeft $n \times m$, niet vierkant dus. En $1 \times m$ maal $B = m \times n$ heeft $n \times m$. 
 Soit, dit allemaal nog eens samenvatten misschien? 
+
+
 
 p.33 eigenschappen nu we ook vermenigvuldiging hebben. $(A \cdot B)^T = A^T B^T$. En $A \cdot \mathbb{I}_n = \mathbb{I}_n \cdot A$. 
 
@@ -86,7 +91,27 @@ TODO: opdracht 3 en 4 p. 36
 
 Elementaire operatie met elementaire matrix: links vermenigvuldigen! $E_n \times A$. 
 
-Procedure inverteren via $(A|\mathbb{I}_n)$: snappen hoe dit in mekaar zit. En ook onthouden: als je nulrij uitkomt, dan niet-inverteerbaar. Als je $\mathbb{I}_n)$ uitkomt, dan wel inverteerbaar. 
+Invertereren. 
+Procedure inverteren via $(A|\mathbb{I}_n)$: snappen hoe dit in mekaar zit. En ook onthouden: als je nulrij uitkomt, dan niet-inverteerbaar. Als je $\mathbb{I}_n$ uitkomt, dan wel inverteerbaar. 
+Eerder gezien dat $A\cdot B$ een nulrij van $A$ of nulkolom van $B$ overneemt. We weten ook dat als $A$ inverteerbaar is, dit eigenlijk wil zeggen dat $A\cdot B = \mathbb{I}$ voor alle $B$. Maar als $A$ een nulrij heeft, heeft $A \cdot B$ een nulrij voor alle $B$, kan $A \cdot B$ nooit gelijk zijn aan $\mathbb{I}$ (want die heeft geen nulrij), en dus kan $A$ niet inverteerbaar zijn. Gelijkaardig voor nulkolom: een matrix met nulkolom is nooit inverteerbaar. (kan beredeneerd worden via getransponeerde etc.) 
+Dus niet alleen het uitkomen van een nulrij tijdens het inverteren via ERO's geeft aan dat matrix niet inverteerbaar is, ook starten met nulrij of nulkolom heeft dit al aan. 
+
+
+Letterlijk in boek: $A$ is inverteerbaar als en slechts als $A = \prod E_i$. 
+
+Oefening 39f (p.54). Als $A$ niet inverteerbaar is, is $AB$ niet inverteerbaar (voor alle $B$). Via determinant is dit makkelijk in te zien, maar nu nog geen determinant gezien. 
+Redenering zonder determinant: als $A$ niet inverteerbaar is, dan bestaat er een $E_k \cdot ... \cdot E_2 \cdot E_1 \cdot A$ met een nulrij. Maar nulrij blijft behouden als je rechts vermenigvuldigt met willekeurige $B$, dus $E_k \cdot ... \cdot E_2 \cdot E_1 \cdot A \cdot B$ heeft ook steeds een nulrij. Dus $AB$ kan herleid worden via ERO's tot matrix met nulrij, dus $AB$ niet inverteerbaar voor eender welke $B$. 
+Kijken we naar $A\cdot B$ voor een matrix $A$ met nulkolom: als $A$ een nulkolom heeft, dan heeft $A^T$ een nulrij, dus is $A^T$ niet inverteerbaar, dus is $A$ niet inverteerbaar (volgt uit opdracht 1.35-2), dus is $A\cdot B$ niet inverteerbaar voor alle $B$. 
+
+$A$ en $B$ inverteerbaar, dan is $A\cdot B$ inverteerbaar (stelling 1.34). 
+Contrapositie: als $A\cdot B$ niet inverteerbaar, dan zijn $A$ en $B$ niet beide inverteerbaar. 
+Als $A$ niet inverteerbaar, dan is $A\cdot B$ ook nooit inverteerbaar (oefening 39f, zie eerder). 
+Contrapositie: als $AB$ inverteerbaar is, dan is $A$ inverteerbaar. Als $B$ niet inverteerbaar is, is $AB$ niet inverteerbaar. Kan via getransponeerde aangetoond worden. 
+Contrapositie van laatste: als $AB$ inverteerbaar, is $B$ inverteerbaar. 
+
+Samengevat: 
+\[ AB \text{ inverteerbaar } \Leftrightarrow A \text{ inverteerbaar } \land B  \text{ inverteerbaar }  \]
+
 
 Vraag die ik me stelde: zijn volgende twee uitspraken equivalent? en geldt dit dan voor alle $B$? Antwoord is denk ik ja, zie verder bij Cramer op p.75. 
 \begin{itemize}
@@ -105,6 +130,7 @@ Als er wel nullen op de diagonaal staan: dan komt er een nulrij bij rij-gereduce
 
 TODO: eens kijken naar transponeren van elementaire matrices. Wat voor matrices worden het? Blijven het elemenataire matrices? (van belang bij determinanten) 
 
+TODO: klopt het dat homogeen stelsel nooit strijdig kan zijn? 
 
 % H2
 \section{Determinanten}
@@ -133,7 +159,7 @@ TODO: eens kijken naar transponeren van elementaire matrices. Wat voor matrices 
     \item gevolg 2.24: $A^{-1} = \frac{1}{\text{det}A} \text{adj}A$
 \end{itemize}
 
-Ivm bewijs voor 2.4: Bewijs van (1) interessant: gaat via $f(D)$ met $D$ diagonaalmatrix, en via principe dat bovendriehoeks zonder nullen op diagonaal rij-equivalent is met diagonaalmatrix met dezelfde diagonaalelementen! (heb dit inzicht toegevoegd in H1) ; benedendriehoeks: zijn ze vergeten te vermelden in bewijs! maar een benedendriehoeks kan ook via ERO's naar diagonaal omgezet worden via ERO's. $f(D)$ berekenen: herhaaldelijk lineariteit toepassen geeft uiteindelijk product van $d_i$ en $f(\mathbb{I})$. Bewijs voor (2): loopt via $A = E_k \cdot E_{k-1} \cdot ... E_1$, en via $f(E\cdot A) = f(E)f(A)$. Bewijs voor (4): gebaseerd op $f(E)=f(E^T)$. 
+Ivm bewijs voor 2.4: Bewijs van (1) interessant: gaat via $f(D)$ met $D$ diagonaalmatrix, en via principe dat bovendriehoeks zonder nullen op diagonaal rij-equivalent is met diagonaalmatrix met dezelfde diagonaalelementen! (heb dit inzicht toegevoegd in H1) ; benedendriehoeks: zijn ze vergeten te vermelden in bewijs! maar een benedendriehoeks kan ook via ERO's naar diagonaal omgezet worden via ERO's. $f(D)$ berekenen: herhaaldelijk lineariteit toepassen geeft uiteindelijk product van $d_i$ en $f(\mathbb{I})$. Bewijs voor (2): loopt via $A = E_k \cdot E_{k-1} \cdot ... E_1$, en via $f(E\cdot A) = f(E)f(A)$. Bewijs voor (3): onderscheid tussen inverteerbare $A$ en niet-inverteerbare $A$. Bewijs voor (4): gebaseerd op $f(E)=f(E^T)$. 
 
 \subsection{Redeneringen, inzichten}
 
@@ -141,26 +167,164 @@ Een permutatie schrijven als samenstelling van transposities is niet uniek. Toch
 
 Formule voor determinant afleiden: niet zo triviaal, nogal wat gedoe en truken. 
 Formule voor rij-ontwikkeling afleiden: ook niet zo triviaal. 
-
+ 
 
 % H3
 \section{Vectorruimten}
 
 \subsection{Definities, notaties}
 
+\begin{itemize}
+    \item definitie 3.2 commutatieve groep (verzameling met 1 bewerking, 4 eigenschappen)
+    \item definitie 3.3 re\"ele vectorruimte, notatie $(\mathbb{R},V,+)$, combinatie commutatieve groep met externe scalaire vermenigvuldiging
+    \item definitie 3.10 deelruimte = iets dat zowel deelverzameling is, alsook vectorruimte op zichzelf
+    \item definitie 3.15 "voortgebracht door"; notatie vct($D$); 
+    \item definitie 3.19 
+    \item definitie 3.20 
+    \item definitie 3.26 (p.104): (een deelverzameling $D$ van $V$ is...) lineaire afhankelijk (niet vrij); lineair onafhankelijke (vrij); "er bestaat een vector in $D$ die een lineaire combinatie is van de andere"; opgelet, dit kan oneindige deelverzameling $D$ zijn! 
+    \item definitie 3.31: "voortbrengend" (kan eindig of oneindig zijn!) ; notatie met opsomming tot $v_n$ alleen voor eindige! 
+    \item definitie 3.33: "basis $\beta$". (kan eindig of oneidig zijn!) ;notatie met opsomming tot $v_n$ alleen voor eindige! 
+    \item definitie 3.38: dimensie van $V$ met eindige basis; en dimensie van $\{ 0\}$ is per definitie $0$
+    \item definitie 3.58: complementaire deelruimte
+    \item definitie 3.61: rijruimte / kolomruimte / nulruimte 
+    \item definitie 3.65: TODO over nadenken 
+\end{itemize}
+
 \subsection{Stellingen}
+\begin{itemize}
+    \item stelling 3.11: deelruimte criterium; niet vergeten: NIET leeg. (en uitaard: elke lin. combin. opnieuw in deelverz.) 
+    \item propositie 3.14: doorsnede van 2 deelruimten is opnieuw deelruimte
+    \item propositie 3.23: een somruimte is een direct som $\Leftrightarrow$ (het is somruimte) en (doorsnede is $\{0\}$); deel 2: voor meer dan twee verzamelingen, moet de doorsnede van elke afzonderlijke met somruimte van alle overige alleen nulvector bevatten! 
+    \item propositie 3.27: $D$ is vrij $\leftrightarrow$ de enige LC van $v_i \in D$ die nulvector geeft, is de LC met alle co\"effici\"enten nul ; 
+    \item stelling 3.35: Lemma van Steinitz. reeds voortbrengend deel met m elementen, dan is elke deelverzameling met meer elementen LA; vrij deel met m elementen, dan is elke deelverz. met minder dan m elementen niet voortbrengend. 
+    \item gevolg 3.36: als je een willekeurig voortbrengend deel van $m$ elementen hebt, en een willekeurig vrij deel van $n$ elementen, dan geldt: $n \leq m$. 
+    \item gevolg 3.37: als er een basis bestaat met $n$ vectoren, dan heeft elke andere basis ook $n$ vectoren
+    \item stelling 3.40: elke vrije deelverzameling kan uitgebreid worden tot basis, elke eindige voortbrengende verzameling kan gereduceerd worden tot een basis. 
+    \item stelling 3.44: triviaal maar praktisch interessant
+    \item stelling 3.45: hetzelfde maar ook voor $\infty$ basis ; interessant bewijs! 
+    \item stelling 3.47: 
+    \item stelling 3.49: elke vector $v$ is unieke lin. combin. van basisvectoren; co\"ordinaatafbeelding bepaald door basis $\beta$. (definitie co\"ordinaatvector van $v$ ten opzichte van $\beta$) 
+    \item stelling 3.53: dim($U+W$) + dim($U \cap W$) = dim($U$) + dim($W$)
+    \item stelling 3.56: als $V= U_1 \bigoplus U_2 \bigoplus ...$ dan dim $V = \sum \text{dim} U_i $
+    \item stelling 3.60: eindige dimensie: elke deelruimte heeft een complementaire deelruimte 
+    \item stelling 3.64: nulruimte blijft behouden bij rijreduceren/gauss-elim. ; en ook de rijruimte ; en dim $N(A)$ + dim $R(A)$ $=n$ met $n$ aantal kolommen 
+\end{itemize}
 
 \subsection{Redeneringen, inzichten}
 
+Commutatieve groep is nooit leeg (neutraal element nodig). Dus is vectorruimte nooit leeg. 
+
+TODO: waarom is (C,R,+) geen vectorruimte? Is het omdat elke $\lambda \cdot v$ erin moet zitten?? 
+
+Een deelruimte moet altijd NE bevatten (de nulvector dus). Omgekeerd: elke deelverzameling zonder de nulvector kan nooit een deelruimte zijn. 
+
+Veel bewijzen in dit hoofdstuk zijn niet zo simpel, dus goed op oefenen, studeren. 
+
+Een deelverzameling $D$ met de nulvector erin, is nooit vrij. 
+
+Techniek om na te gaan of vectoren in $\mathbb{R}^3$ lin.onafh. zijn: kan via stelsel (homogeen). Meer algemeen: onderzoek naar oplossingen van homogeen stelsel van 1e graadsvergelijkingen. 
+Techniek om na te gaan of vectoren in $\mathbb{R}^3$ voortbrengend zijn: kunnen ze willekeurige vector opleveren, is ook stelsel oplossen (zelfde stelsel als voor LO, maar niet homogeen) 
+
+Bij bewijs van Steinitz staat: je kan inzien dat deel (2) vd stelling equivalent is met deel (1): dit is contrapositie. 
+
+Deel (1) in contrapositie: 
+$\neg$(elke deelverz. $> m$ elementen is niet vrij) $\implies$ $\neg$(er bestaat voortbrengend deel met m elementen)
+
+is equivalent met: 
+
+(er bestaat een deelverzameling met $n>m$ elementen die vrij is) $\implies$ (alle deelverzamelingen met $m$ elementen zijn niet voortbrengend)
+
+TODO: die stelling 3.40: was dat letterlijk de examenvraag? 
+
+TODO: bewijs van stelling 3.53: best moeilijk bewijs. 
+
+TODO: paragraaf 3.5.2 lezen 
 
 % H4
 \section{Lineaire afbeelingen en transformaties}
 
 \subsection{Definities, notaties}
+\begin{itemize}
+    \item lineaire transformatie
+    \item def. 4.16: isomorifsme = $L$ die bijectief is; notatie $V \cong W$ als er zo'n $L$ bestaat
+    \item definitie 4.31: kern (ker $L$) en beeld (Im $L$) , en rang van $L$! (=dim van Im $L$) ; opgelet rang hoeft niet eindig! 
+\end{itemize}
 
 \subsection{Stellingen}
+\begin{itemize}
+    \item Stelling 4.13: afbeelding van $Hom_{\mathbb{R}}(V,W)$ naar $\mathbb{R}^{m \times n}$. Na kiezen basis. 
+    \item stelling 4.14: samenstelling van L en K ook lineaire afbeelding. 
+    \item stelling 4.18: not shocking 
+    \item stelling 4.20: (eindig dim.) $V \cong W$ asa dim $V$ = dim $W$ ! grappig wel; 1 getal, de dimensie is genoeg om een isomorfisme te hebben
+    \item prop. 4.23: $L$ is isomorfisme asa $A$ inverteerbaar. (en matrix van inverse $L^{-1}$ is de inverse matrix) 
+    \item prop. 4.32: Im $L$ = vct $\{ L(v_1), ... \} = $ vct $(\beta)$ ;logisch maar moet ik wel goed in hoofd prenten. 
+    \item stelling 4.34: $L$ is injectief asa ker $L$ = $\{ 0 \}$. 
+    \item stelling 4.36: goed te kennen (o.a. oef 4 p. 186)  
+\end{itemize}
 
 \subsection{Redeneringen, inzichten}
+
+TODO: oef. 3.6.11 herbekijken; moet ook voor oneindig-dimensionale vectorruimte of deelruimte kunnen bewezen worden, denk ik; 
+als vrij, dan hoogstens 1 manier: lijkt me easy (geval $v \in vct \text{ vs } v \notin vct$. 
+Maar omgekeerde geval: ?? 
+
+p.158 opdracht 1: lukte me niet 
+
+p.148 gevolg 4.3 (3): lineaire afbeelding ligt volledig vast door beelden van de basis; maar wat wil dat zeggen? mag je willekeurige beelden $w_i$ uit $W$ aan een basis van $V$ toekennen en dan 
+besluiten dat $L$ een lineaire afbeelding is? ergens was er oefening hierover... 
+
+Vraag: als $v_i$ basis vormen, is dan de verzameling $L(v_i)$ ook basis? Ze is in ieder geval LO denk ik, maar to be seen. 
+
+Zeker onthouden: $L_{\beta_V}^{\beta_W}$: kolommen zijn coordinaatvectoren tov $\beta_W$ van de beelden van de basisvectoren uit $\beta_V$. Vooral $V$ en $W$ niet omdraaien hierin, goed inprenten, of goeie kapstok vinden om te onthouden. 
+
+Notaties: $Y = A \cdot X$ met $X$ coord-vector van $v$ en $Y$ coord-vector van $L(v)$ ; 
+$v_i$ zijn $n$ basisvectoren van $V$
+$w_i$ zijn $m$ basisvectoren van $W$ 
+$L(v) = \sum y_i w_i$; 
+elke $v = (v_1 ... v_n) \begin{pmatrix} x_1 \\ ... \\x_n \end{pmatrix}$ ; en $L(v) = (w_1 ... w_m) \begin{pmatrix} y_1 \\ ... \\y_m \end{pmatrix}$. 
+Ook: $L(v) = ( L(v_1) ... L(v_n) \begin{pmatrix} x_1 \\ ... \\x_m \end{pmatrix}$? 
+TODO: dit nog verder uitwerken? Met ook A er verder in gewerkt, en zien dat ik goed en snel kan reproduceren? 
+
+p.156 figuur! 
+
+Truuk om niet in de war te geraken: goed onderscheid maken tussen vector uit $\mathbb{R}^n$ met "re\"ele getallen" op een rij/kolom, en anderzijds een co\"ordinaatvector, die altijd moet gezien worden als coeff. van lin. combinatie van basisvectoren. 
+
+Vraag: welk matrices uit $\mathbb{R}^{m \times n} $ komen overeen met een $L$? Allemaal? Kan ik matrix verzinnen en zeggen: dit is mijn $L_A$ ? En wat betekent dat dan? Tov welke basis? Of kan dit met eender welke basis gecombineerd worden?? 
+Wat we weten: gegeven een $L$, een $\beta$ en een $\beta'$: we kunnen altijd de matrix bepalen, er is een techniek hiervoor. 
+
+Vectorruimte van de lineaire afbeeldingen: nog een abstractie verder: alle $L$ van een gegeven $V$ naar een gegeven $W$ vormen zelf een vectorruimte. 
+Definitie 4.12: $Hom_{\mathbb{R}}(V,W)$. Homomorfisme. Alle LA van $V$ naar $W$. Je kan hiermee ook bewerkingen doen, dus de LA als vectoren beschouwen. 
+En met gekozen basissen zijn het eigenlijk gewoon matrices... 
+(LA als abstractie van een matrix? of omgekeerd? ik denk het eerste in de les gezegd) 
+
+Bij matrices van LA: het moet gaan over eindig-dimensionale vectorruimte. dim $V = n$. dim $W = m$. $K+L$ correspondeert met $A+B$, en $\lambda K$ met $\lambda A$. 
+
+Linaire transformatie: vierkante matrix
+
+Als $L$ surjectief is (ttz alle $w$ worden bereikt door $L$), dan is $W$ voorgebracht door de $L(v_i)$. (opdracht 4.19). 
+Als $L$ injectief is (ttz elke $v$ heeft unieke $L(v)$), zijn de $L(v_i)$ vrij. 
+Als $L$ beide is (bijectief, maw een isomorfisme): dan is $L(\beta)$ een basis van $W$. En $V$ en $W$ hebben dezelfde dimensie geloof ik, kan bijna niet anders. 
+
+TODO: voor mezelf verschillende makkelijk te onthouden voorbeelden van $L$ bedenken die surjectief, injectief, bijectief zijn etc., en erover nadenken, matrices erbij, basissen erbij, ... 
+
+TODO: opdracht 4.22, alle rijen van re\"ele getallen als vectoren; rijen met eindig aantal; waarmee isomorf? 
+
+Sectie 4.4 basisverandering. Op basis van $Id$ afbeelding. Want vectoren blijven zelfde, alleen coord. veranderen! $Id_{\beta}^{\beta'}$. 
+
+Basisverandering matrix: vaak als $P$ aangeduid. En inverse als $P^{-1}$. Is dit altijd inverteerbaar? Is dit altijd vierkant? Definitie gelijkvormige matrices... Ze stellen dezelfde $L$ voor, maar in andere basis. 
+Als ene set basisvectoren een standaardbasis is, is ene matrix heel simpel op te schrijven, en andere door inverteren te berekenen. 
+
+Opmerking 4.35: voor EINDIG-dim $V$ en $W$ : verzameling van alle coord. van ker $L$ = nulruimte $N(A)$ van $A = L_{\alpha}^{\beta}$. En gelijkaardig beeld van $L$ en kolomruimte $C(A)$! 
+
+Kern is deelruimte van $V$. Beeld is deelruimte van $W$. 
+
+Dimensiestelling. dim $V$ = dim ker $L$ + dim Im $L$/ 
+
+TODO: praktisch, vlot leren $N(A)$ te vinden incl. basis ervoor, en $C(A)$ en basis ervoor. (herhaling hoofdstuk matrices/vectorruimten??) 
+
+TODO Oef. 9 p. 187: ik zie het niet
+
+oef. 17 p. 189: nog niet kunnen afwerken, altijd in de war met die rij/kolomvectoren, Id, basissen etc. 
 
 
 
@@ -169,14 +333,22 @@ Formule voor rij-ontwikkeling afleiden: ook niet zo triviaal.
 \section{Eigenwaarden, eigenvectoren, diagonaliseerbaarheid}
 
 \subsection{Definities, notaties}
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \subsection{Stellingen}
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \subsection{Redeneringen, inzichten}
 
+Eigenvectoren altijd niet-nul. Eigenwaarden kunnen nul zijn. (bijhorende eigenvectoren zijn oplossingen van homogeen stelsel). 
 
+p.231: oef. 1a: truuk nodig; $Av=\lambda v$ dus $AAv= A\lambda v$ dus ... $\lambda v = \lambda^2 v$, ofte  $\lambda v - \lambda^2 v = 0$ voor niet-nul $v$, dus $\lambda(1-\lambda)=0$
 
-
+oef. 1b: $Av=\lambda v$ dus $A^{-1}Av = A^{-1} \lambda v$, ... $\frac{1}{\lambda}v= A^{-1}v$, dus ... 
 
 % H6 
 \section{Inproductruimten en Euclidische ruimten}
@@ -196,8 +368,14 @@ Legt verband tussen:
 
 
 \subsection{Definities, notaties}
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \subsection{Stellingen}
+\begin{itemize}
+    \item 
+\end{itemize}
 
 \subsection{Redeneringen, inzichten}
 
