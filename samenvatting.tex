@@ -475,5 +475,38 @@ Legt verband tussen:
 \subsection{Redeneringen, inzichten}
 
 
+\section{Overkoepelende beschouwingen}
+
+\subsection{Matrix}
+
+\begin{itemize}
+    \item tabel getallen $m$ bij $n$
+    \item m rijen of ook: m rijvectoren uit $\mathbb{R}^n$
+    \item n kolommen of ook: n kolomvectoren uit $\mathbb{R}^m$
+    \item model van lineair stelsel (homogeen of uitgebreide matrix); 0, 1 of oneindig veel oplossingen       
+    \item $n \times n$: inverteerbaar asa det $\neq 0$ asa rijvectoren LO asa kolomvectoren LO asa rang $A=n$ 
+    \item zelf element van vectorruimte  $\mathbb{R}^{m \times n}$ 
+    \item rijen brengen rijruimte $R(A)$ voort, kolommen de kolomruimte $C(A)$ 
+    \item oplossingen homogeen stelsel vormen nulruimte $N(A)$ 
+    \item rang matrix = min ( aantal LO rijen, aantal LO kolommen) 
+    \item als lineaire afbeelding: $X \mapsto A \cdot X$ (of lin. transformatie indien $n \times n$) 
+\end{itemize}
+
+Rang van een matrix, met nieuwe info in H4 na definitie LA : ergens beetje eigenaardig dat "de rang" van een matrix pas wordt aangetoond als lineaire afbeeldingen zijn behandeld. 
+\begin{itemize}
+    \item H3: kolomrang en rijrang gedefineerd (als dim van $C(A)$ resp. $R(A)$) 
+    \item H3: dimensiestelling matrix en geassocieerde vectorruimtes: dim $N(A)$ + dim $R(A)$ = $n$ ($n$ = aantal kolommen) 
+    \item H4: dimensiestelling LA: dim $V$ = dim(ker $L$) + dim Im $L$, met dim $V=n$=aantal kolommen bijhorende matrix, dim ker $L$ = dim $N(A)$, en dim Im $L$ per definitie rang van $L$, maar ook dim Im $L$ = $C(A)$ = kolomrang
+    \item H4: uit voorgaande: dim $N(A)$ + rijrang = n = dim $N(A)$ + kolomrang ; dus kolomrang = rijrang = rang afbeelding $L_A$  
+\end{itemize}
+
+\subsection{Lineaire afbeelding}
+\begin{itemize}
+    \item matrix voorstelling ervan als er basis(sen) zijn gekozen (bij lin trans op $V$ is 1 basis genoeg)
+    \item basisverandering binnen 1 ruimte is ook een transformatie, eigenlijk de identieke $Id$ 
+    \item $L$ is bijectief (en dus isomorfisme) asa matrixvoorstelling is inverteerbaar     
+    
+\end{itemize}
+
 
 \end{document}
