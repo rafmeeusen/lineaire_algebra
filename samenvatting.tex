@@ -170,7 +170,7 @@ Formule voor rij-ontwikkeling afleiden: ook niet zo triviaal.
  
 
 % H3
-\section{Vectorruimten}
+\section{H3 Vectorruimten}
 
 \subsection{Definities, notaties}
 
@@ -182,7 +182,7 @@ Formule voor rij-ontwikkeling afleiden: ook niet zo triviaal.
     \item definitie 3.19 
     \item definitie 3.20 
     \item definitie 3.26 (p.104): (een deelverzameling $D$ van $V$ is...) lineaire afhankelijk (niet vrij); lineair onafhankelijke (vrij); "er bestaat een vector in $D$ die een lineaire combinatie is van de andere"; opgelet, dit kan oneindige deelverzameling $D$ zijn! 
-    \item definitie 3.31: "voortbrengend" (kan eindig of oneindig zijn!) ; notatie met opsomming tot $v_n$ alleen voor eindige! 
+    \item definitie 3.31: "voortbrengend" (kan eindig of oneindig zijn!); vct($D$)=$V$ (gelijkheid! geen grotere verzameling!) ; notatie met opsomming tot $v_n$ alleen voor eindige! 
     \item definitie 3.33: "basis $\beta$". (kan eindig of oneidig zijn!) ;notatie met opsomming tot $v_n$ alleen voor eindige! 
     \item definitie 3.38: dimensie van $V$ met eindige basis; en dimensie van $\{ 0\}$ is per definitie $0$
     \item definitie 3.58: complementaire deelruimte
@@ -240,8 +240,12 @@ TODO: bewijs van stelling 3.53: best moeilijk bewijs.
 
 TODO: paragraaf 3.5.2 lezen 
 
+
+Belangrijke bedenking: als $\beta$ een basis is van $V$ (eindig-dim), dan kunnen basissen van deelruimten NIET altijd gevonden worden door te schrappen in $\beta$! $\beta$ is namelijk niet voortbrengend voor de deelruimten! Te veel voortbrengen is NIET voorbrengen (zie definitie voortbrengend); voorbeeld: het vlak, eenheidsvectoren op X-as en Y-as, en deelruimte diagonaal y=x. 
+Dit is van groot belang bij het bewijs van de dimensiestelling, je kan geen basis van de kern van $L$ vinden door te schrappen uit basis van $V$!! 
+
 % H4
-\section{Lineaire afbeelingen en transformaties}
+\section{H4 Lineaire afbeelingen en transformaties}
 
 \subsection{Definities, notaties}
 \begin{itemize}
@@ -326,29 +330,120 @@ TODO Oef. 9 p. 187: ik zie het niet
 
 oef. 17 p. 189: nog niet kunnen afwerken, altijd in de war met die rij/kolomvectoren, Id, basissen etc. 
 
+Ik stelde me ooit de vraag of elke matrix $A \in \mathbb{R}^{m \times n}$ de voorstelling is van een lineaire transformatie. Natuurlijk is dat zo: gewoon $Y = A \cdot X$ kan altijd gezien worden als afbeelding die $X \ \in \mathbb{R}^n$ afbeeldt op $Y \in \mathbb{R}^m$, en deze afbeelding is lineair (matrixproduct distributief, en scalairen kunnen binnen en buiten gebracht worden). 
+Omgekeerd is ook elke $L : V \to W$ als matrix te bekijken door met co\"ordinaten te werken. 
+
+Als elke willekeurige matrix een $L$ voorstelt, wat dan met willekeurige inverteerbare matrices? Inverteerbare matrices $n \times n$ hebben sowieso rijen en kolommen die lineair onafhankelijk zijn (zie die samenvattende stellingen ergens einde H3 geloof ik). Dus de kolommen van een inverteerbare matrix vormen steeds een basis voor $\mathbb{R}^n$. 
+Maar als kolommen van een matrix een basis vormen, dan stelt deze matrix eigenlijk ook een basisverandering voor op $\mathbb{R}^n$ van basis gegeven door de kolommen (bvb. $\alpha$) naar de standaardbasis $\epsilon$. Dus elke inverteerbare matrix $A$ is eigenlijk een basistransformatie $Id_{\alpha}^{\epsilon}$ met $\alpha=\{ \text{kolommen van A} \}$ en $\epsilon$ standaardbasis. 
+Inderdaad, geven we co\"ordinaat $(1,0,0...)$ aan deze basisverandering, dan komt er kolom 1 uit, wat de coordinaat tov $\epsilon$ van het beeld van de eerste basisvector van  $\alpha$ is, wat klopt want de co\"effici\"enten van een kolommatrix zijn gewoon de coordinaten tov van de standaardbasis. Wel verwarrend altijd, die coordinaten en die co\"effici\"enten door mekaar. 
+De omgekeerde basistransformatie is dan $A^{-1}$. 
+Samengevat: elke inverteerbare matrix kan gezien worden als een basistransformatiematrix van $\alpha$ naar de standaardbasis. Of omgekeerd (want toch inverteerbaar). Verderop gebruik ik dit nog bij diagonaliseerbaarheid. 
 
 
 
 % H5
-\section{Eigenwaarden, eigenvectoren, diagonaliseerbaarheid}
+\section{H5 Eigenwaarden, eigenvectoren, diagonaliseerbaarheid}
+
+Intro: bij een $L$ op $V$ ziet de matrix $A$ er anders uit naargelang de basiskeuze. Als de basis zodanig kan gekozen worden dat de matrix $A$ een diagonaalmatrix is, zou dat "ideaal" zijn. Bvb. product van twee diagonaalmatrices (of kwadraat van een diag.matrix) zijn heel eenvoudig te berekenen. 
+
+We hebben bij basisveranderingen gezien dat de nieuwe matrix er als volgt uitziet: $B=P^{-1}AP$ dus als we dat zodanig kunnen dat $B$ een diagonaalmatrix is, dan noemen we enerzijds $A$ diagonaliseerbaar (en bijhorende $L$), en weten we ook dat we nog steeds dezelfde transformatie hebben, alleen met coordinaten ten op zichte van een andere basis. 
+
+Bij het uitrekenen wanneer een $P^{-1}AP=\Lambda$ diagonaal is (dan is namelijk $AP=P\Lambda$, en kan je wat met kolommen van $P$ redeneren), kom je automatisch op de eigenwaarde- en eigenvectordefinities. 
+
 
 \subsection{Definities, notaties}
 \begin{itemize}
-    \item 
+    \item eigenwaarde en eigenvectoren horende bij die eigenwaarde (van een matrix $A$): $Av=\lambda v$
+    \item karakteristieke veelterm van een matrix $A$
+    \item eigenwaarde en bijhorende eigenvectoren  van ee lineaire transformatie $L(v)=\lambda v$
+    \item definitie spectrum van $L:V \to V$, Spec($L$) $\subset \mathbb{R}$
+    \item definitie diagonaliseerbare matrix: er bestaat een inverteerbare $P$ zodat ... 
+    \item definitie diagonaliseerbare transformatie $L$ op $V$: er bestaat een basis van $V$ die volledig bestaat uit eigenvectoren van $L$ (!!); heel andere definitie dus; niet via bijhorende matrix of zo. 
+    \item algebra\"ische multipliciteit  $m(\lambda)$, en meetkundige $d(\lambda) $; om te onthouden: m multipliciteit, en d dimensie (en dimensie is een meetkundig gegeven) 
+    \item enkelvoudig spectrum: spectrum van een $L$ op $V$ met dim $n$ is enkelvoudig als \#Spec($L$)=$n$ (dus precies $n$ verschillende eigenwaarden) 
 \end{itemize}
 
 \subsection{Stellingen}
 \begin{itemize}
-    \item 
+    \item de enige eigenwaarden $\lambda$ van matrix $A$ zijn de nulpunten van de karakteristieke veelterm
+    \item stelling 5.8: $A$ diagonaliseerbaar asa $\mathbb{R}^n$ heeft een basis die volledig bestaat uit eigenvectoren van $A$ / bewijs al best pittig om te volgen! (zie nota's redeneringen) 
+    \item stelling 5.16: makkelijker te onthouden notatie dan in boek:   $1 \leq d(\lambda) \leq m(\lambda)$
+    \item stelling 5.18: eigenvectoren bij verschillende eigenwaarden zijn lineair onafhankelijk 
+    \item p.215: $L$ met enkelvoudig spectrum is diagonaliseerbaar
+    \item lemma 5.22: als $L$ diagonaliseerbaar, dan moet $\phi_L$ volledig ontbinden als product van eerstegraadstermen; bewijs niet moeilijk, maar vraagt toch mind-flex. 
+    \item stelling ?.? : gegeven $V$ met dim $n$, een $L$ op $V$, en een $\phi_L$ met $n$ nulpunten in $\mathbb{R}$: L is diagonaliseerbaar \emph{asa} voor alle $\lambda_i$ geldt dat $m(\lambda_i) = d(\lambda_i) $
+    \item ergens een stelling dat gelijkvormige matrices dezelfde eigenwaarden, eigenvectoren en wat meer hebben!! 
 \end{itemize}
 
 \subsection{Redeneringen, inzichten}
 
 Eigenvectoren altijd niet-nul. Eigenwaarden kunnen nul zijn. (bijhorende eigenvectoren zijn oplossingen van homogeen stelsel). 
 
+Scalair veelvoud van een eigenvector is steeds een andere eigenvector bij dezelfde eigenwaarde. 
+
+Twee verschillende definities: eigenwaarde matrix en eigenwaarde lineaire transformatie. (hoewel je al kan aanvoelen dat ze overeen gaan komen). 
+
+Wat nadenken over spiegelingen, rotaties etc. kan zeker geen kwaad! Spiegeling tov bisectrice (y=x). Als $y=x$ : die vectoren op zichzelf afgebeeld, dus eigenwaarde 1. Andere vectoren $(x,y)$ afgebeeld op $(-x,-y)$, namelijk de loodlijn door 0 op die bisectrice, dus er is een eigenwaarde -1 ook. Ander voorbeeld: projecties van hele ruimte op vlak of as. 
+
+$A=\begin{pmatrix} 0&1 \\ 1&0 \end{pmatrix}$: 
+  Spec($A$) = $\{\lambda_1=1,\lambda_2=-1\}$,
+  $E_{\lambda_1}=\{ r \cdot \begin{pmatrix} 1\\ 1 \end{pmatrix}  \}$, 
+  $E_{\lambda_2}=\{ s \cdot \begin{pmatrix} -1\\ 1 \end{pmatrix}  \}$
+
+$B=\begin{pmatrix} 0&-1 \\ 1&0 \end{pmatrix}$: 
+  Spec($B$) = $\{  \lambda_1=i,  \lambda_2=-i \}$,  
+  $E_{\lambda_1} = \{ c \cdot \begin{pmatrix} i\\ 1 \end{pmatrix}  \}$, 
+  $E_{\lambda_2} = \{ d \cdot \begin{pmatrix} -i\\ 1 \end{pmatrix}  \}   $
+
+
+$C=\begin{pmatrix} 1&1 \\ 0&1 \end{pmatrix}$: 
+  Spec($C$) = $\{ \lambda_1=1 \}$. 
+  $E_{\lambda_1} = \{ r \cdot \begin{pmatrix} 1\\ 0 \end{pmatrix}  \}$, dim $E_{\lambda_1}=1$ 
+  
+$D= \mathbb{I}_2 = \begin{pmatrix} 1&0 \\ 0&1 \end{pmatrix}$: 
+  Spec($D$) = $\{ \lambda_1=1 \}$. 
+  $E_{\lambda_1} = \{ \begin{pmatrix} r\\ s \end{pmatrix}  \}$, dim $E_{\lambda_1} = 2 $
+
+
+
+Als $Ap_i = \lambda_i p_i$, waarom zijn deze kolommen $p_i$ dan een basis van $\mathbb{R}^n$? Kolommen van een inverteerbare matrix zijn altijd lineair onafhankelijk. En aangezien er $n$ zijn, is het een basis. (nodig in bewijs stelling 5.8). 
+
+Als een vector $v$ in $E_{\lambda_1}$ zit, kan die niet in $E_{\lambda_2}$ zitten, en omgekeerd. Dit is evident omdat $L(v)$ niet tegelijk gelijk kan zijn aan $\lambda_1 v$ en aan $\lambda_2 v$ met verschillende eigenwaarden. 
+
+$E_{\lambda}$ , de eigenruimte, is wel degelijk een deelruimte! Ik dacht eerst dat er geen $0$ in zat, maar er zit zeker wel een $0$ in, want het is per definitie een ruimte. Ook de ruimte met basis $\{ (1,0), (0,1) \}$ heeft $0$ erin natuurlijk... 
+
+
+In de les iets gezegd van: lineaire afbeeldingen zijn een abstractie van matrices. Snap niet helemaal waarom lineaire afbeeldingen abstracter zijn dan matrices, ik vind ze eigenlijk concreter. 
+
+Uit theorieles: wanneer heeft $A$ of $L$ genoeg eigenvectoren? Genoeg in de zin van: om een basis te vormen, dus $n$ lineair onafhankelijke eigenvectoren. En dit is dezelfde vraag als: wanneer is $A$ of $L$ diagonaliseerbaar. En er zijn twee obstakels: eerst moeten we genoeg nulpunten hebben van $\phi_A$ zodat we genoeg eigenwaarden hebben; en dan als er genoeg eigenwaarden zijn, moeten we nog een basis vinden van eigenvectoren. 
+(TODO: vraag: waarom moeten we genoeg eigenwaarden hebben? waarom niet binnen eenzelfde eigenwaarde eigenvectoren te vinden? ik denk dat Vaes zijn formulering een beetje te vaag is, en je eigenlijk met 1 eigenwaarde nog altijd kan diagonaliseren, zie eenheidsmatrix; betere formulering zou zijn: we moeten genoeg multipliciteit hebben). 
+
+Redenering: vectorruimte $V$ met dimensie $n$, karakteristiek vergelijking van bijhorende matrix heeft maximum graad $n$, dus er zijn maximum $n$ re\"ele nulpunten (en exact $n$ complexe nulpunten). Dus de som van de algebraische multipliciteiten is maximaal $n$: $m(\lambda_1) + m(\lambda_2) + ... + m(\lambda_k) \leq n $ (en $=n$ bij complexe). 
+
+In de les een variant op stelling 5.8 gezien: als we een $L: V \to V$ hebben en een basis $\beta=\{ v_1, v_2, ... v_n \}$. Dan bestaat $\beta$ uit eigenvectoren van $L$ \emph{asa} $L_\beta^\beta$ is een diagonaalmatrix. Bewijs loopt als volgt: kolommen van $L_\beta^\beta$ zijn de co\"ordinaten van de beelden van de basisvectoren $v_i$. Maar als $v_i$ eigenvectoren zijn, dan zijn de geldt voor elke $i$: $L(v_i) = \lambda_i v_i$. En dus is de co\"ordinaat $(0, ... \lambda_i, ... 0)$. Dus staan die co\"ordinaten als kolommen in $L_\beta^\beta$ en hebben we een diagonaalmatrix. 
+
+Enkelvoudig spectrum: uit definitie volgt rechtstreeks dat alle $m(\lambda_i)=1$. 
+
+Als enkelvoudig spectrum, dan diagonaliseerbaar (een stelling of Lemma p.215). Maar omgekeerd: indien geen enkelvoudig spectrum?? Wel dan kan alles nog... bvb. eenheidmatrix heeft geen enkelvoudig spectrum, maar is al diagonaal dus zeker diagonaliseerbaar... 
+
+Complexe vectorruimten, complexe eigenwaarden/eigenvectoren: $\mathbb{C}$. Definities $A \in \mathbb{C}^{n \times n}$ diagonaliseerbaar over $\mathbb{C}$, $L: (\mathbb{C},V,+) \to (\mathbb{C},V,+)$ diagonaliseerbaar, en voorwaarde \emph{asa} $d(\lambda_i) = m(\lambda_i)$: eigenlijk hetzelfde als re\"ele varianten. Maar scalairen zijn dan complex (dus ook vermenigvuldigen met $i$ van bvb vector $\begin{pmatrix} 1\\ 0 \end{pmatrix}$ is een scalair veelvoud! 
+
+Ik probeer in eigen woorden het verband te zien tussen de definitie van een diagonaliseerbare matrix en een diagonaliseerbare transformatie. $A$ diagonaliseerbaar, is per definitie het bestaan van een $P, P^{-1}$ zodat $ P^{-1}AP= \Lambda$. 
+Een diagonaliseerbare $L$ betekent het bestaan van een basis $\beta$ in $V$ bestaande uit eigenvectoren van $L$. Maar het bestaan van een basis bestaande uit eigenvectoren, betekent net hetzelfde als zeggen dat de matrix van $L$ tov. basis $\beta$ een diagonaalmatrix is: $L_{\beta}^{\beta}$ = \begin{pmatrix} \lambda_1 & 0 &... \\ 0 & \lambda_2 & ... \\ &...&\\ ... & 0 & \lambda_n \end{pmatrix}. (lemma in de les gezien als intermezzo). 
+Nu kunnen we bij een $L$ altijd onze basis kiezen, en aan de hand daarvan de matrix van $L$ opschrijven. Kiezen we voor dezelfde diagonaliseerbare $L$ een andere basis $\alpha$, dan weten we dat $L_{\alpha}^{\alpha}$ en $L_{\beta}^{\beta}$ dezelfde lineaire transformatie voorstellen, maar ten opzichte van een andere basis. Deze basisverandering is ook een transformatie, en is bijectief, dus is er een inverteerbare matrix $P$ zodat $L_{\alpha}^{\alpha} = P^{-1} L_{\beta}^{\beta} P $. Dat wil ook zeggen dat matrix $L_{\alpha}^{\alpha}$ diagonaliseerbaar is. Dus voor willekeurige basis $\alpha$ is de matrix van een diagonaliseerbare transformatie $L$ ook diagonaliseerbaar. 
+Omgekeerd: nemen we een willekeurige matrix $A$ die diagonaliseerbaar is. Dan is $A = P^{-1} \Lambda P$ of $\Lambda=P A P^{-1}  $. Deze matrix $A$ stelt ook een lineaire transformatie voor $X \mapsto AX$ op $\mathbb{R}^n$. En elke inverteerbare matrix $P$ kan gezien worden als een basistransformatiematrix van $\alpha$ naar de standaardbasis of omgekeerd (zie eerder mijn redenering ergens).  Dus onze $\Lambda$ stelt dezelfde $L$ voor als onze $A$, maar ten opzichte van een andere basis. Wegens ons intermezzo (er bestaat basis uit eigenvectoren asa matrix $L$ tov deze basis is diagonaalmatrix): onze $L$ is ook diagonaliseerbaar. 
+
+
+
+
+
+=================
 p.231: oef. 1a: truuk nodig; $Av=\lambda v$ dus $AAv= A\lambda v$ dus ... $\lambda v = \lambda^2 v$, ofte  $\lambda v - \lambda^2 v = 0$ voor niet-nul $v$, dus $\lambda(1-\lambda)=0$
 
 oef. 1b: $Av=\lambda v$ dus $A^{-1}Av = A^{-1} \lambda v$, ... $\frac{1}{\lambda}v= A^{-1}v$, dus ... 
+
+
+
 
 % H6 
 \section{Inproductruimten en Euclidische ruimten}
